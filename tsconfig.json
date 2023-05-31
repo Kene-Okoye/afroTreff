@@ -17,8 +17,16 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Alias */
+    "types": ["node"],
+    "baseUrl": "." /* Specifies the base directory for resolving non-relative module names */,
+    "paths": {
+      "@/*": ["src/*"] /* Sets up a path alias for '@' that points to the src directory */
+    }
   },
+
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
