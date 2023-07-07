@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:wght@300;400;500;600;700;800&display=swap');
 
 /* Option 2 */
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -31,8 +31,10 @@
   --carnaby-tan-color: #5f2a04;
   --satin-linen-color: #f0e1d2;
   --egg-shell-color: #f2e7dd;
+  --color-dark: #1d1c1c;
 
   /* SPACING */
+  --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 3rem;
@@ -54,7 +56,6 @@ footer {
 
 section,
 footer {
-  border: 2px solid red;
   padding-block: min(10vh, 10rem);
   padding-inline: clamp(1rem, 10%, 6rem);
 }
@@ -83,8 +84,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background: var(--satin-linen-color);
-  /* font-family: var(--font-family-open-sans); */
-  font-family: var(--font-family-merriweather);
+  font-family: var(--font-family-open-sans);
+  /* font-family: var(--font-family-merriweather); */
   font-size: max(var(--font-size-sm), 1.2vw);
 }
 
@@ -111,7 +112,6 @@ h3,
 h4,
 h5,
 h6 {
-  border: 2px solid blueviolet;
   overflow-wrap: break-word;
 }
 
@@ -119,10 +119,11 @@ h1,
 h2 {
   font-family: var(--font-family-ubuntu);
   /* font-family: var(--font-family-catmaran); */
+  font-weight: var(--font-weight-extra-bold);
 }
 
 h1 {
-  font-size: clamp(var(--font-size-lg), var(--font-size-xs) + 10vw, var(--font-size-xl));
+  font-size: clamp(var(--font-size-xs), var(--font-size-xs) + 10vw, var(--font-size-xl));
 }
 
 h2 {
@@ -136,12 +137,6 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-button {
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  cursor: pointer;
 }
 /* ----------------
   END - CSS reset
