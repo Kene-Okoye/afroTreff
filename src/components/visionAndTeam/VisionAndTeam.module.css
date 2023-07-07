@@ -1,0 +1,13 @@
+.vision-team-section > div {
+  margin-block: var(--spacing-md);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .vision-team-section div:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+}
