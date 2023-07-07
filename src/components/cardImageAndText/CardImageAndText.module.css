@@ -1,0 +1,30 @@
+.image-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-wrapper {
+  width: 100%;
+}
+
+.text-wrapper p {
+  padding-block: var(--spacing-md);
+}
+
+.image-wrapper img {
+  margin: auto;
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .image-text-container {
+    flex-direction: row;
+  }
+
+  .text-wrapper {
+    width: 70%;
+  }
+}
