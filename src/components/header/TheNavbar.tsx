@@ -22,7 +22,12 @@ const TheNavbar = () => {
 
   return (
     <>
-      <nav ref={dialogRef as RefObject<HTMLElement>} id="main-nav" aria-label="Select a page">
+      <nav
+        ref={dialogRef as RefObject<HTMLElement>}
+        id="main-nav"
+        aria-label="Select a page"
+        className={`${isMenuOpen && headerStyles['nav-fixed']}`}
+      >
         {/* Hamburger Menu */}
         <button
           ref={triggerRef as RefObject<HTMLButtonElement>}

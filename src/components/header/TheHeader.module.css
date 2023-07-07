@@ -2,9 +2,11 @@
   HEADER STYLES 
 ---------------- */
 header {
-  border: 2px solid green;
   background-color: rgba(0, 0, 0, 0.5);
-  position: sticky;
+  position: absolute;
+  inset-block-start: 0rem;
+  inset-inline: 0rem;
+  z-index: 1;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -13,11 +15,6 @@ header {
 
 .logo-image {
   height: 100%;
-}
-
-nav {
-  border: 2px solid pink;
-  padding: var(--spacing-sm);
 }
 
 .logo {
@@ -59,9 +56,14 @@ nav {
 ---------------------------- */
 
 nav {
-  position: fixed;
+  position: absolute;
   inset-block-start: 0rem;
   inset-inline-end: 0rem;
+  padding: var(--spacing-sm);
+}
+
+.nav-fixed {
+  position: fixed;
 }
 
 nav ul {
@@ -79,6 +81,10 @@ nav > button[aria-expanded='false'] + ul {
   transform: translateX(100%);
 }
 
+/* button[aria-expanded='false'] {
+  position: static;
+} */
+
 nav > button {
   display: flex;
   position: relative;
@@ -92,15 +98,15 @@ nav a {
 .sub-menu > button:hover,
 nav a:hover {
   text-decoration: underline 3px solid var(--carrot-orange-color);
+  text-decoration-style: wavy;
   text-underline-offset: 10px;
 }
 
 nav [aria-current='page'] {
-  text-decoration-line: underline;
-  text-decoration-color: rgb(24, 54, 145);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 5px;
-  color: rgb(24, 54, 145);
+  text-decoration: underline 3px solid var(--carrot-orange-color);
+  text-decoration-style: wavy;
+  text-underline-offset: 10px;
+  color: var(--carrot-orange-color);
 }
 
 .main-menu {
@@ -109,14 +115,12 @@ nav [aria-current='page'] {
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: var(--spacing-sm);
   padding-inline-start: var(--spacing-md);
   padding-block-start: var(--spacing-xxl);
 
   background-color: #1d1c1c;
   color: var(--egg-shell-color);
-  border-inline-start: 10px solid var(--carrot-orange-color);
   box-shadow: -5px 0 11px 0 rgb(0 0 0 / 0.2); /* TODO: Remove after main styling*/
   height: 100%;
   position: fixed;
@@ -139,21 +143,27 @@ nav [aria-current='page'] {
 
 .main-menu > li:not(:first-child),
 .main-menu li button {
-  font-size: 3rem;
+  font-family: var(--font-family-ubuntu);
   font-weight: var(--font-weight-extra-bold);
+  font-size: var(--font-size-lg);
 }
 
 .sub-menu > ul {
-  opacity: 1;
+  padding-inline-start: var(--spacing-xs);
   height: 148px;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  opacity: 1;
   transition: all 0.5s ease;
 }
 
 .sub-menu > button {
+  text-transform: uppercase;
   background: none;
   border: none;
   padding: 0;
   color: inherit;
+  cursor: pointer;
 }
 
 .sub-menu--button-arrow-down::after {
@@ -226,7 +236,6 @@ nav [aria-current='page'] {
     visibility: visible;
 
     background-color: inherit;
-    color: #000;
   }
 
   .main-menu ul li:first-child {
@@ -254,11 +263,6 @@ nav [aria-current='page'] {
     transform: none;
   }
 
-  .sub-menu > button:hover,
-  nav a:hover {
-    text-underline-offset: 5px;
-  }
-
   .sub-menu > ul {
     padding-inline-end: var(--spacing-sm);
     padding-inline-start: 0;
@@ -277,8 +281,8 @@ nav [aria-current='page'] {
     width: 0.8rem;
     height: 0.8rem;
     margin-inline-start: 0.9rem;
-    border-inline-start: 3px solid #000;
-    border-block-end: 3px solid #000;
+    border-inline-start: 3px solid #fff;
+    border-block-end: 3px solid #fff;
     vertical-align: initial;
   }
 

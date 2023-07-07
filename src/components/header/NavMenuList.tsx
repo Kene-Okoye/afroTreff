@@ -85,7 +85,7 @@ const NavMenuList = ({ firstFocusableElementRef }: NavMenuListProps) => {
               <a href="#">Gallery</a>
             </li>
             <li>
-              <a href="#">News / Blog / AfroTreffzine</a>
+              <a href="#">News / Blog</a>
             </li>
           </ul>
         </li>
