@@ -7,7 +7,9 @@ type buttonProps = {
 const Button = ({ text }: buttonProps) => {
   return (
     <>
-      <button className={buttonStyles['button']}>{text}</button>
+      <button type="button" className={buttonStyles['button']}>
+        {text}
+      </button>
     </>
   );
 };
