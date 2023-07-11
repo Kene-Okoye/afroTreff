@@ -57,7 +57,7 @@ footer {
 section,
 footer {
   padding-block: min(10vh, 10rem);
-  padding-inline: clamp(1rem, 10%, 6rem);
+  padding-inline: clamp(1rem, -1.22rem + 11.11vw, 6rem);
 }
 
 /* ----------------
