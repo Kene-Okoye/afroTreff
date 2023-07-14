@@ -10,45 +10,38 @@ const blogContent = [
   {
     id: 1,
     heading: 'Celebrating AfroTreff"s First Anniversary',
-    category: 'news',
+    category: 'story',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
     imageSrc: blogImage5,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
+    href: '#',
   },
   {
     id: 2,
     heading: 'Cologne Carnival',
-    category: 'news',
+    category: 'story',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
     imageSrc: blogImage5,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
+    href: '#',
   },
   {
     id: 3,
     heading: 'Christopher Street Day',
-    category: 'story',
+    category: 'news',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
     imageSrc: blogImage5,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
+    href: '#',
   },
   {
     id: 4,
-    heading: 'Celebrating The Icons In Our Community',
-    category: 'story',
-    textContent:
-      'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
-    imageSrc: blogImage5,
-    imageAlt: 'picture of some person',
-    buttonText: 'read more',
-  },
-  {
-    id: 5,
     heading: 'Celebrating The Icons In Our Community',
     category: 'news',
     textContent:
@@ -56,6 +49,18 @@ const blogContent = [
     imageSrc: blogImage5,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
+    href: '#',
+  },
+  {
+    id: 5,
+    heading: 'Celebrating The Icons In Our Community',
+    category: 'story',
+    textContent:
+      'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
+    imageSrc: blogImage5,
+    imageAlt: 'picture of some person',
+    buttonText: 'read more',
+    href: '#',
   },
 ];
 
@@ -65,7 +70,7 @@ const Blog = () => {
       <section>
         <div className={blogStyles['blog-container']}>
           {blogContent.map(
-            ({ id, heading, category, textContent, buttonText, imageSrc, imageAlt }) => (
+            ({ id, heading, category, textContent, buttonText, href, imageSrc, imageAlt }) => (
               <CardBlog
                 key={id}
                 heading={heading}
@@ -74,6 +79,7 @@ const Blog = () => {
                 imageSrc={imageSrc}
                 imageAlt={imageAlt}
                 buttonText={buttonText}
+                href={href}
               />
             ),
           )}
