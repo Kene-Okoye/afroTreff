@@ -49,53 +49,6 @@
   text-align: center;
 }
 
-/* ------------------------------
-  BUTTON-LIKE LOOKING LINK STYLES
-------------------------------- */
-
 .hero--content a {
-  /* TODO: Check how to fix the issue with 'composes' in Vite Typescrit app */
-  /* composes: buttonStyles from '@/components/button/Button.module.css'; */
-  /* width: min-content;
-  margin-block-start: var(--spacing-lg); */
-}
-
-.hero--content a {
-  border: 3px solid var(--carrot-orange-color);
-  color: var(--carrot-orange-color);
-  background: transparent;
-  text-transform: uppercase;
-  padding: 0.8rem var(--spacing-md);
-  cursor: pointer;
-  transform: skew(-4deg) rotate(-0.8deg);
-  -webkit-transform: skew(-4deg) rotate(-0.8deg);
-  -moz-transform: skew(-4deg) rotate(-0.8deg);
-
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-
-  width: min-content;
   margin-block-start: var(--spacing-lg);
-}
-
-.hero--content a:hover {
-  color: inherit;
-}
-
-.hero--content a::before {
-  content: '';
-  background-color: var(--carrot-orange-color);
-  position: absolute;
-  z-index: -1;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  width: 100%;
-  height: 100%;
-  transform: translate(0%, 100%) skew(0deg);
-  transition: 0.5s;
-}
-
-.hero--content a:hover::before {
-  transform: translate(0%, 0%) skew(0deg);
 }

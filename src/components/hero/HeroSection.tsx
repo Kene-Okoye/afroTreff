@@ -1,4 +1,5 @@
 import heroSectionStyles from '@/components/hero/HeroSection.module.css';
+import LinkButton from '@/components/linkButton/LinkButton';
 
 type heroSectionProps = {
   h1Text: string;
@@ -17,7 +18,7 @@ const HeroSection = ({ h1Text, pText, linkText }: heroSectionProps) => {
         >
           <h1>{h1Text}</h1>
           <p>{pText}</p>
-          {linkText && <a href="#">{linkText}</a>}
+          {linkText && <LinkButton linkText={linkText} href="#" />}
         </div>
       </section>
     </>
