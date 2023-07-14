@@ -1,0 +1,8 @@
+.faq {
+  list-style: none;
+  padding: 0;
+}
+
+.faq li:first-child {
+  border-block-start: 0.1rem solid var(--color-dark);
+}
