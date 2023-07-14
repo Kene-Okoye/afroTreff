@@ -1,0 +1,90 @@
+.accordion summary {
+  display: block;
+  position: relative;
+  padding-block: var(--spacing-sm);
+  padding-inline-end: 2.5rem;
+  border-block-end: 0.1rem solid var(--color-dark);
+  font-family: var(--font-family-ubuntu);
+  font-weight: var(--font-weight-extra-bold);
+  font-size: 1.4rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Remove the summary default arrow for Safari */
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 1.5rem;
+  background-color: var(--color-dark);
+  inset-inline-end: 1rem;
+  width: 2px;
+  height: 17px;
+  transition: all 0.3s;
+}
+
+.accordion summary::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 1.5rem;
+  background-color: var(--color-dark);
+  inset-inline-end: 1rem;
+  width: 2px;
+  height: 17px;
+  transform: rotate(90deg);
+}
+
+.accordion--text-wrapper {
+  padding-block-end: var(--spacing-md);
+  border-block-end: 0.1rem solid var(--color-dark);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
+}
+
+/* -----------------------------------
+  ACCORDION (DETAILS) STYLES WHEN OPEN
+------------------------------------ */
+.accordion[open] > summary {
+  border-block-end: none;
+}
+
+.accordion[open] > summary::before {
+  background-color: var(--dirt-brown-color);
+
+  transform: rotate(90deg);
+}
+
+.accordion[open] > summary::after {
+  background-color: var(--dirt-brown-color);
+}
+
+.accordion[open] > .accordion--text-wrapper {
+  max-height: 50rem;
+}
+
+.accordion[open] summary {
+  color: var(--dirt-brown-color);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .accordion summary {
+    padding-block: var(--spacing-md);
+  }
+
+  .accordion summary::before {
+    inset-block-start: 2.41rem;
+  }
+
+  .accordion summary::after {
+    inset-block-start: 2.41rem;
+  }
+}
