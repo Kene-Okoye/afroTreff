@@ -13,7 +13,7 @@ const blogContent = [
     category: 'story',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
-    imageSrc: blogImage5,
+    imageSrc: blogImage1,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
     href: '#',
@@ -24,7 +24,7 @@ const blogContent = [
     category: 'story',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
-    imageSrc: blogImage5,
+    imageSrc: blogImage2,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
     href: '#',
@@ -35,7 +35,7 @@ const blogContent = [
     category: 'news',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
-    imageSrc: blogImage5,
+    imageSrc: blogImage3,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
     href: '#',
@@ -46,7 +46,7 @@ const blogContent = [
     category: 'news',
     textContent:
       'Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.',
-    imageSrc: blogImage5,
+    imageSrc: blogImage4,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
     href: '#',
