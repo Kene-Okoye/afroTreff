@@ -5,9 +5,9 @@
   text-transform: uppercase;
   padding: 0.8rem var(--spacing-md);
   cursor: pointer;
-  transform: skew(-4deg) rotate(-0.8deg);
   -webkit-transform: skew(-4deg) rotate(-0.8deg);
   -moz-transform: skew(-4deg) rotate(-0.8deg);
+  transform: skew(-4deg) rotate(-0.8deg);
 
   position: relative;
   isolation: isolate;
