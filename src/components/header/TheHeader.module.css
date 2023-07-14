@@ -164,6 +164,7 @@ nav [aria-current='page'] {
   padding: 0;
   color: inherit;
   cursor: pointer;
+  width: max-content;
 }
 
 .sub-menu--button-arrow-down::after {
