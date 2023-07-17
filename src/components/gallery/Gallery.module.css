@@ -1,0 +1,36 @@
+.gallery--container {
+  margin-block-start: var(--spacing-xl);
+}
+
+.gallery--container img {
+  break-inside: avoid;
+  margin-block-end: var(--spacing-sm);
+}
+
+.gallery--container img {
+  object-fit: cover;
+}
+
+.gallery--image-wrapper:hover img {
+  filter: grayscale(100%);
+}
+
+.gallery--image-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+@media only screen and (min-width: 48em) {
+  @supports (column-width: 20vw) and (break-inside: avoid) {
+    .gallery--container {
+      column-width: 20vw;
+    }
+
+    .gallery--container img {
+      break-inside: avoid;
+    }
+  }
+}
