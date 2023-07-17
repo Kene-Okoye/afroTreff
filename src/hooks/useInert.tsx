@@ -79,10 +79,14 @@ const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): 
     };
 
     if (isOpen) {
-      // Set 'inert' and 'aria-hidden' attributes for elements outside the modal dialog
+      // Set 'inert' attribute, 'aria-hidden' attribute, and desired styles
+      // for elements outside the modal dialog
       elementsToInert.forEach((element) => {
         element?.setAttribute('inert', '');
         element?.setAttribute('aria-hidden', 'true');
+        (element as HTMLElement).style.pointerEvents = 'none';
+        (element as HTMLElement).style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        (element as HTMLElement).style.transition = 'all 0.5s';
       });
 
       // Focus the first focusable element inside the modal dialog after some delay.
@@ -98,6 +102,9 @@ const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): 
       elementsToInert.forEach((element) => {
         element?.removeAttribute('inert');
         element?.removeAttribute('aria-hidden');
+        (element as HTMLElement).style.pointerEvents = '';
+        (element as HTMLElement).style.backgroundColor = '';
+        (element as HTMLElement).style.transition = '';
       });
 
       // Remove the 'Escape' keydown event listener
@@ -109,6 +116,9 @@ const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): 
       elementsToInert.forEach((element) => {
         element?.removeAttribute('inert');
         element?.removeAttribute('aria-hidden');
+        (element as HTMLElement).style.pointerEvents = '';
+        (element as HTMLElement).style.backgroundColor = '';
+        (element as HTMLElement).style.transition = '';
       });
       if (timeoutId) {
         clearTimeout(timeoutId);
