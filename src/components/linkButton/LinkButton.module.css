@@ -3,12 +3,16 @@
   color: var(--carrot-orange-color);
   background: transparent;
   text-transform: uppercase;
+  text-align: center;
+  font-weight: var(--font-weight-extra-black);
   padding: 0.8rem var(--spacing-md);
   cursor: pointer;
   -webkit-transform: skew(-4deg) rotate(-0.8deg);
   -moz-transform: skew(-4deg) rotate(-0.8deg);
   transform: skew(-4deg) rotate(-0.8deg);
 
+  display: block;
+  width: max-content;
   position: relative;
   isolation: isolate;
   overflow: hidden;
