@@ -27,13 +27,9 @@
   overflow: hidden;
 }
 
-/* .blog-item--image {
-  margin-block-end: -3rem;
-  width: 100%;
-} */
-
 .blog-item--image {
   transition: transform 0.5s, filter 0.5s ease-in-out;
+  object-fit: cover;
 }
 
 .blog-item--image:hover {
