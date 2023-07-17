@@ -4,7 +4,8 @@ import HeroSection from '@/components/hero/HeroSection';
 import TheFooter from '@/components/footer/TheFooter';
 import Blog from '@/components/blog/Blog';
 import VisionAndTeam from '@/components/visionAndTeam/VisionAndTeam';
-import Faq from './components/faq/Faq';
+import Faq from '@/components/faq/Faq';
+import Activities from '@/components/activities/Activities';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main id="main-content" className="inert-target">
         <HeroSection h1Text="AfroTreff 13.0" pText="July 14, 2023" linkText="Register" />
         {/* <Button text="button" /> */}
+        <Activities />
         <Faq />
         <VisionAndTeam />
         <Blog />
