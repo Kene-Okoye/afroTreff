@@ -30,7 +30,7 @@ const ActivitiesCard = ({
       <div className={activitiesCardStyles['activities--text-button-wrapper']}>
         <div className={activitiesCardStyles['activities--text-wrapper']}>
           <h3>{eventName}</h3>
-          <p className={activitiesCardStyles['activities--text-date']}>{eventDate}</p>
+          <p>{eventDate}</p>
           <p>Venue: {eventVenue}</p>
         </div>
         <LinkButton linkText={linkText} href={href} />

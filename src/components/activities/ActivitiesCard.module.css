@@ -36,13 +36,10 @@
   margin-block-end: var(--spacing-sm);
 }
 
-.activities--text-date {
-}
-
 /* ----------------
   MEDIA QUERRIES
 ----------------- */
-@media only screen and (min-width: 62em) {
+@media only screen and (min-width: 40em) {
   .activities--container {
     flex-direction: row;
   }

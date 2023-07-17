@@ -27,6 +27,7 @@ const activitiesContent = [
     href: '#',
   },
   {
+    id: 3,
     eventName: 'AfroTreff 16.0',
     eventDate: 'Fri, Sep. 22, 2023 18:30 CET',
     eventVenue: 'Rautenstrauch-Joest-Museum',
