@@ -1,7 +1,5 @@
 import ActivitiesCard from '@/components/activities/ActivitiesCard';
 
-import activitiesStyles from '@/components/activities/Activities.module.css';
-
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
 import eventImage1 from '@/assets/images/blog_image_4.webp';
 
