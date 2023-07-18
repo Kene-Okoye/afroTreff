@@ -265,11 +265,14 @@ nav [aria-current='page'] {
   }
 
   .sub-menu > ul {
-    padding-inline-end: var(--spacing-sm);
-    padding-inline-start: 0;
     position: absolute;
+    font-size: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-inline: var(--spacing-sm);
+    margin-inline-start: -16px;
     min-width: 5rem;
     height: 200px;
+    width: max-content;
   }
 
   .main-menu > li:not(:first-child),
