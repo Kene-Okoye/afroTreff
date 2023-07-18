@@ -1,16 +1,5 @@
 .hero {
   position: relative;
-  isolation: isolate;
-  width: 100%;
-  height: 90vh;
-  padding-inline: 1rem;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -18,13 +7,19 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 90vh;
+  padding-inline: 1rem;
 }
 
+/* Center the hero content verticaly and horizontally */
 .hero--content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-block-start: 10rem;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 10%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
 }
 
 .hero--content h1,
@@ -40,9 +35,13 @@
   font-size: max(var(--font-size-md), 1.2vw);
 }
 
+/* Center the hero content verticaly and horizontally */
+
 .hero--content-center {
-  margin-block-start: var(--spacing-xl);
-  align-items: center;
+  inset-inline-start: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .hero--content-center h1 {
