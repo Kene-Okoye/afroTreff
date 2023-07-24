@@ -5,12 +5,19 @@ type heroSectionProps = {
   h1Text: string;
   pText: string;
   linkText?: string;
+  backGroundImage: string;
 };
 
-const HeroSection = ({ h1Text, pText, linkText }: heroSectionProps) => {
+const HeroSection = ({ h1Text, pText, linkText, backGroundImage }: heroSectionProps) => {
   return (
     <>
-      <section className={heroSectionStyles['hero']}>
+      <section
+        className={heroSectionStyles['hero']}
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(${backGroundImage})`,
+        }}
+      >
         <div
           className={`${heroSectionStyles['hero--content']} ${
             linkText && heroSectionStyles['hero--content-center']
