@@ -1,0 +1,44 @@
+.faq--mobile,
+.faq--desktop {
+  list-style: none;
+  padding: 0;
+}
+
+.faq--desktop {
+  display: none;
+}
+
+.faq--mobile {
+  padding-block-start: var(--spacing-md);
+}
+
+.faq--mobile h2 {
+  padding-block-end: var(--spacing-lg);
+}
+
+.faq--mobile li:first-child {
+  border-block-start: 0.1rem solid var(--color-dark);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .faq--mobile {
+    display: none;
+  }
+
+  .faq--desktop {
+    display: block;
+  }
+
+  .faq--desktop h3 {
+    text-transform: capitalize;
+    font-size: var(--font-size-md);
+  }
+
+  .faq--desktop li {
+    padding-block-end: var(--spacing-lg);
+  }
+}
