@@ -1,0 +1,27 @@
+.vision-team__working-team {
+  background-color: var(--pine-cone-color);
+  color: #fff;
+}
+
+.vision-team__working-team--card > div {
+  margin-block: var(--spacing-md);
+}
+
+.vision-team--founder {
+  background-color: var(--color-dark);
+  color: #fff;
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .vision-team__working-team--card div:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .vision-team__header--small {
+    font-size: var(--font-size-md);
+  }
+}
