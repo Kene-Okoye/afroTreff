@@ -7,8 +7,17 @@
   width: 100%;
 }
 
+.text-wrapper h3 {
+  font-size: clamp(var(--font-size-md), var(--font-size-xs) + 10vw, var(--font-size-lg));
+  display: block;
+}
+
 .text-wrapper p {
-  padding-block: var(--spacing-md);
+  padding-block-end: var(--spacing-sm);
+}
+
+.image-wrapper {
+  padding-block-end: var(--spacing-md);
 }
 
 .image-wrapper img {
@@ -26,5 +35,9 @@
 
   .text-wrapper {
     width: 70%;
+  }
+
+  .image-wrapper {
+    padding-block-end: 0;
   }
 }

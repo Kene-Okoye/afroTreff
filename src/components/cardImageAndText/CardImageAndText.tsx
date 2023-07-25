@@ -1,49 +1,33 @@
-import teamFrancis from '@/assets/images/team_Francis.webp';
-
 import cardImageAndTextStyles from '@/components/cardImageAndText/CardImageAndText.module.css';
 
-const CardImageAndText = () => {
+type CardImageAndTextProps = {
+  header?: string;
+  text1: string;
+  text2?: string;
+  text3?: string;
+  imageSrc: string;
+  imageAlt: string;
+};
+
+const CardImageAndText = ({
+  header,
+  text1,
+  text2,
+  text3,
+  imageSrc,
+  imageAlt,
+}: CardImageAndTextProps) => {
   return (
     <>
       <div className={cardImageAndTextStyles['image-text-container']}>
-        <div className={cardImageAndTextStyles['image-wrapper']}>
-          <img src={teamFrancis} alt="" />
-        </div>
         <div className={cardImageAndTextStyles['text-wrapper']}>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, accusantium. Quos
-            voluptates rerum porro aliquid, sed cupiditate, quod eligendi laboriosam, excepturi
-            earum itaque. Nostrum est repellendus assumenda placeat totam veritatis! Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit.
-            <br />
-            <br />
-            Officiis inventore, veniam doloribus temporibus obcaecati nobis est qui nihil cupiditate
-            amet reiciendis deserunt impedit! Quibusdam corrupti optio exercitationem sapiente harum
-            obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            aspernatur amet dicta, recusandae repudiandae a ad illo aliquam. Aspernatur quisquam sit
-            doloribus et rerum similique recusandae doloremque iste soluta perspiciatis.
-          </p>
+          {header && <h3>{header}</h3>}
+          <p>{text1}</p>
+          {text2 && <p>{text2}</p>}
+          {text3 && <p>{text3}</p>}
         </div>
-      </div>
-
-      <div className={cardImageAndTextStyles['image-text-container']}>
         <div className={cardImageAndTextStyles['image-wrapper']}>
-          <img src={teamFrancis} alt="" />
-        </div>
-        <div className={cardImageAndTextStyles['text-wrapper']}>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, accusantium. Quos
-            voluptates rerum porro aliquid, sed cupiditate, quod eligendi laboriosam, excepturi
-            earum itaque. Nostrum est repellendus assumenda placeat totam veritatis! Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit.
-            <br />
-            <br />
-            Officiis inventore, veniam doloribus temporibus obcaecati nobis est qui nihil cupiditate
-            amet reiciendis deserunt impedit! Quibusdam corrupti optio exercitationem sapiente harum
-            obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            aspernatur amet dicta, recusandae repudiandae a ad illo aliquam. Aspernatur quisquam sit
-            doloribus et rerum similique recusandae doloremque iste soluta perspiciatis.
-          </p>
+          <img src={imageSrc} alt={imageAlt} />
         </div>
       </div>
     </>
