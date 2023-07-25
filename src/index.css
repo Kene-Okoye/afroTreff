@@ -52,12 +52,15 @@
 
 footer {
   margin-top: auto;
-  padding-block-start: min(10vh, 10rem);
+  padding-block: min(10vh, 10rem);
+}
+
+section {
+  padding-block: min(8vh, 5rem);
 }
 
 section,
 footer {
-  padding-block-end: min(10vh, 10rem);
   padding-inline: clamp(1rem, -1.22rem + 11.11vw, 6rem);
 }
 
@@ -106,21 +109,18 @@ select {
   font: inherit;
 }
 
-p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
-}
-
-h1,
-h2 {
   font-family: var(--font-family-ubuntu);
   /* font-family: var(--font-family-catmaran); */
   font-weight: var(--font-weight-extra-bold);
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  padding-block-end: var(--spacing-md);
 }
 
 h1 {
@@ -133,6 +133,7 @@ h2 {
 
 p {
   font-size: max(var(--font-size-sm), 1.2vw);
+  overflow-wrap: break-word;
 }
 
 a {
@@ -142,3 +143,14 @@ a {
 /* ----------------
   END - CSS reset
 ----------------- */
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  h1,
+  h2 {
+    padding-block-end: var(--spacing-lg);
+  }
+}
