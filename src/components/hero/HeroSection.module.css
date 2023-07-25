@@ -28,7 +28,7 @@
 }
 
 .hero--content h1 {
-  text-transform: capitalize;
+  line-height: 1;
 }
 
 .hero--content h1 {
@@ -36,7 +36,7 @@
 }
 
 .hero--content p {
-  font-size: max(var(--font-size-md), 1.2vw);
+  font-size: clamp(1.25rem, 0.92rem + 1.67vw, 2rem);
 }
 
 /* Center the hero content verticaly and horizontally */
@@ -55,4 +55,14 @@
 
 .hero--content a {
   margin-block-start: var(--spacing-lg);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .hero--content {
+    max-width: 50%;
+  }
 }
