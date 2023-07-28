@@ -12,7 +12,6 @@ interface NavMenuListProps {
 const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListProps) => {
   const [isOpen, setIsOpen] = useState(false); // State to track whether the menu is open or closed
   const menuRef = useRef<HTMLUListElement>(null); // Reference to the menu element
-  let buttonRef = useRef<HTMLButtonElement>(null); // Reference to the button element
 
   // Get the last segment of an URL
   const location = useLocation();
@@ -33,17 +32,10 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
     toggleMenu();
   };
 
-  // Handle outside click event to close the menu
-  const handleOutsideClick = (event: MouseEvent) => {
-    buttonRef = firstFocusableElementRef;
-    if (
-      menuRef.current &&
-      !menuRef.current.contains(event.target as Node) &&
-      buttonRef.current &&
-      !buttonRef.current.contains(event.target as Node)
-    ) {
-      closeMenu();
-    }
+  // Function to close the main menu and sub menu when nav link is clicked
+  const handleNavLinkClick = () => {
+    onNavLinkClick();
+    closeMenu();
   };
 
   // Handle Escape key press to close the menu
@@ -55,12 +47,10 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
 
   useEffect(() => {
     // Add event listeners for outside click and Escape key press
-    document.addEventListener('mousedown', handleOutsideClick);
     document.addEventListener('keydown', handleEscapeKey);
 
     return () => {
       // Clean up event listeners when the component is unmounted
-      document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleEscapeKey);
     };
   }, []);
@@ -91,29 +81,29 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
           </button>
           <ul ref={menuRef}>
             <li>
-              <NavLink to={paths.VISION_AND_TEAM} onClick={onNavLinkClick}>
+              <NavLink to={paths.VISION_AND_TEAM} onClick={handleNavLinkClick}>
                 Vision & Team
               </NavLink>
             </li>
             <li>
-              <NavLink to={paths.GALLERY} onClick={onNavLinkClick}>
+              <NavLink to={paths.GALLERY} onClick={handleNavLinkClick}>
                 Gallery
               </NavLink>
             </li>
             <li>
-              <NavLink to={paths.BLOG} onClick={onNavLinkClick}>
+              <NavLink to={paths.BLOG} onClick={handleNavLinkClick}>
                 News / Blog
               </NavLink>
             </li>
           </ul>
         </li>
         <li>
-          <NavLink to={paths.ACTIVITIES} onClick={onNavLinkClick}>
+          <NavLink to={paths.ACTIVITIES} onClick={handleNavLinkClick}>
             Activities
           </NavLink>
         </li>
         <li>
-          <NavLink to={paths.SUPPORT} onClick={onNavLinkClick}>
+          <NavLink to={paths.SUPPORT} onClick={handleNavLinkClick}>
             Support
           </NavLink>
         </li>
