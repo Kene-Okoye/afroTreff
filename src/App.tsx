@@ -6,7 +6,7 @@ import lazyLoadElementImports from '@/pages/lazyLoadElementImports';
 
 import PageLayout from '@/pages/PageLayout';
 import PageNotFound from '@/pages/pageNotFound/PageNotFound';
-import PageLoading from '@/pages/PageLoading';
+import PageLoading from '@/pages/pageLoading/PageLoading';
 
 const getRouteElement = (Component: React.ElementType): React.ReactNode => (
   <Suspense fallback={<PageLoading />}>

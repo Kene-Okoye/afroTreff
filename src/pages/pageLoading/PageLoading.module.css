@@ -1,0 +1,19 @@
+.page-loading {
+  height: 100vh;
+  position: relative;
+}
+
+.page-loading p {
+  font-family: var(--font-family-ubuntu);
+  font-size: clamp(var(--font-size-md), var(--font-size-xs) + 10vw, var(--font-size-lg));
+  font-weight: var(--font-weight-extra-bold);
+  text-align: center;
+  width: 100%;
+  padding-inline: clamp(1rem, -1.22rem + 11.11vw, 6rem);
+  margin: 0;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
