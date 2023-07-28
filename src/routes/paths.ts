@@ -9,5 +9,6 @@ export default {
   ACTIVITIES: 'activities',
   BLOG: 'blog',
   GALLERY: 'gallery',
+  SUPPORT: 'support',
   FAQ: 'faq',
 } as Paths;

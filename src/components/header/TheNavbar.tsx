@@ -7,7 +7,13 @@ import useInert from '@/hooks/useInert';
 import NavMenuList from '@/components/header/NavMenuList';
 
 const TheNavbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  // Function to watch when a menu link is clicked within the 'NavMenuList.tsx'
+  // component in order to close on mobile view
+  const handleIsNavLinkClicked = () => {
+    handleMenuClose();
+  };
 
   // Event handlers to toggle the Menu state
   const handleMenuToggle = () => {
@@ -48,6 +54,7 @@ const TheNavbar = () => {
 
         <NavMenuList
           firstFocusableElementRef={firstFocusableElementRef as RefObject<HTMLButtonElement>}
+          onNavLinkClick={handleIsNavLinkClicked}
         />
       </nav>
     </>

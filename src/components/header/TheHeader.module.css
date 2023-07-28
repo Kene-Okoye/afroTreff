@@ -96,17 +96,20 @@ nav a {
 }
 
 .sub-menu > button:hover,
-nav a:hover {
-  text-decoration: underline 3px solid var(--carrot-orange-color);
+nav a:hover,
+.sub-menu--button-arrow-up:hover::after {
+  text-decoration: underline;
   text-decoration-style: wavy;
   text-underline-offset: 10px;
+  color: var(--carrot-orange-color) !important;
 }
 
-nav [aria-current='page'] {
-  text-decoration: underline 3px solid var(--carrot-orange-color);
+nav [aria-current='page'],
+.child-active {
+  text-decoration: underline;
   text-decoration-style: wavy;
   text-underline-offset: 10px;
-  color: var(--carrot-orange-color);
+  color: var(--carrot-orange-color) !important;
 }
 
 .main-menu {
@@ -186,6 +189,13 @@ nav [aria-current='page'] {
   margin-block-end: 0;
 }
 
+.sub-menu--button-arrow-up:hover::after,
+.sub-menu--button-arrow-down:hover::after,
+.child-active::after {
+  border-color: var(--carrot-orange-color);
+  transition: none;
+}
+
 .sub-menu > button[aria-expanded='false'] + ul {
   visibility: hidden;
   opacity: 0;
@@ -197,6 +207,10 @@ nav [aria-current='page'] {
   clear: both;
   width: 100%;
   margin-block-end: var(--spacing-sm);
+}
+
+.sub-menu ul li:first-child {
+  margin-block-start: 1.5rem;
 }
 
 /* ----------------

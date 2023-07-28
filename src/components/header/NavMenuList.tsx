@@ -1,15 +1,22 @@
 import { useState, useEffect, useRef, RefObject } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
+import paths from '@/routes/paths';
 import headerStyles from '@/components/header/TheHeader.module.css';
 
 interface NavMenuListProps {
   firstFocusableElementRef: RefObject<HTMLButtonElement>;
+  onNavLinkClick: () => void;
 }
 
-const NavMenuList = ({ firstFocusableElementRef }: NavMenuListProps) => {
+const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListProps) => {
   const [isOpen, setIsOpen] = useState(false); // State to track whether the menu is open or closed
   const menuRef = useRef<HTMLUListElement>(null); // Reference to the menu element
   let buttonRef = useRef<HTMLButtonElement>(null); // Reference to the button element
+
+  // Get the last segment of an URL
+  const location = useLocation();
+  const lastSegmentOfURL = location?.pathname.split('/').pop();
 
   // Function to toggle the menu state
   const toggleMenu = () => {
@@ -73,34 +80,49 @@ const NavMenuList = ({ firstFocusableElementRef }: NavMenuListProps) => {
             aria-expanded={isOpen}
             className={`${headerStyles['sub-menu--button-arrow-down']} ${
               isOpen && headerStyles['sub-menu--button-arrow-up']
+            } ${
+              (paths.VISION_AND_TEAM === lastSegmentOfURL ||
+                paths.GALLERY === lastSegmentOfURL ||
+                paths.BLOG === lastSegmentOfURL) &&
+              headerStyles['child-active']
             }`}
           >
             About
           </button>
           <ul ref={menuRef}>
             <li>
-              <a href="#">Vision & Team</a>
+              <NavLink to={paths.VISION_AND_TEAM} onClick={onNavLinkClick}>
+                Vision & Team
+              </NavLink>
             </li>
             <li>
-              <a href="#">Gallery</a>
+              <NavLink to={paths.GALLERY} onClick={onNavLinkClick}>
+                Gallery
+              </NavLink>
             </li>
             <li>
-              <a href="#">News / Blog</a>
+              <NavLink to={paths.BLOG} onClick={onNavLinkClick}>
+                News / Blog
+              </NavLink>
             </li>
           </ul>
         </li>
         <li>
-          <a href="#activities" aria-current="page">
+          <NavLink to={paths.ACTIVITIES} onClick={onNavLinkClick}>
             Activities
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#support">Support</a>
+          <NavLink to={paths.SUPPORT} onClick={onNavLinkClick}>
+            Support
+          </NavLink>
         </li>
         <li>
+          {/* // TODO: Change this path to external link for the AfroList after the website has also been created*/}
           <a href="#">AfroList</a>
         </li>
         <li>
+          {/* // TODO: Replace this eith the appropriate tag once the language switch radio button is implemented */}
           <a href="#">EN</a>
         </li>
       </ul>
