@@ -5,9 +5,13 @@
 
 .page-loading p {
   font-family: var(--font-family-ubuntu);
-  font-size: clamp(var(--font-size-md), var(--font-size-xs) + 10vw, var(--font-size-lg));
+  font-size: clamp(var(--font-size-sm), 0.47rem + 3.89vw, var(--font-size-lg));
+
   font-weight: var(--font-weight-extra-bold);
   text-align: center;
+}
+
+.page-loading--container {
   width: 100%;
   padding-inline: clamp(1rem, -1.22rem + 11.11vw, 6rem);
   margin: 0;
@@ -16,4 +20,82 @@
   inset-inline-start: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* ZIG ZAG LINE STYLes */
+
+.page-loading--loading-line {
+  margin-inline: auto;
+  margin-top: 5px;
+  position: relative;
+  border-radius: 50px;
+  height: 18px;
+  width: clamp(8.125rem, 6.18rem + 9.72vw, 12.5rem);
+  background: linear-gradient(135deg, var(--satin-linen-color) 22%, transparent 22%) -13px 0,
+    linear-gradient(225deg, var(--satin-linen-color) 22%, transparent 22%) -12px 0,
+    linear-gradient(315deg, var(--satin-linen-color) 22%, transparent 22%),
+    linear-gradient(45deg, var(--satin-linen-color) 22%, transparent 22%);
+  background-size: 18px 18px;
+  background-color: #eee;
+}
+
+.page-loading--loading-line::before {
+  content: '';
+  position: absolute;
+  border-radius: 50px 0 0 50px;
+  display: block;
+  height: 18px;
+  width: 0px;
+  background: linear-gradient(135deg, var(--satin-linen-color) 22%, transparent 22%) -13px 0,
+    linear-gradient(225deg, var(--satin-linen-color) 22%, transparent 22%) -12px 0,
+    linear-gradient(315deg, var(--satin-linen-color) 22%, transparent 22%),
+    linear-gradient(45deg, var(--satin-linen-color) 22%, transparent 22%);
+  background-size: 18px 18px;
+  background-color: var(--carrot-orange-color);
+  animation: zig-zag 2s infinite;
+}
+
+@keyframes zig-zag {
+  100% {
+    width: clamp(8.125rem, 6.18rem + 9.72vw, 12.5rem);
+  }
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  /* ZIG ZAG LINE STYLes */
+
+  .page-loading--loading-line {
+    margin-inline: auto;
+    margin-top: 5px;
+    position: relative;
+    border-radius: 50px;
+    width: clamp(8.125rem, 6.18rem + 9.72vw, 12.5rem);
+    height: 24px;
+    background: linear-gradient(135deg, var(--satin-linen-color) 26%, transparent 26%) -13px 0,
+      linear-gradient(225deg, var(--satin-linen-color) 26%, transparent 26%) -12px 0,
+      linear-gradient(315deg, var(--satin-linen-color) 26%, transparent 26%),
+      linear-gradient(45deg, var(--satin-linen-color) 26%, transparent 26%);
+    background-size: 30px 25px;
+    background-color: #eee;
+  }
+
+  .page-loading--loading-line::before {
+    content: '';
+    position: absolute;
+    border-radius: 50px 0 0 50px;
+    display: block;
+    width: 0px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--satin-linen-color) 26%, transparent 26%) -13px 0,
+      linear-gradient(225deg, var(--satin-linen-color) 26%, transparent 26%) -12px 0,
+      linear-gradient(315deg, var(--satin-linen-color) 26%, transparent 26%),
+      linear-gradient(45deg, var(--satin-linen-color) 26%, transparent 26%);
+    background-size: 30px 25px;
+    background-color: var(--carrot-orange-color);
+    animation: zig-zag 2s infinite;
+  }
 }

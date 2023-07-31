@@ -17,7 +17,9 @@
 
 .page-not-found p {
   font-family: var(--font-family-ubuntu);
-  font-size: clamp(var(--font-size-md), var(--font-size-xs) + 10vw, var(--font-size-lg));
+  /* font-size: clamp(var(--font-size-md), var(--font-size-xs) + 10vw, var(--font-size-lg)); */
+  font-size: clamp(var(--font-size-sm), 0.47rem + 3.89vw, var(--font-size-lg));
+
   font-weight: var(--font-weight-extra-bold);
   margin-block-end: var(--spacing-md);
 }
