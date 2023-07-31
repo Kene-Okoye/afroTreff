@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react';
+
 import heroSectionStyles from '@/components/hero/HeroSection.module.css';
 import LinkButton from '@/components/linkButton/LinkButton';
 
@@ -8,7 +10,13 @@ type heroSectionProps = {
   backGroundImage: string;
 };
 
-const HeroSection = ({ h1Text, pText, linkText, backGroundImage }: heroSectionProps) => {
+const HeroSection = ({
+  h1Text,
+  pText,
+  linkText,
+  backGroundImage,
+  children,
+}: PropsWithChildren<heroSectionProps>) => {
   return (
     <>
       <section
@@ -26,6 +34,7 @@ const HeroSection = ({ h1Text, pText, linkText, backGroundImage }: heroSectionPr
           <h1>{h1Text}</h1>
           <p>{pText}</p>
           {linkText && <LinkButton linkText={linkText} href="#" />}
+          {children}
         </div>
       </section>
     </>

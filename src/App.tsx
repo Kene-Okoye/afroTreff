@@ -31,7 +31,10 @@ function App() {
           />
           <Route path={paths.BLOG} element={getRouteElement(lazyLoadElementImports.Blog)} />
           <Route path={paths.GALLERY} element={getRouteElement(lazyLoadElementImports.Gallery)} />
-
+          <Route
+            path={paths.SUPPORT}
+            element={getRouteElement(lazyLoadElementImports.comingSoon)}
+          />
           <Route path={paths.PAGE_NOT_FOUND} element={<PageNotFound />} />
         </Route>
       </Routes>

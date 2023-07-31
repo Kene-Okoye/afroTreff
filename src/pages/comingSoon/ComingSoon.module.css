@@ -1,0 +1,17 @@
+.coming-soon--icon-wrapper {
+  display: flex;
+}
+
+.coming-soon--icon-wrapper img {
+  width: auto !important;
+}
+
+.coming-soon--icon-wrapper a {
+  margin-block-start: var(--spacing-sm);
+}
+
+.coming-soon--link {
+  color: var(--carrot-orange-color);
+  text-decoration: underline;
+  margin-block-start: var(--spacing-sm) !important;
+}

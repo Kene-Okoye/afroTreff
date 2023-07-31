@@ -14,7 +14,7 @@
 .hero--content {
   position: absolute;
   inset-block-start: 50%;
-  inset-inline-start: 10%;
+  inset-inline-start: 5%;
   -webkit-transform: translate(0%, -50%);
   -moz-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
@@ -64,5 +64,10 @@
 @media only screen and (min-width: 62em) {
   .hero--content {
     max-width: 50%;
+    inset-inline-start: 10%;
+  }
+
+  .hero--content-center {
+    inset-inline-start: 50%;
   }
 }

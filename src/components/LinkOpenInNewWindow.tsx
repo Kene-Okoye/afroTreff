@@ -6,13 +6,15 @@ import newWindowIconBlack from '@/assets/svg/new_window_black.svg';
 
 type LinkOpenInNewWindowProps = {
   href: string;
-  text: string;
+  socialMediaIconAlt?: string;
+  text?: string;
   imageSrc?: string;
   useWhiteIcon?: boolean;
 };
 
 const LinkOpenInNewWindow = ({
   href,
+  socialMediaIconAlt,
   text,
   imageSrc,
   useWhiteIcon,
@@ -26,11 +28,21 @@ const LinkOpenInNewWindow = ({
         href={href}
         className={footerStyles['social--logos-svg-wrapper']}
       >
-        {imageSrc && <img src={imageSrc} alt="" role="image" />}
-        <span>{text}</span>
+        {imageSrc && (
+          <img
+            src={imageSrc}
+            alt={`${socialMediaIconAlt ? socialMediaIconAlt + ' ' : ''}(Opens in a new tab)`}
+            role="image"
+          />
+        )}
+        {text && <span>{text}</span>}
         {children}
-        {useWhiteIcon && <img src={newWindowIconWhite} alt="(Opens in a new tab)" role="image" />}
-        {!useWhiteIcon && <img src={newWindowIconBlack} alt="(Opens in a new tab)" role="image" />}
+        {useWhiteIcon && text && (
+          <img src={newWindowIconWhite} alt="(Opens in a new tab)" role="image" />
+        )}
+        {!useWhiteIcon && text && (
+          <img src={newWindowIconBlack} alt="(Opens in a new tab)" role="image" />
+        )}
       </a>
     </>
   );
