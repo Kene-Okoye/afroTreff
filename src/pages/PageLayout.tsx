@@ -1,16 +1,21 @@
+import { Suspense, lazy } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import TheHeader from '@/components/header/TheHeader';
-import TheFooter from '@/components/footer/TheFooter';
+import PageLoading from '@/pages/pageLoading/PageLoading';
+
+const TheHeader = lazy(() => import('@/components/header/TheHeader'));
+const TheFooter = lazy(() => import('@/components/footer/TheFooter'));
 
 const PageLayout = () => {
   return (
     <>
-      <TheHeader />
-      <main id="main-content" className="inert-target">
-        <Outlet />
-      </main>
-      <TheFooter />
+      <Suspense fallback={<PageLoading />}>
+        <TheHeader />
+        <main id="main-content" className="inert-target">
+          <Outlet />
+        </main>
+        <TheFooter />
+      </Suspense>
     </>
   );
 };

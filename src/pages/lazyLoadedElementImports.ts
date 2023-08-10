@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 
-const lazyLoadElementImports = {
+const lazyLoadedElementImports = {
   Home: lazy(() => import('@/pages/home/Home')),
   Vision_and_team: lazy(() => import('@/pages/visionAndTeam/VisionAndTeam')),
   Activities: lazy(() => import('@/pages/activities/Activities')),
@@ -10,4 +10,4 @@ const lazyLoadElementImports = {
   comingSoon: lazy(() => import('@/pages/comingSoon/ComingSoon')),
 };
 
-export default lazyLoadElementImports;
+export default lazyLoadedElementImports;
