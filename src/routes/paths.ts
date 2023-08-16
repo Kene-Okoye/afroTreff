@@ -11,4 +11,5 @@ export default {
   GALLERY: 'gallery',
   SUPPORT: 'support',
   FAQ: 'faq',
+  CONTACT: 'contact',
 } as Paths;

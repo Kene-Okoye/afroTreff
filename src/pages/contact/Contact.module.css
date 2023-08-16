@@ -1,0 +1,26 @@
+.contact--textarea-wrapper,
+.contact--input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-block-start: var(--spacing-sm);
+}
+
+.contact--form-submit-button {
+  margin-block-start: var(--spacing-sm);
+}
+
+.contact--field-input,
+.contact--field-text-area {
+  padding: 0.3rem;
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .contact--textarea-wrapper,
+  .contact--input-wrapper {
+    max-width: 70%;
+  }
+}

@@ -7,7 +7,8 @@ const lazyLoadedElementImports = {
   Blog: lazy(() => import('@/pages/blog/Blog')),
   Gallery: lazy(() => import('@/pages/gallery/Gallery')),
   Faq: lazy(() => import('@/pages/faq/Faq')),
-  comingSoon: lazy(() => import('@/pages/comingSoon/ComingSoon')),
+  Contact: lazy(() => import('@/pages/contact/Contact')),
+  ComingSoon: lazy(() => import('@/pages/comingSoon/ComingSoon')),
 };
 
 export default lazyLoadedElementImports;

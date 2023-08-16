@@ -25,9 +25,10 @@ function App() {
           />
           <Route path={paths.BLOG} element={getRouteElement(lazyLoadedElementImports.Blog)} />
           <Route path={paths.GALLERY} element={getRouteElement(lazyLoadedElementImports.Gallery)} />
+          <Route path={paths.CONTACT} element={getRouteElement(lazyLoadedElementImports.Contact)} />
           <Route
             path={paths.SUPPORT}
-            element={getRouteElement(lazyLoadedElementImports.comingSoon)}
+            element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
           />
           <Route path={paths.PAGE_NOT_FOUND} element={<PageNotFound />} />
         </Route>
