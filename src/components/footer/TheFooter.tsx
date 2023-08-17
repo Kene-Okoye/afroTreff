@@ -1,11 +1,11 @@
+import { Link } from 'react-router-dom';
+
+import paths from '@/routes/paths';
 import LinkOpenInNewWindow from '@/components/LinkOpenInNewWindow';
 
 import footerStyles from '@/components/footer/TheFooter.module.css';
-
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
-import twitterLogo from '@/assets/svg/twitter_logo.svg';
 import instagramLogo from '@/assets/svg/instagram_logo.svg';
-import facebookLogo from '@/assets/svg/facebook_logo.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo.svg';
 
 const TheFooter = () => {
@@ -14,26 +14,26 @@ const TheFooter = () => {
       <footer>
         <div className={footerStyles['footer-container']}>
           <div>
-            <a href="#" className={footerStyles['logo-wrapper']}>
+            <Link to={paths.HOME} className={footerStyles['logo-wrapper']}>
               <img
                 src={afroTreffLogo}
                 alt="AfroTreff homepage"
                 className={footerStyles['logo-image']}
               />
               <p>Made with love in Köln</p>
-            </a>
+            </Link>
           </div>
           <div>
             <h2>Get to know us</h2>
             <ul>
               <li>
-                <a href="#">About us</a>
+                <Link to={paths.VISION_AND_TEAM}>About us</Link>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link to={paths.CONTACT}>Contact</Link>
               </li>
               <li>
-                <a href="#">FAQ</a>
+                <Link to={paths.FAQ}>FAQ</Link>
               </li>
             </ul>
           </div>
@@ -41,10 +41,10 @@ const TheFooter = () => {
             <h2>Get involved</h2>
             <ul>
               <li>
-                <a href="#">Individual donations</a>
+                <Link to={paths.SUPPORT}>Individual donations</Link>
               </li>
               <li>
-                <a href="#">Volunteer</a>
+                <Link to={paths.SUPPORT}>Volunteer</Link>
               </li>
             </ul>
           </div>
@@ -59,9 +59,7 @@ const TheFooter = () => {
                   imageSrc={instagramLogo}
                 />
               </li>
-              <li>
-                <LinkOpenInNewWindow href="" text="Facebook" useWhiteIcon imageSrc={facebookLogo} />
-              </li>
+
               <li>
                 <LinkOpenInNewWindow
                   href="https://www.linkedin.com/company/afrotreff/"
@@ -70,17 +68,14 @@ const TheFooter = () => {
                   imageSrc={linkedInLogo}
                 />
               </li>
-              <li>
-                <LinkOpenInNewWindow href="" text="Twitter" useWhiteIcon imageSrc={twitterLogo} />
-              </li>
             </ul>
           </div>
         </div>
 
         <div className={footerStyles['privacy-wrapper']}>
-          <a href="#">&copy;Afrotreff 2023</a>
-          <a href="#">Imprint</a>
-          <a href="#">Privacy policy</a>
+          <p>&copy;Afrotreff {new Date().getFullYear()}</p>
+          <Link to={paths.IMPRINT}>Imprint</Link>
+          <Link to={paths.PRIVACY}>Privacy policy</Link>
         </div>
       </footer>
     </>

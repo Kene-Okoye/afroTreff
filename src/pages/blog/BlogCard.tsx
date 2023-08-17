@@ -8,7 +8,8 @@ type BlogCardProps = {
   imageSrc?: string;
   imageAlt?: string;
   buttonText: string;
-  href: string;
+  href?: string;
+  path?: string;
 };
 
 const BlogCard = ({
@@ -19,6 +20,7 @@ const BlogCard = ({
   imageAlt,
   buttonText,
   href,
+  path,
 }: BlogCardProps) => {
   return (
     <>
@@ -48,7 +50,7 @@ const BlogCard = ({
             }`}
           >
             <p className={blogCardStyles['blog-item--text']}>{textContent}</p>
-            <LinkButton linkText={buttonText} href={href} />
+            <LinkButton linkText={buttonText} href={href} path={path} />
           </div>
         </div>
       </div>

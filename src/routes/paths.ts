@@ -10,6 +10,9 @@ export default {
   BLOG: 'blog',
   GALLERY: 'gallery',
   SUPPORT: 'support',
+  AFROLIST: 'afrolist',
   FAQ: 'faq',
   CONTACT: 'contact',
+  IMPRINT: 'imprint',
+  PRIVACY: 'privacy',
 } as Paths;

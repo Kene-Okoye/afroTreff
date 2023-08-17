@@ -1,16 +1,27 @@
+import { Link } from 'react-router-dom';
+
 import linkButtonStyles from '@/components/linkButton/LinkButton.module.css';
 
 type LinkButtonProps = {
   linkText: string;
-  href: string;
+  href?: string;
+  path?: string;
 };
 
-const LinkButton = ({ linkText, href }: LinkButtonProps) => {
+const LinkButton = ({ linkText, href, path }: LinkButtonProps) => {
   return (
     <>
-      <a href={href} className={linkButtonStyles['link-button']}>
-        {linkText}
-      </a>
+      {href && (
+        <a href={href} className={linkButtonStyles['link-button']}>
+          {linkText}
+        </a>
+      )}
+
+      {path && (
+        <Link to={path} className={linkButtonStyles['link-button']}>
+          {linkText}
+        </Link>
+      )}
     </>
   );
 };

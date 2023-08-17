@@ -20,7 +20,6 @@ const blogContent = [
     imageSrc: blogImage1,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
-    href: '#',
   },
   {
     id: 2,
@@ -31,7 +30,6 @@ const blogContent = [
     imageSrc: blogImage2,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
-    href: '#',
   },
   {
     id: 3,
@@ -42,7 +40,6 @@ const blogContent = [
     imageSrc: blogImage3,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
-    href: '#',
   },
   {
     id: 4,
@@ -53,7 +50,6 @@ const blogContent = [
     imageSrc: blogImage4,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
-    href: '#',
   },
   {
     id: 5,
@@ -64,7 +60,6 @@ const blogContent = [
     imageSrc: blogImage5,
     imageAlt: 'picture of some person',
     buttonText: 'read more',
-    href: '#',
   },
 ];
 
@@ -81,7 +76,7 @@ const Blog = () => {
 
         <div className={blogStyles['blog-container']}>
           {blogContent.map(
-            ({ id, heading, category, textContent, buttonText, href, imageSrc, imageAlt }) => (
+            ({ id, heading, category, textContent, buttonText, imageSrc, imageAlt }) => (
               <BlogCard
                 key={id}
                 heading={heading}
@@ -90,7 +85,7 @@ const Blog = () => {
                 imageSrc={imageSrc}
                 imageAlt={imageAlt}
                 buttonText={buttonText}
-                href={href}
+                path={id.toString()}
               />
             ),
           )}

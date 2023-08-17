@@ -23,11 +23,18 @@ function App() {
             path={paths.ACTIVITIES}
             element={getRouteElement(lazyLoadedElementImports.Activities)}
           />
-          <Route path={paths.BLOG} element={getRouteElement(lazyLoadedElementImports.Blog)} />
+          <Route path={paths.BLOG}>
+            <Route index element={getRouteElement(lazyLoadedElementImports.Blog)} />
+            <Route path=":blogId" element={getRouteElement(lazyLoadedElementImports.ComingSoon)} />
+          </Route>
           <Route path={paths.GALLERY} element={getRouteElement(lazyLoadedElementImports.Gallery)} />
           <Route path={paths.CONTACT} element={getRouteElement(lazyLoadedElementImports.Contact)} />
           <Route
             path={paths.SUPPORT}
+            element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
+          />
+          <Route
+            path={paths.AFROLIST}
             element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
           />
           <Route path={paths.PAGE_NOT_FOUND} element={<PageNotFound />} />

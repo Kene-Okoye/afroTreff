@@ -41,7 +41,7 @@ const TheNavbar = () => {
           aria-expanded={isMenuOpen}
           aria-controls="main-nav"
           onClick={handleMenuToggle}
-          className={`${headerStyles['hamburger-menu']} ${headerStyles['hamburger-menu--spin']} ${
+          className={`${headerStyles['hamburger-menu']} ${headerStyles['hamburger-menu--spring']} ${
             isMenuOpen && headerStyles['is-active']
           }`}
         >
