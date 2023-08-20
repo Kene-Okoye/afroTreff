@@ -1,0 +1,35 @@
+.thank-you--container {
+  height: 90vh;
+}
+
+.thank-you--wrapper {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.thank-you--wrapper a {
+  color: #0640f1;
+  text-decoration: underline;
+}
+
+.thank-you--wrapper h2 {
+  padding-block-end: var(--spacing-sm);
+}
+
+.thank-you--header {
+  font-size: var(--font-size-md);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .thank-you--wrapper {
+    max-width: 70%;
+  }
+}

@@ -15,7 +15,11 @@ const Contact = () => {
       <section>
         <HeadingTopSmallVariant h1SmallerVariant="write us a" h1BiggerVariant="Message" />
         <div className={contactStyles['contact--form-wrapper']}>
-          <form className={contactStyles['contact--form']} noValidate>
+          <form
+            className={contactStyles['contact--form']}
+            action="https://formsubmit.co/mr.kene.okoye@gmail.com"
+            method="POST"
+          >
             <div className={contactStyles['contact--form-info-text-wrapper']}>
               <p>
                 We are always glad to get your thoughts and answer any question you may have. Just
@@ -29,45 +33,64 @@ const Contact = () => {
 
             <div className={contactStyles['contact--form-fields-wrapper']}>
               <div className={contactStyles['contact--input-wrapper']}>
-                <label htmlFor="name" className={contactStyles['contact--field-label']}>
-                  Name:
+                <label htmlFor="name" className={contactStyles['contact--input-label']}>
+                  Name
                 </label>
                 <input
                   id="name"
                   type="text"
-                  className={contactStyles['contact--field-input']}
+                  name="name"
+                  className={contactStyles['contact--input']}
                   autoComplete="off"
-                  required
                 />
               </div>
 
               <div className={contactStyles['contact--input-wrapper']}>
-                <label htmlFor="email" className={contactStyles['contact--field-label']}>
-                  Email:
+                <label htmlFor="email" className={contactStyles['contact--input-label']}>
+                  Email (required)
                 </label>
                 <input
                   id="email"
                   type="text"
-                  className={contactStyles['contact--field-input']}
+                  name="email"
+                  className={contactStyles['contact--input']}
                   autoComplete="off"
-                  required
+                  required={true}
                 />
               </div>
 
               <div className={contactStyles['contact--textarea-wrapper']}>
-                <label htmlFor="message" className={contactStyles['contact--field-label']}>
-                  Your message:
+                <label htmlFor="message" className={contactStyles['contact--input-label']}>
+                  Your message (required)
                 </label>
                 <textarea
                   id="message"
-                  className={contactStyles['contact--field-text-area']}
+                  name="message"
+                  className={contactStyles['contact--text-area']}
                   rows={5}
                   maxLength={500}
                   autoComplete="off"
                   required
                 />
               </div>
-              <button type="submit" className={contactStyles['contact--form-submit-button']}>
+
+              <input type="hidden" name="_next" value="http://localhost:5173/afroTreff/thank-you" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New email submitted via the AfroTreff website!"
+              />
+              <label htmlFor="_honey" className={contactStyles['contact--hidden-field']}>
+                Honeypot field
+              </label>
+              <input
+                id="_honey"
+                type="text"
+                name="_honey"
+                className={contactStyles['contact--hidden-field']}
+              />
+
+              <button type="submit" className={contactStyles['contact--submit-button']}>
                 Send
               </button>
             </div>

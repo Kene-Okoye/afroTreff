@@ -30,6 +30,10 @@ function App() {
           <Route path={paths.GALLERY} element={getRouteElement(lazyLoadedElementImports.Gallery)} />
           <Route path={paths.CONTACT} element={getRouteElement(lazyLoadedElementImports.Contact)} />
           <Route
+            path={paths.THANKYOU}
+            element={getRouteElement(lazyLoadedElementImports.Thank_you)}
+          />
+          <Route
             path={paths.SUPPORT}
             element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
           />

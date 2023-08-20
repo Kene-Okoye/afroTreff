@@ -13,6 +13,7 @@ export default {
   AFROLIST: 'afrolist',
   FAQ: 'faq',
   CONTACT: 'contact',
+  THANKYOU: 'thank-you',
   IMPRINT: 'imprint',
   PRIVACY: 'privacy',
 } as Paths;
