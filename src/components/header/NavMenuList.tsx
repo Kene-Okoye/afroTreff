@@ -108,15 +108,14 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
           </NavLink>
         </li>
         <li>
-          {/* // TODO: Change this path to external link for the AfroList after the website has also been created*/}
-          <NavLink to={paths.AFROLIST} onClick={handleNavLinkClick}>
-            Afrolist
-          </NavLink>
+          <a href="https://community.afrotreff.com/" target="_blank" rel="noreferrer">
+            Community
+          </a>
         </li>
-        <li>
-          {/* // TODO: Replace this with the appropriate tag (radio button) once the language switch radio button is implemented */}
+        {/* <li>
+           // TODO: Replace this with the appropriate tag (radio button) once the language switch radio button is implemented *
           <a href="#">EN</a>
-        </li>
+        </li> */}
       </ul>
     </>
   );
