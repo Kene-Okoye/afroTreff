@@ -3,7 +3,7 @@ interface Paths {
 }
 
 export default {
-  HOME: '/afroTreff/',
+  HOME: '/',
   PAGE_NOT_FOUND: '*',
   VISION_AND_TEAM: 'vision-and-team',
   ACTIVITIES: 'activities',
