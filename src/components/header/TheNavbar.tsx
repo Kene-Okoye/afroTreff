@@ -6,6 +6,8 @@ import useInert from '@/hooks/useInert';
 
 import NavMenuList from '@/components/header/NavMenuList';
 
+import LanguageSwitch from '@/components/nav/languageSwitch/LanguageSwitch';
+
 const TheNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -34,6 +36,8 @@ const TheNavbar = () => {
         aria-label="Select a page"
         className={`${isMenuOpen && headerStyles['nav-fixed']}`}
       >
+        <LanguageSwitch />
+
         {/* Hamburger Menu */}
         <button
           ref={triggerRef as RefObject<HTMLButtonElement>}
@@ -48,8 +52,20 @@ const TheNavbar = () => {
           <span className={headerStyles['hamburger-menu-box']}>
             <span className={headerStyles['hamburger-menu-inner']}></span>
           </span>
-          {!isMenuOpen && <span className={headerStyles['hamburger-menu-label']}>menu</span>}
-          {isMenuOpen && <span className={headerStyles['hamburger-menu-label']}>close</span>}
+          {!isMenuOpen && (
+            <span
+              className={`${headerStyles['hamburger-menu-label']} ${headerStyles['visually-hidden']}`}
+            >
+              menu
+            </span>
+          )}
+          {isMenuOpen && (
+            <span
+              className={`${headerStyles['hamburger-menu-label']} ${headerStyles['visually-hidden']}`}
+            >
+              close
+            </span>
+          )}
         </button>
 
         <NavMenuList

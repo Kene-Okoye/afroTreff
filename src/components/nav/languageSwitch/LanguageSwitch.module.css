@@ -1,0 +1,59 @@
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+fieldset {
+  display: flex;
+  width: max-content;
+  padding: var(--spacing-xs);
+  border: none;
+}
+
+/* .language-switch__input-wrapper--en {
+  border: 2px solid red;
+  padding: var(--spacing-xs);
+  border-radius: 5px 0 0 5px;
+}
+
+.language-switch__input-wrapper--de {
+  border: 2px solid red;
+  padding: var(--spacing-xs);
+  border-radius: 0 5px 5px 0;
+} */
+
+.language-switch__input {
+  -webkit-appearance: none; /* Add if not using autoprefixer */
+  appearance: none;
+  background-color: var(--satin-linen-color); /* For iOS < 15 to remove gradient background */
+  margin: 0; /* Not removed via appearance */
+}
+
+.language-switch__label {
+  color: var(--egg-shell-color);
+  padding: var(--spacing-xs);
+  padding-block: 2px;
+  cursor: pointer;
+}
+
+.language-switch__label--en {
+  border-radius: 5px 0 0 5px;
+}
+
+.language-switch__label--de {
+  border-left: 2px solid var(--egg-shell-color);
+  border-radius: 0 5px 5px 0;
+}
+
+.language-switch__input:checked + .language-switch__label {
+  color: var(--carrot-orange-color);
+}
+
+.language-switch__lable-aria-description {
+  margin-inline-start: var(--spacing-xs);
+}
