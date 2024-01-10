@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import paths from '@/routes/paths';
 
 import TheNavbar from '@/components/header/TheNavbar';
+
 import headerStyles from '@/components/header/TheHeader.module.css';
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
 

@@ -29,7 +29,8 @@
   --dirt-brown-color: #8c6239;
   --pine-cone-color: #736357;
   --carnaby-tan-color: #5f2a04;
-  --satin-linen-color: #f0e1d2;
+  /* --satin-linen-color: #f0e1d2; */
+  --satin-linen-color: #f3eade;
   --egg-shell-color: #f2e7dd;
   --color-dark: #1d1c1c;
 
@@ -44,7 +45,6 @@
 
 #root {
   max-width: 1920px;
-  min-height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,17 @@ section {
 
 section,
 footer {
-  padding-inline: clamp(1rem, -1.22rem + 11.11vw, 6rem);
+  padding-inline: clamp(0.75rem, -1.14rem + 9.44vw, var(--spacing-xl));
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
 }
 
 /* ----------------
@@ -90,7 +100,7 @@ body {
   background: var(--satin-linen-color);
   font-family: var(--font-family-open-sans);
   /* font-family: var(--font-family-merriweather); */
-  font-size: max(var(--font-size-sm), 1.2vw);
+  /* font-size: max(var(--font-size-sm), 1.2vw); */
 }
 
 img,
@@ -124,15 +134,16 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(var(--font-size-xs), var(--font-size-xs) + 10vw, var(--font-size-xl));
+  font-size: clamp(var(--font-size-md), 0.67rem + 6.67vw, var(--font-size-xl));
 }
 
 h2 {
-  font-size: clamp(var(--font-size-md), var(--font-size-xs) + 10vw, var(--font-size-lg));
+  font-size: clamp(var(--font-size-md), 1.56rem + 2.22vw, var(--font-size-lg));
 }
 
-p {
-  font-size: max(var(--font-size-sm), 1.2vw);
+p,
+a {
+  font-size: clamp(1rem, 0.89rem + 0.56vw, 1.25rem);
   overflow-wrap: break-word;
 }
 

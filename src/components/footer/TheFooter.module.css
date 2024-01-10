@@ -7,7 +7,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: var(--spacing-md);
-  grid-row-gap: var(--spacing-lg);
+  grid-row-gap: var(--spacing-md);
 }
 
 footer h2 {
@@ -51,13 +51,14 @@ footer a {
 }
 
 .social--logos-svg-wrapper img:first-child {
-  width: 9%;
-  margin-inline-end: 10px;
+  width: 6.5%;
+  margin-inline-end: 6px;
 }
 
 .social--logos-svg-wrapper img:not(:first-child) {
-  margin-inline-start: 5px;
+  margin-inline-start: 3px;
   margin-block-end: 5px;
+  width: 3.5%;
 }
 
 /* ----------------

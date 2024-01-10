@@ -31,7 +31,7 @@ const LinkOpenInNewWindow = ({
         {imageSrc && (
           <img
             src={imageSrc}
-            alt={`${socialMediaIconAlt ? socialMediaIconAlt + ' ' : ''}(Opens in a new tab)`}
+            alt={`${socialMediaIconAlt ? socialMediaIconAlt + ' ' : ''}`}
             role="image"
           />
         )}

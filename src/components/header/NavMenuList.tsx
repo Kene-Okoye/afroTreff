@@ -108,7 +108,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
           </NavLink>
         </li>
         <li>
-          <a href="https://community.afrotreff.com/" target="_blank" rel="noreferrer">
+          <a href="https://community.afrotreff.com/" target="_blank" rel="noreferrer noopener">
             Community
           </a>
         </li>

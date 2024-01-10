@@ -2,7 +2,7 @@
   HEADER STYLES 
 ---------------- */
 header {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.937);
   position: absolute;
   inset-block-start: 0rem;
   inset-inline: 0rem;
@@ -10,7 +10,7 @@ header {
   top: 0;
   display: flex;
   justify-content: space-between;
-  height: 90px;
+  height: 70px;
 }
 
 .logo-image {
@@ -57,6 +57,7 @@ header {
 
 nav {
   position: absolute;
+  display: flex;
   inset-block-start: 0rem;
   inset-inline-end: 0rem;
   padding: var(--spacing-sm);
@@ -124,7 +125,7 @@ nav [aria-current='page'],
   padding-block-start: var(--spacing-xxl);
 
   background-color: #1d1c1c;
-  color: var(--egg-shell-color);
+  /* color: var(--egg-shell-color); */
   box-shadow: -5px 0 11px 0 rgb(0 0 0 / 0.2); /* TODO: Remove after main styling*/
   height: 100%;
   position: fixed;
@@ -143,6 +144,11 @@ nav [aria-current='page'],
 .main-menu li a,
 .main-menu li button {
   padding-inline-end: var(--spacing-md);
+  color: var(--egg-shell-color);
+}
+
+.main-menu > li > a {
+  font-size: var(--font-size-lg);
 }
 
 .main-menu > li:not(:first-child),
@@ -156,9 +162,12 @@ nav [aria-current='page'],
   padding-inline-start: var(--spacing-xs);
   height: 148px;
   text-transform: capitalize;
-  font-size: 1.5rem;
   opacity: 1;
   transition: all 0.5s ease;
+}
+
+.sub-menu a {
+  font-size: 1.5rem;
 }
 
 .sub-menu > button {
@@ -220,11 +229,11 @@ nav [aria-current='page'],
 
 @media only screen and (min-width: 62em) {
   header {
-    height: 140px;
+    height: 100px;
   }
 
   nav {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   .logo {
@@ -290,10 +299,18 @@ nav [aria-current='page'],
     width: max-content;
   }
 
+  .sub-menu a {
+    font-size: inherit;
+  }
+
   .main-menu > li:not(:first-child),
   .main-menu li button {
     font-size: inherit;
     font-weight: inherit;
+  }
+
+  .main-menu > li > a {
+    font-size: inherit;
   }
 
   .sub-menu--button-arrow-down::after {
@@ -313,6 +330,16 @@ nav [aria-current='page'],
 /* --------------------------
 HAMBURGER MENU BUTTON STYLES 
 --------------------------- */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
 .hamburger-menu {
   color: var(--egg-shell-color);
   cursor: pointer;
@@ -350,7 +377,7 @@ HAMBURGER MENU BUTTON STYLES
 .hamburger-menu-inner::before,
 .hamburger-menu-inner::after {
   width: 30px;
-  height: 4px;
+  height: 3.5px;
   background-color: var(--egg-shell-color);
 
   position: absolute;

@@ -51,7 +51,7 @@ const Contact = () => {
                 </label>
                 <input
                   id="email"
-                  type="text"
+                  type="email"
                   name="email"
                   className={contactStyles['contact--input']}
                   autoComplete="off"
