@@ -25,7 +25,9 @@
 
 .contact--input:focus,
 .contact--text-area:focus {
-  border-bottom: 4px solid var(--carrot-orange-color);
+  -moz-box-shadow: 1px -4px 0px 0px var(--carrot-orange-color) inset;
+  -webkit-box-shadow: 1px -4px 0px 0px var(--carrot-orange-color) inset;
+  box-shadow: 1px -4px 0px 0px var(--carrot-orange-color) inset;
 }
 
 .contact--submit-button {
@@ -62,6 +64,6 @@
   }
 
   .contact--submit-button {
-    width: 30%;
+    width: 25%;
   }
 }

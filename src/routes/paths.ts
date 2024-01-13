@@ -5,6 +5,7 @@ interface Paths {
 export default {
   HOME: '/',
   PAGE_NOT_FOUND: '*',
+  REGISTER: 'register',
   VISION_AND_TEAM: 'vision-and-team',
   ACTIVITIES: 'activities',
   BLOG: 'blog',

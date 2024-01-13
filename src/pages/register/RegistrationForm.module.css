@@ -1,0 +1,71 @@
+.registration-form__form {
+  background-color: #ffff;
+  padding-inline: clamp(0.75rem, -1.14rem + 9.44vw, var(--spacing-xl));
+  padding-block: min(8vh, 5rem);
+}
+
+.registration-form__heading {
+  font-size: clamp(var(--font-size-md), 1.56rem + 2.22vw, var(--font-size-lg));
+  padding-block-end: var(--spacing-xs);
+}
+
+.registration-form__info-text {
+  padding-block-end: var(--spacing-sm);
+}
+
+.registration-form__input-wrapper {
+  padding-block: var(--spacing-xs);
+}
+
+.registration-form__input {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  padding: var(--spacing-xs);
+  background-color: rgba(255, 254, 253, 0.55);
+  border: 1px solid rgba(67, 67, 66, 0.55);
+}
+
+.registration-form__input:focus {
+  -moz-box-shadow: 1px -4px 0px 0px var(--carnaby-tan-color) inset;
+  -webkit-box-shadow: 1px -4px 0px 0px var(--carnaby-tan-color) inset;
+  box-shadow: 1px -4px 0px 0px var(--carnaby-tan-color) inset;
+}
+
+.registration-form__submit-button {
+  background-color: var(--carnaby-tan-color);
+  color: #ffff;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: var(--font-weight-extra-black);
+  padding: 0.8rem var(--spacing-sm);
+  margin-block-start: var(--spacing-sm);
+  cursor: pointer;
+  width: 100%;
+}
+
+.registration-form__submit-button:hover,
+.registration-form__submit-button:focus {
+  background-color: rgba(95, 42, 4, 0.932);
+}
+
+.registration-form__error-message {
+  color: red;
+  font-size: var(--font-size-xxs);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .registration-form__form-container {
+    max-width: 70%;
+    margin: auto;
+  }
+
+  .registration-form__submit-button {
+    width: 25%;
+  }
+}

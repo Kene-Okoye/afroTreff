@@ -1,0 +1,26 @@
+.register__container {
+  padding: 0;
+}
+
+.register__background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  padding-inline: 1rem;
+}
+
+.register__form-container {
+  position: relative;
+  isolation: isolate;
+  padding-inline: clamp(0.75rem, -1.14rem + 9.44vw, var(--spacing-xl));
+  padding-block: min(8vh, 5rem);
+}
+
+.register__form-container > form {
+  margin-block-start: -70vh;
+}

@@ -10,6 +10,7 @@ const lazyLoadedElementImports = {
   Contact: lazy(() => import('@/pages/contact/Contact')),
   Thank_you: lazy(() => import('@/pages/contact/ThankYou')),
   ComingSoon: lazy(() => import('@/pages/comingSoon/ComingSoon')),
+  Register: lazy(() => import('@/pages/register/Register')),
 };
 
 export default lazyLoadedElementImports;

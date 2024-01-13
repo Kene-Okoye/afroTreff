@@ -15,6 +15,10 @@ function App() {
         <Route path={paths.HOME} element={<PageLayout />}>
           <Route index element={getRouteElement(lazyLoadedElementImports.Home)} />
           <Route
+            path={paths.REGISTER}
+            element={getRouteElement(lazyLoadedElementImports.Register)}
+          />
+          <Route
             path={paths.VISION_AND_TEAM}
             element={getRouteElement(lazyLoadedElementImports.Vision_and_team)}
           />
