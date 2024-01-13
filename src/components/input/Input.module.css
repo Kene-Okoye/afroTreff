@@ -1,0 +1,28 @@
+.input__conatiner {
+  padding-block: var(--spacing-xs);
+}
+
+.input__label {
+  text-transform: capitalize;
+}
+
+.input__input-field {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  padding: var(--spacing-xs);
+  background-color: rgba(255, 254, 253, 0.55);
+  border: 1px solid rgba(67, 67, 66, 0.55);
+}
+
+.input__input-field:focus {
+  -moz-box-shadow: 1px -4px 0px 0px var(--carnaby-tan-color) inset;
+  -webkit-box-shadow: 1px -4px 0px 0px var(--carnaby-tan-color) inset;
+  box-shadow: 1px -4px 0px 0px var(--carnaby-tan-color) inset;
+}
+
+.input__error-message {
+  color: red;
+  font-size: var(--font-size-xxs);
+  text-transform: capitalize;
+}
