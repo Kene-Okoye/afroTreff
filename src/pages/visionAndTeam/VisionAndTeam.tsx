@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import HeroSection from '@/components/hero/HeroSection';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
 import CardImageAndText from '@/components/cardImageAndText/CardImageAndText';
@@ -87,16 +89,15 @@ const VisionAndTeam = () => {
           <HeadingTopSmallVariant h1SmallerVariant="Meeet the" h1BiggerVariant="Working team" />
           <div className={visionAndTeamStyles['vision-team__working-team--card']}>
             {visionAndTeamContent.map(({ id, header, text1, text2, imageSrc, imageAlt }) => (
-              <>
+              <Fragment key={id}>
                 <CardImageAndText
-                  key={id}
                   header={header}
                   text1={text1}
                   text2={text2}
                   imageSrc={imageSrc}
                   imageAlt={imageAlt}
                 />
-              </>
+              </Fragment>
             ))}
           </div>
         </section>
