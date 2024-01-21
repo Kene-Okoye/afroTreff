@@ -1,5 +1,6 @@
 .link-button {
   border: 3px solid var(--carrot-orange-color);
+  border-radius: 3px;
   color: var(--carrot-orange-color);
   background: transparent;
   text-transform: uppercase;

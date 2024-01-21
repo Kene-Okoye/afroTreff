@@ -30,6 +30,8 @@
   --dirt-brown-color: #8c6239;
   --pine-cone-color: #736357;
   --carnaby-tan-color: #5f2a04;
+  --carnaby-tan-color-2: #b9794b;
+
   /* --satin-linen-color: #f0e1d2; */
   --satin-linen-color: #f3eade;
   --egg-shell-color: #f2e7dd;
@@ -57,7 +59,7 @@ footer {
 }
 
 section {
-  padding-block: min(8vh, 5rem);
+  padding-block: clamp(2rem, 1.56rem + 2.22vw, 3rem);
 }
 
 section,
@@ -131,7 +133,7 @@ h6 {
   font-weight: var(--font-weight-extra-bold);
   text-transform: uppercase;
   overflow-wrap: break-word;
-  padding-block-end: var(--spacing-md);
+  padding-block-end: var(--spacing-sm);
 }
 
 h1 {
@@ -160,9 +162,5 @@ a {
   MEDIA QUERRIES
 ----------------- */
 
-@media only screen and (min-width: 62em) {
-  h1,
-  h2 {
-    padding-block-end: var(--spacing-lg);
-  }
-}
+/* @media only screen and (min-width: 62em) {
+} */

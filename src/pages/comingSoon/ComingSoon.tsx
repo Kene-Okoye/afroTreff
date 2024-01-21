@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import paths from '@/routes/paths';
 import HeroSection from '@/components/hero/HeroSection';
-import LinkOpenInNewWindow from '@/components/LinkOpenInNewWindow';
+import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
 import comingSoonStyles from '@/pages/comingSoon/ComingSoon.module.css';
 

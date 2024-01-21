@@ -1,6 +1,7 @@
 footer {
   background-color: black;
   color: #fff;
+  margin-top: var(--spacing-lg);
 }
 
 .footer-container {
@@ -44,21 +45,6 @@ footer a {
   flex-wrap: wrap;
   column-gap: var(--spacing-lg);
   row-gap: var(--spacing-sm);
-}
-
-.social--logos-svg-wrapper {
-  display: flex;
-}
-
-.social--logos-svg-wrapper img:first-child {
-  width: 6.5%;
-  margin-inline-end: 6px;
-}
-
-.social--logos-svg-wrapper img:not(:first-child) {
-  margin-inline-start: 3px;
-  margin-block-end: 5px;
-  width: 3.5%;
 }
 
 /* ----------------

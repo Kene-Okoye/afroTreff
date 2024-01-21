@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import paths from '@/routes/paths';
-import LinkOpenInNewWindow from '@/components/LinkOpenInNewWindow';
+import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
 import footerStyles from '@/components/footer/TheFooter.module.css';
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
@@ -57,6 +57,7 @@ const TheFooter = () => {
                   text="Instagram"
                   useWhiteIcon
                   imageSrc={instagramLogo}
+                  styleSocialMediaIcon={{ width: '10%' }}
                 />
               </li>
 
@@ -66,6 +67,11 @@ const TheFooter = () => {
                   text="LinkedIn"
                   useWhiteIcon
                   imageSrc={linkedInLogo}
+                  styleSocialMediaIcon={{
+                    width: '8%',
+                    marginInlineEnd: '9px',
+                    marginInlineStart: '3px',
+                  }}
                 />
               </li>
             </ul>

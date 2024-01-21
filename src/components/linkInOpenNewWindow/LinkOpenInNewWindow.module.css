@@ -1,0 +1,14 @@
+.link__container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.link__social-media-icon {
+  margin-inline-end: 6px;
+}
+
+.link__new-tab-icon {
+  margin-inline-start: 3px;
+  margin-block-end: 5px;
+  width: 4%;
+}
