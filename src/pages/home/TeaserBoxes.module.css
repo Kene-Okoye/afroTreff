@@ -1,0 +1,157 @@
+.teaser-box__wrapper--group-text-only {
+  display: block;
+  height: auto;
+}
+
+.teaser-box__CTA-box-text-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 205px;
+  margin-block-end: var(--spacing-sm);
+  padding: 1.3rem;
+}
+
+.teaser-box__wrapper--group-text-only a {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.9rem 1.3rem;
+  letter-spacing: 1.8px;
+  font-size: var(--font-size-xxs);
+  line-height: 20px;
+}
+
+.teaser-box__wrapper--group-text-only a:hover {
+  color: var(--color-dark);
+}
+
+.teaser-box__wrapper--group-text-only a::before {
+  background-color: #fff;
+}
+
+.teaser-box__CTA-box-text-only:nth-child(1) {
+  background-color: var(--carnaby-tan-color);
+}
+
+.teaser-box__CTA-box-text-only:nth-child(2) {
+  background-color: var(--dirt-brown-color);
+}
+
+.teaser-box__CTA-box-text-only:nth-child(3) {
+  background-color: var(--pine-cone-color);
+}
+
+.teaser-box__CTA-box-text-only:nth-child(4) {
+  background-color: var(--carnaby-tan-color-2);
+}
+
+.teaser-box__CTA-box-social-media-container {
+  background-color: #3d3c3c;
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  margin-block-start: var(--spacing-sm);
+  height: auto;
+}
+
+.teaser-box__CTA-box--instagram,
+.teaser-box__CTA-box--whatsApp,
+.teaser-box__CTA-box--linkedIn {
+  border: 2px solid #fff;
+  padding: 1rem;
+  margin-inline: var(--spacing-xs);
+  border-radius: 50%;
+
+  display: block;
+  width: max-content;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.teaser-box__CTA-box--instagram::before,
+.teaser-box__CTA-box--whatsApp::before,
+.teaser-box__CTA-box--linkedIn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(0%, 100%) skew(0deg);
+  transition: 0.5s;
+}
+
+.teaser-box__CTA-box--instagram::before {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+.teaser-box__CTA-box--whatsApp::before {
+  background-color: #25d366;
+}
+
+.teaser-box__CTA-box--linkedIn::before {
+  background-color: #0e76a8;
+}
+
+.teaser-box__CTA-box--instagram:hover::before,
+.teaser-box__CTA-box--whatsApp:hover::before,
+.teaser-box__CTA-box--linkedIn:hover::before {
+  transform: translate(0%, 0%) skew(0deg);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .teaser-box__wrapper--group-text-only {
+    display: block;
+    height: 312px;
+  }
+
+  .teaser-box__CTA-box-text-only {
+    display: flex;
+    align-items: center;
+    padding: 1.3rem;
+  }
+
+  .teaser-box__wrapper--group-text-only a {
+    width: 100%;
+  }
+
+  .teaser-box__CTA-box-text-only:nth-child(1) {
+    width: calc(25% - 10px);
+    height: 312px;
+    float: left;
+  }
+
+  .teaser-box__CTA-box-text-only:nth-child(2) {
+    width: calc(50% - 10px);
+    height: 312px;
+    float: right;
+  }
+
+  .teaser-box__CTA-box-text-only:nth-child(3) {
+    width: calc(25% - 12px);
+    height: 148px;
+    float: left;
+    margin: 0 17px 15px 15px;
+  }
+
+  .teaser-box__CTA-box-text-only:nth-child(4) {
+    width: calc(25% - 12px);
+    height: 148px;
+    float: left;
+    margin: 0 17px 15px 15px;
+  }
+
+  .teaser-box__CTA-box--instagram,
+  .teaser-box__CTA-box--whatsApp,
+  .teaser-box__CTA-box--linkedIn {
+    border: 2px solid #fff;
+    padding: 1.5rem;
+    margin-inline: var(--spacing-md);
+    border-radius: 50%;
+  }
+}

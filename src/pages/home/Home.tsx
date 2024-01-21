@@ -2,6 +2,7 @@ import HeroSection from '@/components/hero/HeroSection';
 
 import homeStyles from '@/pages/home/Home.module.css';
 import heroImageHome from '@/assets/images/hero_image_home.webp';
+import TeaserBoxes from '@/pages/home/TeaserBoxes';
 
 const Home = () => {
   return (
@@ -28,6 +29,10 @@ const Home = () => {
           dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis
           accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium
         </p>
+      </section>
+
+      <section>
+        <TeaserBoxes />
       </section>
     </>
   );
