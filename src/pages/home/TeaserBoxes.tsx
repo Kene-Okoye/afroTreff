@@ -5,7 +5,6 @@ import teaserBoxesStyles from '@/pages/home/TeaserBoxes.module.css';
 
 import instagramLogo from '@/assets/svg/instagram_logo.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo_outlined.svg';
-import whatsAppLogo from '@/assets/svg/whatsapp_logo.svg';
 
 const teaserBoxContent = [
   { id: 1, linkButtonText: 'Discover the previous events', path: 'activities' },
@@ -36,16 +35,6 @@ const TeaserBoxes = () => {
             href="https://www.instagram.com/afrotreff/?hl=en"
             socialMediaIconAlt="Follow us on Instagram"
             imageSrc={instagramLogo}
-            useWhiteIcon
-            showOpenInNewTabIcon
-            styleSocialMediaIcon={{ width: '50px', margin: 0 }}
-          />
-        </div>
-        <div className={teaserBoxesStyles['teaser-box__CTA-box--whatsApp']}>
-          <LinkOpenInNewWindow
-            href="https://chat.whatsapp.com/KmsOopPvdgOKcHSG5EyITe"
-            socialMediaIconAlt="Join the community on whatsApp"
-            imageSrc={whatsAppLogo}
             useWhiteIcon
             showOpenInNewTabIcon
             styleSocialMediaIcon={{ width: '50px', margin: 0 }}

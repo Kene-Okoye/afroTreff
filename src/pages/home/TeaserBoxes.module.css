@@ -55,7 +55,6 @@
 }
 
 .teaser-box__CTA-box--instagram,
-.teaser-box__CTA-box--whatsApp,
 .teaser-box__CTA-box--linkedIn {
   border: 2px solid #fff;
   padding: 1rem;
@@ -70,7 +69,6 @@
 }
 
 .teaser-box__CTA-box--instagram::before,
-.teaser-box__CTA-box--whatsApp::before,
 .teaser-box__CTA-box--linkedIn::before {
   content: '';
   position: absolute;
@@ -86,16 +84,12 @@
 .teaser-box__CTA-box--instagram::before {
   background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
-.teaser-box__CTA-box--whatsApp::before {
-  background-color: #25d366;
-}
 
 .teaser-box__CTA-box--linkedIn::before {
   background-color: #0e76a8;
 }
 
 .teaser-box__CTA-box--instagram:hover::before,
-.teaser-box__CTA-box--whatsApp:hover::before,
 .teaser-box__CTA-box--linkedIn:hover::before {
   transform: translate(0%, 0%) skew(0deg);
 }
@@ -147,7 +141,6 @@
   }
 
   .teaser-box__CTA-box--instagram,
-  .teaser-box__CTA-box--whatsApp,
   .teaser-box__CTA-box--linkedIn {
     border: 2px solid #fff;
     padding: 1.5rem;
