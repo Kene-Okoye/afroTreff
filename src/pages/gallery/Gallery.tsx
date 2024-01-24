@@ -1,20 +1,40 @@
 import HeroSection from '@/components/hero/HeroSection';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
+import GalleryImageModalDialog from '@/pages/gallery/GalleryImageModalDialog';
+import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
+
 import galleryStyles from '@/pages/gallery/Gallery.module.css';
 
-import gallerImage1 from '@/assets/images/blog_image_1.webp';
-import gallerImage2 from '@/assets/images/blog_image_2.webp';
-import gallerImage3 from '@/assets/images/blog_image_3.webp';
-import gallerImage4 from '@/assets/images/blog_image_4.webp';
-import gallerImage5 from '@/assets/images/blog_image_5.webp';
+import galleryImage1 from '@/assets/images/blog_image_1.webp';
+import galleryImage2 from '@/assets/images/blog_image_2.webp';
+import galleryImage3 from '@/assets/images/blog_image_3.webp';
+import galleryImage4 from '@/assets/images/blog_image_4.webp';
+import galleryImage5 from '@/assets/images/blog_image_5.webp';
+import galleryImage6 from '@/assets/images/hero_image_home.webp';
 import heroImageGallery from '@/assets/images/blog_image_5.webp';
+import { Fragment } from 'react';
 
 const galleryContent = [
-  { id: 1, imageSrc: gallerImage1, alt: '' },
-  { id: 2, imageSrc: gallerImage2, alt: '' },
-  { id: 3, imageSrc: gallerImage3, alt: '' },
-  { id: 4, imageSrc: gallerImage4, alt: '' },
-  { id: 5, imageSrc: gallerImage5, alt: '' },
+  { id: 1, imageSrc: galleryImage1, alt: 'Chima and a lady smiling and having a nice chat' },
+  { id: 2, imageSrc: galleryImage2, alt: 'Five attendees posing for a nice shot' },
+  {
+    id: 3,
+    imageSrc: galleryImage3,
+    alt: 'The host of the last event talking with a mic in her right hand',
+  },
+  {
+    id: 4,
+    imageSrc: galleryImage4,
+    alt: 'A capture of various participants seated and looking towrds the host talking',
+  },
+  {
+    id: 5,
+    imageSrc: galleryImage5,
+    alt: 'Three female participants seated, with two having their hands raised.',
+  },
+  { id: 6, imageSrc: galleryImage6, alt: 'View from top of the entire room' },
+  { id: 7, imageSrc: galleryImage1, alt: 'Chima and a lady smiling and having a nice chat' },
+  { id: 8, imageSrc: galleryImage2, alt: 'Five attendees posing for a nice shot' },
 ];
 const Gallery = () => {
   return (
@@ -26,11 +46,18 @@ const Gallery = () => {
       />
       <section>
         <HeadingTopSmallVariant h1SmallerVariant="AfroTreff 2023" h1BiggerVariant="Photo Gallery" />
-        <div className={galleryStyles['gallery--container']}>
+        <p className={galleryStyles['gallery__paragraph-text']}>
+          See a few teasers from the last events.{' '}
+          <LinkOpenInNewWindow
+            href="https://www.instagram.com/afrotreff/?hl=en"
+            text="Follow the AfroTreff page on Instagram to explore more"
+          />
+        </p>
+        <div className={galleryStyles['gallery__grid']}>
           {galleryContent.map(({ id, imageSrc, alt }) => (
-            <div key={id} className={galleryStyles['gallery--image-wrapper']}>
-              <img src={imageSrc} alt={alt} />
-            </div>
+            <Fragment key={id}>
+              <GalleryImageModalDialog imageSrc={imageSrc} imageAlt={alt} />
+            </Fragment>
           ))}
         </div>
       </section>

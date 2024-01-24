@@ -1,0 +1,69 @@
+.modal-dialog__dialog {
+  background: rgba(0, 0, 0, 10);
+  margin: auto;
+  width: 90%;
+  height: 90%;
+}
+
+.modal-dialog__dialog::backdrop {
+  background: rgba(0, 0, 0, 10);
+}
+
+.modal-dialog__button {
+  background-color: rgb(236, 48, 48);
+  color: #fff;
+  font-weight: var(--font-weight-extra-bold);
+  text-transform: capitalize;
+  border: none;
+  float: right;
+  cursor: zoom-in;
+  border-radius: 10px;
+  padding: var(--spacing-xs);
+  margin-block-end: var(--spacing-sm);
+}
+
+.modal-dialog__button--close {
+  cursor: zoom-out;
+}
+
+.modal-dialog__button--smaller-size {
+  width: 40px;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* ----------------
+  MODAL ANIMATION
+----------------- */
+.modal-dialog__dialog {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,42 @@
+.gallery__grid {
+  display: grid;
+  gap: var(--spacing-sm);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-block-start: var(--spacing-md);
+}
+
+.gallery__container {
+  position: relative;
+  isolation: isolate;
+}
+
+.gallery__image {
+  object-fit: cover;
+  object-position: top;
+  height: inherit;
+  width: 100%;
+  border-radius: inherit;
+}
+
+.gallery__image-wrapper {
+  background-color: var(--pine-cone-color);
+
+  height: 350px;
+  border-radius: 10px;
+}
+
+.gallery__view-image-button-wrapper {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  transition: 0.1s ease;
+  opacity: 0;
+  border-radius: 10px;
+  padding: var(--spacing-sm);
+}
+
+.gallery__container:hover .gallery__view-image-button-wrapper,
+.gallery__container:focus-within .gallery__view-image-button-wrapper {
+  opacity: 1;
+}

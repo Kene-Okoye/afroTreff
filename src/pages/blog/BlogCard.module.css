@@ -5,6 +5,12 @@
   margin-block-end: var(--spacing-xl);
 }
 
+.blog-item:hover .blog-item--image,
+.blog-item:focus-within .blog-item--image {
+  transform: scale(1.1);
+  filter: sepia(70%);
+}
+
 .blog-item:nth-child(odd) {
   padding-inline-end: 0;
 }
@@ -22,7 +28,7 @@
 
 .blog-item--image-wrapper {
   /*max-height: 300px;*/ /* TODO: REINTEGRATE after pics with the perfect dimension are ontained from Francis */
-  height: 300px; /*TODO: REMOVE after pics with the perfect dimension are ontained from Francis*/
+  height: 300px; /*TODO: REMOVE after pics with the perfect dimension are obtained from Francis*/
   background-color: darkgray;
   overflow: hidden;
 }
@@ -30,6 +36,9 @@
 .blog-item--image {
   transition: transform 0.5s, filter 0.5s ease-in-out;
   object-fit: cover;
+  object-position: top;
+  height: inherit;
+  width: 100%;
 }
 
 .blog-item--image:hover {
