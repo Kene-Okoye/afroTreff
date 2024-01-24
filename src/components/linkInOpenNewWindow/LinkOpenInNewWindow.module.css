@@ -1,14 +1,19 @@
 .link__container {
-  display: flex;
-  justify-content: flex-start;
+  /* display: flex;
+  justify-content: flex-start; */
+  display: inline;
 }
 
 .link__social-media-icon {
+  display: inline-block;
+  vertical-align: text-top;
   margin-inline-end: 6px;
 }
 
 .link__new-tab-icon {
-  margin-inline-start: 3px;
+  display: inline;
+  vertical-align: middle;
+  margin-inline-start: 2px;
   margin-block-end: 5px;
-  width: 4%;
+  width: 10px;
 }

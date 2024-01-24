@@ -57,7 +57,6 @@ const TheFooter = () => {
                   text="Instagram"
                   useWhiteIcon
                   imageSrc={instagramLogo}
-                  styleSocialMediaIcon={{ width: '10%' }}
                 />
               </li>
 
@@ -68,7 +67,7 @@ const TheFooter = () => {
                   useWhiteIcon
                   imageSrc={linkedInLogo}
                   styleSocialMediaIcon={{
-                    width: '8%',
+                    width: '25px',
                     marginInlineEnd: '9px',
                     marginInlineStart: '3px',
                   }}
