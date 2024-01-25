@@ -29,14 +29,27 @@ const ModalDialog = ({
 }: PropsWithChildren<ModalDialogProps>) => {
   const { dialogRef, openModal, closeModal } = useModal();
   const dialogId = useId();
+  const expandIconId = useId();
+  const closeIconId = useId();
 
   return (
     <>
       <div className={openButtonWrapperClassName}>
+        {/* ---------------------------------------------------------------------------------------------
+            // TODO: ACCESSIBILITY ISSUE: 
+            ----------------------------------------------------------------------------------------------
+            When using I am currently experiencing an issue with NVDA screen reader 
+            and the HTM Dialog element. When I close my modal dialog (useing ESC key or clicking a button),
+            the first link or another focusable element on my web page gets announced first before the
+            announcement of the button / element that opened the dialog. Find out if this is a general 
+            bug/issue with NVDA how to fix thus?  
+        */}
+
         <button
           type="button"
           onClick={openModal}
           style={styleopenButton}
+          aria-labelledby={`expand-fullscreen-icon-${expandIconId}`}
           className={`${modalDialogStyles['modal-dialog__button']} ${
             !openButtonText && modalDialogStyles['modal-dialog__button--smaller-size']
           }`}
@@ -46,10 +59,17 @@ const ModalDialog = ({
             <>
               <img
                 src={expandFullscreenIcon}
-                alt="View image on fullscreen"
-                role="image"
+                alt=""
+                role="presentation"
+                aria-hidden="true"
                 className={modalDialogStyles['modal-dialog__expand-fullscreen-icon']}
               />
+              <span
+                id={`expand-fullscreen-icon-${expandIconId}`}
+                className={modalDialogStyles['visually-hidden']}
+              >
+                View image on fullscreen
+              </span>
             </>
           )}
         </button>
@@ -69,6 +89,8 @@ const ModalDialog = ({
         <div className={closeButtonWrapperClassName}>
           <button
             type="button"
+            autoFocus
+            aria-labelledby={`close-fullscreen-icon-${closeIconId}`}
             onClick={closeModal}
             style={styleopenButton}
             className={`${modalDialogStyles['modal-dialog__button']} ${
@@ -80,10 +102,17 @@ const ModalDialog = ({
               <>
                 <img
                   src={closeIcon}
-                  alt="Close and return to normal view"
-                  role="image"
+                  alt=""
+                  role="presentation"
+                  aria-hidden="true"
                   className={modalDialogStyles['modal-dialog__expand-fullscreen-icon']}
                 />
+                <span
+                  id={`close-fullscreen-icon-${closeIconId}`}
+                  className={modalDialogStyles['visually-hidden']}
+                >
+                  Close and return to normal view
+                </span>
               </>
             )}
           </button>
