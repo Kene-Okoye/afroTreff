@@ -36,7 +36,7 @@ const TeaserBoxes = () => {
             socialMediaIconAlt="Follow us on Instagram"
             imageSrc={instagramLogo}
             useWhiteIcon
-            showOpenInNewTabIcon
+            hideOpenInNewTablIcon
             styleSocialMediaIcon={{ width: '50px', margin: 0 }}
           />
         </div>
@@ -46,7 +46,7 @@ const TeaserBoxes = () => {
             socialMediaIconAlt="Stay up to date on LinkedIn"
             imageSrc={linkedInLogo}
             useWhiteIcon
-            showOpenInNewTabIcon
+            hideOpenInNewTablIcon
             styleSocialMediaIcon={{ width: '50px', margin: 0 }}
           />
         </div>

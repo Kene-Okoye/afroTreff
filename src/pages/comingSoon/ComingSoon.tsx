@@ -27,13 +27,22 @@ function ComingSoon() {
             <LinkOpenInNewWindow
               href="https://www.linkedin.com/company/afrotreff/"
               imageSrc={linkedInLogo}
-              socialMediaIconAlt="Visit us on instagram"
+              socialMediaIconAlt="Visit us on LinkedIn"
+              hideOpenInNewTablIcon
+              styleSocialMediaIcon={{ width: '40px', margin: 0 }}
             />
             <LinkOpenInNewWindow
               href="https://www.instagram.com/afrotreff/?hl=en"
+              socialMediaIconAlt="Follow us on Instagram"
+              imageSrc={instagramLogo}
+              hideOpenInNewTablIcon
+              styleSocialMediaIcon={{ width: '50px', marginInlineStart: '10px' }}
+            />
+            {/* <LinkOpenInNewWindow
+              href="https://www.instagram.com/afrotreff/?hl=en"
               imageSrc={instagramLogo}
               socialMediaIconAlt="Visit us on instagram"
-            />
+            /> */}
           </div>
         </HeroSection>
       </div>

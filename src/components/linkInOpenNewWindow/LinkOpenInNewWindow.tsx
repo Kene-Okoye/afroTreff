@@ -13,7 +13,7 @@ type LinkOpenInNewWindowProps = {
   styleSocialMediaIcon?: CSSProperties;
   styleNewTabIcon?: CSSProperties;
   useWhiteIcon?: boolean;
-  showOpenInNewTabIcon?: boolean;
+  hideOpenInNewTablIcon?: boolean;
 };
 
 const LinkOpenInNewWindow = ({
@@ -24,7 +24,7 @@ const LinkOpenInNewWindow = ({
   styleSocialMediaIcon,
   styleNewTabIcon,
   useWhiteIcon,
-  showOpenInNewTabIcon = false,
+  hideOpenInNewTablIcon = false,
   children,
 }: PropsWithChildren<LinkOpenInNewWindowProps>) => {
   return (
@@ -46,7 +46,7 @@ const LinkOpenInNewWindow = ({
         )}
         {text && <span>{text}</span>}
         {children}
-        {!showOpenInNewTabIcon && useWhiteIcon && (text || socialMediaIconAlt) && (
+        {!hideOpenInNewTablIcon && useWhiteIcon && (text || socialMediaIconAlt) && (
           <img
             src={newWindowIconWhite}
             alt="(Opens in a new tab)"
@@ -55,7 +55,7 @@ const LinkOpenInNewWindow = ({
             style={styleNewTabIcon}
           />
         )}
-        {!showOpenInNewTabIcon && !useWhiteIcon && (text || socialMediaIconAlt) && (
+        {!hideOpenInNewTablIcon && !useWhiteIcon && (text || socialMediaIconAlt) && (
           <img
             src={newWindowIconBlack}
             alt="(Opens in a new tab)"

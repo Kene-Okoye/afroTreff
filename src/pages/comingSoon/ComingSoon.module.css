@@ -1,9 +1,6 @@
 .coming-soon--icon-wrapper {
   display: flex;
-}
-
-.coming-soon--icon-wrapper img {
-  width: auto !important;
+  align-items: center;
 }
 
 .coming-soon--icon-wrapper a {
