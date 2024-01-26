@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent } from 'react';
 import languageSwitchStyles from '@/components/nav/languageSwitch/LanguageSwitch.module.css';
 
 const LanguageSwitch = () => {
