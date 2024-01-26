@@ -37,10 +37,7 @@ function App() {
             path={paths.THANKYOU}
             element={getRouteElement(lazyLoadedElementImports.Thank_you)}
           />
-          <Route
-            path={paths.SUPPORT}
-            element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
-          />
+          <Route path={paths.SUPPORT} element={getRouteElement(lazyLoadedElementImports.Support)} />
           <Route
             path={paths.AFROLIST}
             element={getRouteElement(lazyLoadedElementImports.ComingSoon)}

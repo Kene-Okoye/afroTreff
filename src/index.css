@@ -32,7 +32,6 @@
   --carnaby-tan-color: #5f2a04;
   --carnaby-tan-color-2: #b9794b;
 
-  /* --satin-linen-color: #f0e1d2; */
   --satin-linen-color: #f3eade;
   --egg-shell-color: #f2e7dd;
   --color-dark: #1d1c1c;
@@ -59,7 +58,11 @@ footer {
 }
 
 section {
-  padding-block: clamp(2rem, 1.56rem + 2.22vw, 3rem);
+  padding-block: clamp(1rem, 0.78rem + 1.11vw, 1.5rem);
+}
+
+section:last-child {
+  margin-block-end: var(--spacing-lg);
 }
 
 section,

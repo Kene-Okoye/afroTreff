@@ -5,7 +5,7 @@ import LinkButton from '@/components/linkButton/LinkButton';
 
 type heroSectionProps = {
   h1Text: string;
-  pText: string;
+  pText?: string;
   linkText?: string;
   backGroundImage: string;
 };
