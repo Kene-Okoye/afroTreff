@@ -149,7 +149,7 @@ h2 {
 
 p,
 a {
-  font-size: clamp(1rem, 0.89rem + 0.56vw, 1.25rem);
+  font-size: clamp(1rem, 0.96rem + 0.22vw, 1.1rem);
   overflow-wrap: break-word;
 }
 
