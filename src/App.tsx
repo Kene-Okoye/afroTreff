@@ -29,7 +29,7 @@ function App() {
           />
           <Route path={paths.BLOG}>
             <Route index element={getRouteElement(lazyLoadedElementImports.Blog)} />
-            <Route path=":blogId" element={getRouteElement(lazyLoadedElementImports.ComingSoon)} />
+            <Route path=":blogId" element={getRouteElement(lazyLoadedElementImports.BlogPost)} />
           </Route>
           <Route path={paths.GALLERY} element={getRouteElement(lazyLoadedElementImports.Gallery)} />
           <Route path={paths.CONTACT} element={getRouteElement(lazyLoadedElementImports.Contact)} />

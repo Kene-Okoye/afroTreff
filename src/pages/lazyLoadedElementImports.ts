@@ -6,6 +6,7 @@ const lazyLoadedElementImports = {
   Activities: lazy(() => import('@/pages/activities/Activities')),
   Support: lazy(() => import('@/pages/support/Support')),
   Blog: lazy(() => import('@/pages/blog/Blog')),
+  BlogPost: lazy(() => import('@/pages/blog/blogPost/BlogPost')),
   Gallery: lazy(() => import('@/pages/gallery/Gallery')),
   Faq: lazy(() => import('@/pages/faq/Faq')),
   Contact: lazy(() => import('@/pages/contact/Contact')),
