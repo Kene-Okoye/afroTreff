@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import HeroSection from '@/components/hero/HeroSection';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
 import BlogCard from '@/pages/blog/BlogCard';
@@ -10,7 +12,7 @@ import blogImage4 from '@/assets/images/blog_image_4.webp';
 import blogImage5 from '@/assets/images/blog_image_5.webp';
 import heroImageBlog from '@/assets/images/blog_image_3.webp';
 
-const blogContent = [
+const initialBlogContent = [
   {
     id: 1,
     heading: 'Celebrating AfroTreff"s First Anniversary',
@@ -63,7 +65,33 @@ const blogContent = [
   },
 ];
 
+type initialBlogContentType = {
+  id: number;
+  heading: string;
+  category: string;
+  textContent: string;
+  imageSrc: string;
+  imageAlt: string;
+  buttonText: string;
+};
+
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [blogContent, setBlogContent] = useState<initialBlogContentType[]>(initialBlogContent);
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+  };
+
+  // React to changes in selectedCategory and update filteredBlogContent accordingly
+  useEffect(() => {
+    if (selectedCategory) {
+      setBlogContent(initialBlogContent.filter((item) => item.category === selectedCategory));
+    } else {
+      setBlogContent(initialBlogContent);
+    }
+  }, [selectedCategory]);
+
   return (
     <>
       <HeroSection
@@ -85,7 +113,8 @@ const Blog = () => {
                 imageSrc={imageSrc}
                 imageAlt={imageAlt}
                 buttonText={buttonText}
-                path={id.toString()}
+                path={heading}
+                // path={id.toString()}
               />
             ),
           )}
