@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import useAnnounceActivePage from '@/hooks/useAnnounceActivePage';
 
 import paths from '@/routes/paths';
 
@@ -8,8 +9,16 @@ import headerStyles from '@/components/header/TheHeader.module.css';
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
 
 const TheHeader = () => {
+  const { activePageAnnouncerRef } = useAnnounceActivePage();
+
   return (
     <>
+      <div
+        tabIndex={-1}
+        ref={activePageAnnouncerRef}
+        className={headerStyles['visually-hidden']}
+      ></div>
+
       <header>
         <a href="#main-content" className={headerStyles['skip-to-main']}>
           Skip to Main Content
