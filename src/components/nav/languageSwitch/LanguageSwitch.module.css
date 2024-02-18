@@ -10,22 +10,10 @@
 
 fieldset {
   display: flex;
-  width: max-content;
+  width: 100%;
   padding: var(--spacing-xs);
   border: none;
 }
-
-/* .language-switch__input-wrapper--en {
-  border: 2px solid red;
-  padding: var(--spacing-xs);
-  border-radius: 5px 0 0 5px;
-}
-
-.language-switch__input-wrapper--de {
-  border: 2px solid red;
-  padding: var(--spacing-xs);
-  border-radius: 0 5px 5px 0;
-} */
 
 .language-switch__input {
   -webkit-appearance: none; /* Add if not using autoprefixer */

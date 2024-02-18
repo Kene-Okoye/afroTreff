@@ -46,6 +46,9 @@ const LinkOpenInNewWindow = ({
         )}
         {text && <span>{text}</span>}
         {children}
+        {hideOpenInNewTablIcon && (
+          <span className={linkOpenInNewWindowStyles['visually-hidden']}>Opens in new tab</span>
+        )}
         {!hideOpenInNewTablIcon && useWhiteIcon && (text || socialMediaIconAlt) && (
           <img
             src={newWindowIconWhite}

@@ -1,6 +1,4 @@
 .link__container {
-  /* display: flex;
-  justify-content: flex-start; */
   display: inline;
 }
 
@@ -16,4 +14,14 @@
   margin-inline-start: 2px;
   margin-block-end: 5px;
   width: 10px;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
 }

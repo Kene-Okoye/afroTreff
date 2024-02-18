@@ -9,8 +9,6 @@ const LanguageSwitch = () => {
     setSelectedLanguage(event.target.value);
   };
 
-  console.log({ selectedLanguage: selectedLanguage });
-
   return (
     <>
       <fieldset>
