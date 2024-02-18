@@ -101,7 +101,8 @@ nav a {
 nav a:hover,
 .sub-menu--button-arrow-up:hover::after {
   text-decoration: underline;
-  text-decoration-style: wavy;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px;
   text-underline-offset: 10px;
   color: var(--carrot-orange-color) !important;
 }
@@ -109,9 +110,14 @@ nav a:hover,
 nav [aria-current='page'],
 .child-active {
   text-decoration: underline;
-  text-decoration-style: wavy;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px;
   text-underline-offset: 10px;
   color: var(--carrot-orange-color) !important;
+}
+
+.sub-menu--button[aria-expanded='true'] {
+  text-decoration: none;
 }
 
 .main-menu {
@@ -267,9 +273,9 @@ nav [aria-current='page'],
     margin-block-start: var(--spacing-sm);
   }
 
-  .main-menu > li:last-child {
+  /* .main-menu > li:last-child {
     padding-inline-start: 2rem;
-  }
+  } */
 
   .main-menu li a,
   .main-menu li button {
@@ -295,7 +301,7 @@ nav [aria-current='page'],
     padding-inline: var(--spacing-sm);
     margin-inline-start: -16px;
     min-width: 5rem;
-    height: 200px;
+    height: 160px;
     width: max-content;
   }
 

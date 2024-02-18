@@ -46,6 +46,15 @@ footer a {
   row-gap: var(--spacing-sm);
 }
 
+footer a:hover,
+footer [aria-current='page'] {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+  color: var(--carrot-orange-color) !important;
+}
+
 /* ----------------
   MEDIA QUERRIES
 ----------------- */

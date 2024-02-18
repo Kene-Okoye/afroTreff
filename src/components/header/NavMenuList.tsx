@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, RefObject } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import paths from '@/routes/paths';
+import LinkOpenInNewWindow from '../linkInOpenNewWindow/LinkOpenInNewWindow';
+
 import headerStyles from '@/components/header/TheHeader.module.css';
 
 interface NavMenuListProps {
@@ -68,9 +70,9 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
             ref={firstFocusableElementRef}
             onClick={handleButtonClick}
             aria-expanded={isOpen}
-            className={`${headerStyles['sub-menu--button-arrow-down']} ${
-              isOpen && headerStyles['sub-menu--button-arrow-up']
-            } ${
+            className={`${headerStyles['sub-menu--button']} ${
+              headerStyles['sub-menu--button-arrow-down']
+            } ${isOpen && headerStyles['sub-menu--button-arrow-up']} ${
               (paths.VISION_AND_TEAM === lastSegmentOfURL ||
                 paths.GALLERY === lastSegmentOfURL ||
                 paths.BLOG === lastSegmentOfURL) &&
@@ -108,9 +110,11 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
           </NavLink>
         </li>
         <li>
-          <a href="https://community.afrotreff.com/" target="_blank" rel="noreferrer noopener">
-            Community
-          </a>
+          <LinkOpenInNewWindow
+            href="https://community.afrotreff.com/"
+            text={'Community'}
+            hideOpenInNewTablIcon
+          />
         </li>
         {/* <li>
            // TODO: Replace this with the appropriate tag (radio button) once the language switch radio button is implemented *

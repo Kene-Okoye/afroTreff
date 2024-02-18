@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import paths from '@/routes/paths';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
@@ -14,26 +14,26 @@ const TheFooter = () => {
       <footer>
         <div className={footerStyles['footer-container']}>
           <div>
-            <Link to={paths.HOME} className={footerStyles['logo-wrapper']}>
+            <NavLink to={paths.HOME} className={footerStyles['logo-wrapper']}>
               <img
                 src={afroTreffLogo}
                 alt="AfroTreff homepage"
                 className={footerStyles['logo-image']}
               />
               <p>Made with love in Köln</p>
-            </Link>
+            </NavLink>
           </div>
           <div>
             <h2>Get to know us</h2>
             <ul>
               <li>
-                <Link to={paths.VISION_AND_TEAM}>About us</Link>
+                <NavLink to={paths.VISION_AND_TEAM}>About us</NavLink>
               </li>
               <li>
-                <Link to={paths.CONTACT}>Contact</Link>
+                <NavLink to={paths.CONTACT}>Contact</NavLink>
               </li>
               <li>
-                <Link to={paths.FAQ}>FAQ</Link>
+                <NavLink to={paths.FAQ}>FAQ</NavLink>
               </li>
             </ul>
           </div>
@@ -41,10 +41,10 @@ const TheFooter = () => {
             <h2>Get involved</h2>
             <ul>
               <li>
-                <Link to={paths.SUPPORT}>Individual donations</Link>
+                <NavLink to={paths.SUPPORT}>Individual donations</NavLink>
               </li>
               <li>
-                <Link to={paths.SUPPORT}>Volunteer</Link>
+                <NavLink to={paths.SUPPORT}>Volunteer</NavLink>
               </li>
             </ul>
           </div>
@@ -79,8 +79,8 @@ const TheFooter = () => {
 
         <div className={footerStyles['privacy-wrapper']}>
           <p>&copy;Afrotreff {new Date().getFullYear()}</p>
-          <Link to={paths.IMPRINT}>Imprint</Link>
-          <Link to={paths.PRIVACY}>Privacy policy</Link>
+          <NavLink to={paths.IMPRINT}>Imprint</NavLink>
+          <NavLink to={paths.PRIVACY}>Privacy policy</NavLink>
         </div>
       </footer>
     </>
