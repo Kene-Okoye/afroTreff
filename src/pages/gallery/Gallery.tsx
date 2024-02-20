@@ -45,7 +45,7 @@ const Gallery = () => {
         backGroundImage={heroImageGallery}
       />
       <section>
-        <HeadingTopSmallVariant h1SmallerVariant="AfroTreff 2023" h1BiggerVariant="Photo Gallery" />
+        <HeadingTopSmallVariant h2SmallerVariant="AfroTreff 2023" h2BiggerVariant="Photo Gallery" />
         <p className={galleryStyles['gallery__paragraph-text']}>
           See a few teasers from the last events.{' '}
           <LinkOpenInNewWindow

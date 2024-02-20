@@ -38,7 +38,7 @@ function Support() {
       </div>
 
       <section>
-        <HeadingTopSmallVariant h1SmallerVariant="make a donation" h1BiggerVariant="today!" />
+        <HeadingTopSmallVariant h2SmallerVariant="make a donation" h2BiggerVariant="today!" />
         <p>
           AfroTreff is made possible by generous contributions and sponsorship from individuals,
           community organizations, and businesses that share our vision. Donations made to AfroTreff

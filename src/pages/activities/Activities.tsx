@@ -66,7 +66,7 @@ const Faq = () => {
         backGroundImage={heroImageActivities}
       />
       <section>
-        <HeadingTopSmallVariant h1SmallerVariant="Our 2023" h1BiggerVariant="Events" />
+        <HeadingTopSmallVariant h2SmallerVariant="Our 2023" h2BiggerVariant="Events" />
         {activitiesContent.map(
           ({
             id,

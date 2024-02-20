@@ -13,7 +13,7 @@ const Contact = () => {
         backGroundImage={heroImageContact}
       />
       <section>
-        <HeadingTopSmallVariant h1SmallerVariant="write us a" h1BiggerVariant="Message" />
+        <HeadingTopSmallVariant h2SmallerVariant="write us a" h2BiggerVariant="Message" />
         <div className={contactStyles['contact--form-wrapper']}>
           <form
             className={contactStyles['contact--form']}

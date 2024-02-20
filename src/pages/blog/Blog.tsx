@@ -100,7 +100,7 @@ const Blog = () => {
         backGroundImage={heroImageBlog}
       />
       <section>
-        <HeadingTopSmallVariant h1SmallerVariant="latest" h1BiggerVariant="posts" />
+        <HeadingTopSmallVariant h2SmallerVariant="latest" h2BiggerVariant="posts" />
 
         <div className={blogStyles['blog-container']}>
           {blogContent.map(

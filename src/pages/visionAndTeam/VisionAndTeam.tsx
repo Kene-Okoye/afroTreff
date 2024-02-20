@@ -59,7 +59,7 @@ const VisionAndTeam = () => {
       <div className={visionAndTeamStyles['vision-team--container']}>
         <HeroSection h1Text="Vision and Team" pText="" backGroundImage={heroImageVisionAndTeam} />
         <section>
-          <HeadingTopSmallVariant h1SmallerVariant="Our" h1BiggerVariant="mission" />
+          <HeadingTopSmallVariant h2SmallerVariant="Our" h2BiggerVariant="mission" />
           <p>
             Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix
             ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
@@ -76,7 +76,7 @@ const VisionAndTeam = () => {
         </section>
 
         <section className={visionAndTeamStyles['vision-team--founder']}>
-          <HeadingTopSmallVariant h1SmallerVariant="Meeet the founder" h1BiggerVariant="Francis" />
+          <HeadingTopSmallVariant h2SmallerVariant="Meeet the founder" h2BiggerVariant="Francis" />
           <CardImageAndText
             text1={visionAndTeamContent[0].text1}
             text2={visionAndTeamContent[0].text2}
@@ -86,7 +86,7 @@ const VisionAndTeam = () => {
         </section>
 
         <section className={visionAndTeamStyles['vision-team__working-team']}>
-          <HeadingTopSmallVariant h1SmallerVariant="Meeet the" h1BiggerVariant="Working team" />
+          <HeadingTopSmallVariant h2SmallerVariant="Meeet the" h2BiggerVariant="Working team" />
           <div className={visionAndTeamStyles['vision-team__working-team--card']}>
             {visionAndTeamContent.map(({ id, header, text1, text2, imageSrc, imageAlt }) => (
               <Fragment key={id}>
