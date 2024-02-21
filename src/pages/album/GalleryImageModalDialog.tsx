@@ -1,6 +1,6 @@
 import ModalDialog from '@/components/modalDialog/ModalDialog';
 
-import galleryImageModalDialogStyles from '@/pages/gallery/GalleryImageModalDialog.module.css';
+import galleryImageModalDialogStyles from '@/pages/album/GalleryImageModalDialog.module.css';
 
 type GalleryImageModalDialogProps = {
   imageSrc: string;

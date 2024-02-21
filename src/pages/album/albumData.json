@@ -1,0 +1,1286 @@
+[
+  {
+    "id": 1,
+    "month": "january",
+    "albumBackgroundImage": "src/assets/images/blog_image_1.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "month": "february",
+    "albumBackgroundImage": "src/assets/images/blog_image_2.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "month": "march",
+    "albumBackgroundImage": "src/assets/images/blog_image_3.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "month": "april",
+    "albumBackgroundImage": "src/assets/images/blog_image_4.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "month": "may",
+    "albumBackgroundImage": "src/assets/images/blog_image_5.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "month": "june",
+    "albumBackgroundImage": "src/assets/images/blog_image_2.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "month": "july",
+    "albumBackgroundImage": "src/assets/images/blog_image_1.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "month": "august",
+    "albumBackgroundImage": "src/assets/images/blog_image_2.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "month": "september",
+    "albumBackgroundImage": "src/assets/images/blog_image_1.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "month": "october",
+    "albumBackgroundImage": "src/assets/images/blog_image_2.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "month": "november",
+    "albumBackgroundImage": "src/assets/images/blog_image_3.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "month": "december",
+    "albumBackgroundImage": "src/assets/images/blog_image_4.webp",
+    "photoCollection": [
+      {
+        "id": 1,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Chima and a lady smiling and having a nice chat"
+      },
+      {
+        "id": 2,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Five attendees posing for a nice shot"
+      },
+      {
+        "id": 3,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "The host of the last event talking with a mic in her right hand"
+      },
+      {
+        "id": 4,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "A capture of various participants seated and looking towrds the host talking"
+      },
+      {
+        "id": 5,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Three female participants seated, with two having their hands raised."
+      },
+      {
+        "id": 6,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "View from top of the entire room"
+      },
+      {
+        "id": 7,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 8,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 9,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 10,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 11,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 12,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 13,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 14,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 15,
+        "imageSrc": "src/assets/images/blog_image_5.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 16,
+        "imageSrc": "src/assets/images/blog_image_3.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 17,
+        "imageSrc": "src/assets/images/blog_image_4.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 18,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 19,
+        "imageSrc": "src/assets/images/blog_image_1.webp",
+        "alt": "Add an image description"
+      },
+      {
+        "id": 20,
+        "imageSrc": "src/assets/images/blog_image_2.webp",
+        "alt": "Add an image description"
+      }
+    ]
+  }
+]
