@@ -9,7 +9,7 @@ export default {
   VISION_AND_TEAM: 'vision-and-team',
   ACTIVITIES: 'activities',
   BLOG: 'blog',
-  GALLERY: 'gallery',
+  ALBUMS: 'albums',
   SUPPORT: 'support',
   AFROLIST: 'afrolist',
   FAQ: 'faq',

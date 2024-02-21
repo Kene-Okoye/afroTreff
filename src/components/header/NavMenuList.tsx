@@ -74,7 +74,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
               headerStyles['sub-menu--button-arrow-down']
             } ${isOpen && headerStyles['sub-menu--button-arrow-up']} ${
               (paths.VISION_AND_TEAM === lastSegmentOfURL ||
-                paths.GALLERY === lastSegmentOfURL ||
+                paths.ALBUMS === lastSegmentOfURL ||
                 paths.BLOG === lastSegmentOfURL) &&
               headerStyles['child-active']
             }`}
@@ -88,7 +88,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
               </NavLink>
             </li>
             <li>
-              <NavLink to={paths.GALLERY} onClick={handleNavLinkClick}>
+              <NavLink to={paths.ALBUMS} onClick={handleNavLinkClick}>
                 Gallery
               </NavLink>
             </li>
@@ -106,7 +106,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
         </li>
         <li>
           <NavLink to={paths.SUPPORT} onClick={handleNavLinkClick}>
-            Support
+            Get involved
           </NavLink>
         </li>
         <li>

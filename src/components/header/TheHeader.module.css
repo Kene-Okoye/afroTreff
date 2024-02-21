@@ -153,15 +153,19 @@ nav [aria-current='page'],
   color: var(--egg-shell-color);
 }
 
+.main-menu > li {
+  width: max-content;
+}
+
 .main-menu > li > a {
-  font-size: var(--font-size-lg);
+  font-size: 2.5rem;
 }
 
 .main-menu > li:not(:first-child),
 .main-menu li button {
   font-family: var(--font-family-ubuntu);
   font-weight: var(--font-weight-extra-bold);
-  font-size: var(--font-size-lg);
+  font-size: 2.5rem;
 }
 
 .sub-menu > ul {

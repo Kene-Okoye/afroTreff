@@ -31,7 +31,14 @@ function App() {
             <Route index element={getRouteElement(lazyLoadedElementImports.Blog)} />
             <Route path=":blogId" element={getRouteElement(lazyLoadedElementImports.BlogPost)} />
           </Route>
-          <Route path={paths.GALLERY} element={getRouteElement(lazyLoadedElementImports.Gallery)} />
+          <Route path={paths.ALBUMS}>
+            <Route index element={getRouteElement(lazyLoadedElementImports.Album)} />
+            <Route
+              path=":meetUpMonth"
+              element={getRouteElement(lazyLoadedElementImports.PhotoGallery)}
+            />
+          </Route>
+
           <Route path={paths.CONTACT} element={getRouteElement(lazyLoadedElementImports.Contact)} />
           <Route
             path={paths.THANKYOU}

@@ -23,9 +23,9 @@ const useAnnounceActivePage = () => {
     }
     if (activePageAnnouncerRef.current && location.pathname !== '/') {
       activePageAnnouncerRef.current.textContent =
-        'Navigated to the ' + location.pathname.split('/')[1] + ' page';
+        'Navigated to the ' + location?.pathname.split('/').pop() + ' page';
 
-      document.title = `${location.pathname.split('/')[1]} | Afrotreff`;
+      document.title = `${location?.pathname.split('/').pop()} | Afrotreff`;
     }
   }, [location.pathname]);
 
