@@ -40,3 +40,9 @@
 .gallery__container:focus-within .gallery__view-image-button-wrapper {
   opacity: 1;
 }
+
+.gallery__image-modal {
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
