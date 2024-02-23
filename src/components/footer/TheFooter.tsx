@@ -20,8 +20,8 @@ const TheFooter = () => {
                 alt="AfroTreff homepage"
                 className={footerStyles['logo-image']}
               />
-              <p>Made with love in Köln</p>
             </NavLink>
+            <p>Made with love in Köln</p>
           </div>
           <div>
             <h2>Get to know us</h2>
@@ -41,7 +41,14 @@ const TheFooter = () => {
             <h2>Get involved</h2>
             <ul>
               <li>
-                <NavLink to={paths.SUPPORT}>Individual donations</NavLink>
+                <a
+                  href="https://www.paypal.com/donate/?hosted_button_id=JW4GPY6K2QM6L"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  Individual donations
+                </a>
+                {/* <NavLink to={paths.SUPPORT}>Individual donations</NavLink> */}
               </li>
               <li>
                 <NavLink to={paths.SUPPORT}>Volunteer</NavLink>
