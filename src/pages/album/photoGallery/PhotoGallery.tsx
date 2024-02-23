@@ -5,6 +5,8 @@ import GalleryImageModalDialog from '@/pages/album/GalleryImageModalDialog';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
 
+import { useSkipNavLinkContext } from '@/contexts/skipNavLinkContext/useSkipLinkContext';
+
 import { photoCollectionType } from '@/pages/album/types/albumTypes';
 
 import photoGalleryStyles from '@/pages/album/photoGallery/PhotoGallery.module.css';
@@ -15,17 +17,22 @@ const PhotoGallery = () => {
   const [month, setMonth] = useState<string>('');
   const [photoCollection, setPhotoCollection] = useState<photoCollectionType[]>([]);
 
+  const skipNavLinkContext = useSkipNavLinkContext();
+  const skipNavClicked = skipNavLinkContext?.skipNavClicked;
+
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!location.state || !location.state.month || !location.state.photoCollection) {
-      navigate('/', { replace: true });
+      if (!skipNavClicked) {
+        navigate('/', { replace: true });
+      }
     } else {
       setMonth(location.state.month); // Get the individuall month
       setPhotoCollection(location.state.photoCollection); // Get the individual photo collection for the selected album
     }
-  }, [location.state, navigate]);
+  }, [location, location.pathname, location.state, navigate, skipNavClicked]);
 
   return (
     <section className={photoGalleryStyles['photo-gallery__container']}>
