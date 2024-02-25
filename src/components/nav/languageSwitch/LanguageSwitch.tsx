@@ -1,12 +1,17 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent, useContext } from 'react';
+
+import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
+
 import languageSwitchStyles from '@/components/nav/languageSwitch/LanguageSwitch.module.css';
 
 const LanguageSwitch = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const languageSelectContext = useContext(LanguageSelectContext);
 
   const handleLangugeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    // event.preventDefault();
-    setSelectedLanguage(event.target.value);
+    // Update the language context value
+    languageSelectContext?.setSelectedLanguage(event.target.value);
+    // Dynamically update the HTML lang attribute to the selected language
+    document.documentElement.setAttribute('lang', event.target.value);
   };
 
   return (
@@ -22,10 +27,10 @@ const LanguageSwitch = () => {
           <input
             className={`${languageSwitchStyles['language-switch__input']} ${languageSwitchStyles['visually-hidden']}`}
             key="en"
+            id="language-en"
             lang="en"
             type="radio"
             name="language"
-            id="language-en"
             value="en"
             aria-describedby="eng-en"
             defaultChecked
@@ -36,17 +41,9 @@ const LanguageSwitch = () => {
             lang="en"
             htmlFor="language-en"
           >
-            EN <span className={languageSwitchStyles['visually-hidden']}>English</span>
+            <span aria-hidden="true">EN</span>
+            <span className={languageSwitchStyles['visually-hidden']}>English</span>
           </label>
-          {selectedLanguage === 'de' && (
-            <span
-              className={`${languageSwitchStyles['language-switch__lable-aria-description']} ${languageSwitchStyles['visually-hidden']}`}
-              lang="de"
-              id="eng-en"
-            >
-              Englisch
-            </span>
-          )}
         </div>
 
         {/* Language - GERMAN */}
@@ -54,13 +51,12 @@ const LanguageSwitch = () => {
           <input
             className={`${languageSwitchStyles['language-switch__input']} ${languageSwitchStyles['visually-hidden']}`}
             key="de"
+            id="language-de"
             lang="de"
             type="radio"
             name="language"
-            id="language-de"
             value="de"
             aria-describedby="eng-de"
-            // checked={selectedLanguage === 'de'}
             onChange={handleLangugeChange}
           />
           <label
@@ -68,17 +64,17 @@ const LanguageSwitch = () => {
             lang="de"
             htmlFor="language-de"
           >
-            DE <span className={languageSwitchStyles['visually-hidden']}>Deutsch</span>
+            <span aria-hidden="true">DE</span>
+            <span className={languageSwitchStyles['visually-hidden']}>Deutsch</span>
           </label>
-          {selectedLanguage === 'en' && (
-            <span
-              className={`${languageSwitchStyles['language-switch__lable-aria-description']} ${languageSwitchStyles['visually-hidden']}`}
-              lang="en"
-              id="eng-de"
-            >
-              German
-            </span>
-          )}
+
+          <span
+            className={`${languageSwitchStyles['language-switch__lable-aria-description']} ${languageSwitchStyles['visually-hidden']}`}
+            lang="en"
+            id="eng-de"
+          >
+            German
+          </span>
         </div>
       </fieldset>
     </>
