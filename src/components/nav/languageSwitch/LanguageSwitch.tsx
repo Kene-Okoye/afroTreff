@@ -1,18 +1,9 @@
-import { ChangeEvent, useContext } from 'react';
-
-import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
+import useLanguageBasedRouting from '@/hooks/useLanguageBasedRoutingNew';
 
 import languageSwitchStyles from '@/components/nav/languageSwitch/LanguageSwitch.module.css';
 
 const LanguageSwitch = () => {
-  const languageSelectContext = useContext(LanguageSelectContext);
-
-  const handleLangugeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    // Update the language context value
-    languageSelectContext?.setSelectedLanguage(event.target.value);
-    // Dynamically update the HTML lang attribute to the selected language
-    document.documentElement.setAttribute('lang', event.target.value);
-  };
+  const { handleLanguageChange } = useLanguageBasedRouting();
 
   return (
     <>
@@ -34,7 +25,7 @@ const LanguageSwitch = () => {
             value="en"
             aria-describedby="eng-en"
             defaultChecked
-            onChange={handleLangugeChange}
+            onChange={handleLanguageChange}
           />
           <label
             className={`${languageSwitchStyles['language-switch__label']} ${languageSwitchStyles['language-switch__label--en']}`}
@@ -57,7 +48,7 @@ const LanguageSwitch = () => {
             name="language"
             value="de"
             aria-describedby="eng-de"
-            onChange={handleLangugeChange}
+            onChange={handleLanguageChange}
           />
           <label
             className={`${languageSwitchStyles['language-switch__label']} ${languageSwitchStyles['language-switch__label--de']}`}
