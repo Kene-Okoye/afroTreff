@@ -23,7 +23,7 @@
 */
 
 // Import necessary dependencies
-import { ChangeEvent, useContext } from 'react';
+import { ChangeEvent, useCallback, useContext } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
@@ -47,14 +47,17 @@ const useLanguageBasedRouting = () => {
 
   /* HELPER FUNCTIONS */
   // Update language context with selected language
-  const updateLanguageContext = (selectedLanguage: string) => {
-    languageSelectContext?.setSelectedLanguage(selectedLanguage);
-  };
+  const updateLanguageContext = useCallback(
+    (selectedLanguage: string) => {
+      languageSelectContext?.setSelectedLanguage(selectedLanguage);
+    },
+    [languageSelectContext],
+  );
 
   // Update HTML lang attribute with selected language
-  const updateHTMLLangAttribute = (selectedLanguage: string) => {
+  const updateHTMLLangAttribute = useCallback((selectedLanguage: string) => {
     document.documentElement.setAttribute('lang', selectedLanguage);
-  };
+  }, []);
 
   // Get key from value in the paths object. This is used to get the
   // respective language path value from the paths.ts file
@@ -71,20 +74,23 @@ const useLanguageBasedRouting = () => {
   };
 
   // Update the route based on selected language
-  const updateRoute = (selectedLanguage: string) => {
-    const pathName = location.pathname;
-    const firstSegmentURL = pathName.split('/')[1];
-    const secondSegmentURL = pathName.split('/')[2];
-    const key = getKeyFromValue(secondSegmentURL ? secondSegmentURL : firstSegmentURL);
-    const paramsKey = Object.keys(params);
-    const paramsPath = paramsKey.length > 0 ? `/${params[paramsKey[0]]}` : '';
-    const newPath = secondSegmentURL
-      ? `/${selectedLanguage}/${
-          paths[selectedLanguage as keyof PathsType][key as keyof LanguagePathType]
-        }${paramsPath}`
-      : `/${selectedLanguage}`;
-    navigate(newPath, { replace: true }); // Navigate to the new path
-  };
+  const updateRoute = useCallback(
+    (selectedLanguage: string) => {
+      const pathName = location.pathname;
+      const firstSegmentURL = pathName.split('/')[1];
+      const secondSegmentURL = pathName.split('/')[2];
+      const key = getKeyFromValue(secondSegmentURL ? secondSegmentURL : firstSegmentURL);
+      const paramsKey = Object.keys(params);
+      const paramsPath = paramsKey.length > 0 ? `/${params[paramsKey[0]]}` : '';
+      const newPath = secondSegmentURL
+        ? `/${selectedLanguage}/${
+            paths[selectedLanguage as keyof PathsType][key as keyof LanguagePathType]
+          }${paramsPath}`
+        : `/${selectedLanguage}`;
+      navigate(newPath, { replace: true }); // Navigate to the new path
+    },
+    [location.pathname, navigate, params],
+  );
 
   return {
     handleLanguageChange,
