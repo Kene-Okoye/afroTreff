@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
+
+import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
+
 import HeroSection from '@/components/hero/HeroSection';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
@@ -11,6 +16,10 @@ import instagramLogo from '@/assets/svg/instagram_logo_orange.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo_orange.svg';
 
 function ComingSoon() {
+  const languageSelectContext = useContext(LanguageSelectContext);
+  const currentLanguage: LanguageType =
+    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
+
   return (
     <>
       <div className={comingSoonStyles['coming-soon--hero-section-wrapper']}>
@@ -19,7 +28,10 @@ function ComingSoon() {
           pText="We‘re currently working on this page. Stay tuned for some exciting updates"
           backGroundImage={heroImageComingSoon}
         >
-          <Link className={comingSoonStyles['coming-soon--link']} to={paths.HOME}>
+          <Link
+            className={comingSoonStyles['coming-soon--link']}
+            to={`/${paths[currentLanguage].HOME}`}
+          >
             Return to the home page
           </Link>
 

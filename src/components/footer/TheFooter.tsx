@@ -1,20 +1,33 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
+
+import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
+
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
 import footerStyles from '@/components/footer/TheFooter.module.css';
+
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
 import instagramLogo from '@/assets/svg/instagram_logo.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo.svg';
 
 const TheFooter = () => {
+  const languageSelectContext = useContext(LanguageSelectContext);
+  const currentLanguage: LanguageType =
+    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
+
   return (
     <>
       <footer>
         <div className={footerStyles['footer-container']}>
           <div>
-            <NavLink to={paths.HOME} className={footerStyles['logo-wrapper']}>
+            <NavLink
+              to={`/${paths[currentLanguage].HOME}`}
+              className={footerStyles['logo-wrapper']}
+            >
               <img
                 src={afroTreffLogo}
                 alt="AfroTreff homepage"
@@ -27,13 +40,17 @@ const TheFooter = () => {
             <h2>Get to know us</h2>
             <ul>
               <li>
-                <NavLink to={paths.VISION_AND_TEAM}>About us</NavLink>
+                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].VISION_AND_TEAM}`}>
+                  About us
+                </NavLink>
               </li>
               <li>
-                <NavLink to={paths.CONTACT}>Contact</NavLink>
+                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].CONTACT}`}>
+                  Contact
+                </NavLink>
               </li>
               <li>
-                <NavLink to={paths.FAQ}>FAQ</NavLink>
+                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].FAQ}`}>FAQ</NavLink>
               </li>
             </ul>
           </div>
@@ -51,7 +68,9 @@ const TheFooter = () => {
                 {/* <NavLink to={paths.SUPPORT}>Individual donations</NavLink> */}
               </li>
               <li>
-                <NavLink to={paths.SUPPORT}>Volunteer</NavLink>
+                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].SUPPORT_US}`}>
+                  Volunteer
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -86,8 +105,10 @@ const TheFooter = () => {
 
         <div className={footerStyles['privacy-wrapper']}>
           <p>&copy;Afrotreff {new Date().getFullYear()}</p>
-          <NavLink to={paths.IMPRINT}>Imprint</NavLink>
-          <NavLink to={paths.PRIVACY}>Privacy policy</NavLink>
+          <NavLink to={`/${currentLanguage}/${paths[currentLanguage].IMPRINT}`}>Imprint</NavLink>
+          <NavLink to={`/${currentLanguage}/${paths[currentLanguage].PRIVACY}`}>
+            Privacy policy
+          </NavLink>
         </div>
       </footer>
     </>

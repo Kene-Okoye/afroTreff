@@ -1,17 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
+import { useContext } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
+import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
 
-import useLanguageBasedRouting from './hooks/useLanguageBasedRouting';
+import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
+import useNavigateToDefaultHomepage from '@/hooks/useNavigateToDefaultHomepage';
 
-import lazyLoadedElementImports from '@/pages/lazyLoadedElementImports';
 import PageLayout from '@/pages/PageLayout';
+import lazyLoadedElementImports from '@/pages/lazyLoadedElementImports';
 import PageNotFound from '@/pages/pageNotFound/PageNotFound';
 
 const getRouteElement = (Component: React.ElementType): React.ReactNode => <Component />;
 
 function App() {
-  useLanguageBasedRouting();
+  const languageSelectContext = useContext(LanguageSelectContext);
+  const currentLanguage: LanguageType =
+    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
+
+  useNavigateToDefaultHomepage();
 
   return (
     <>
@@ -123,7 +130,15 @@ function App() {
             <Route path={paths.de.PAGE_NOT_FOUND} element={<PageNotFound />} />
           </Route>
 
-          <Route path="*" element={<PageNotFound />} />
+          <Route
+            path="*"
+            element={
+              <>
+                <Navigate to={`/${currentLanguage}/${paths[currentLanguage].PAGE_NOT_FOUND}`} />
+                <PageNotFound />
+              </>
+            }
+          />
         </Route>
       </Routes>
     </>

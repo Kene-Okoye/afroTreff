@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import useAnnounceActivePage from '@/hooks/useAnnounceActivePage';
 
+import useAnnounceActivePage from '@/hooks/useAnnounceActivePage';
+import { useSkipNavLinkContext } from '@/contexts/skipNavLinkContext/useSkipLinkContext';
+
+import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
 
-import TheNavbar from '@/components/header/TheNavbar';
+import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
 
-import { useSkipNavLinkContext } from '@/contexts/skipNavLinkContext/useSkipLinkContext';
+import TheNavbar from '@/components/header/TheNavbar';
 
 import headerStyles from '@/components/header/TheHeader.module.css';
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
@@ -19,6 +23,10 @@ const TheHeader = () => {
   const handleSkipNavClick = () => {
     setSkipNavClicked && setSkipNavClicked(true);
   };
+
+  const languageSelectContext = useContext(LanguageSelectContext);
+  const currentLanguage: LanguageType =
+    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
 
   return (
     <>
@@ -36,7 +44,7 @@ const TheHeader = () => {
         >
           Skip to Main Content
         </a>
-        <Link to={paths.HOME} className={headerStyles['logo']}>
+        <Link to={`/${paths[currentLanguage].HOME}`} className={headerStyles['logo']}>
           <img
             src={afroTreffLogo}
             alt="AfroTreff homepage"

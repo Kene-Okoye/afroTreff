@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef, RefObject } from 'react';
+import { useState, useEffect, useRef, RefObject, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
-import LinkOpenInNewWindow from '../linkInOpenNewWindow/LinkOpenInNewWindow';
+import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
 import headerStyles from '@/components/header/TheHeader.module.css';
+import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
 
 interface NavMenuListProps {
   firstFocusableElementRef: RefObject<HTMLButtonElement>;
@@ -14,6 +16,10 @@ interface NavMenuListProps {
 const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListProps) => {
   const [isOpen, setIsOpen] = useState(false); // State to track whether the menu is open or closed
   const menuRef = useRef<HTMLUListElement>(null); // Reference to the menu element
+
+  const languageSelectContext = useContext(LanguageSelectContext);
+  const currentLanguage: LanguageType =
+    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
 
   // Get the last segment of an URL
   const location = useLocation();
@@ -73,9 +79,9 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
             className={`${headerStyles['sub-menu--button']} ${
               headerStyles['sub-menu--button-arrow-down']
             } ${isOpen && headerStyles['sub-menu--button-arrow-up']} ${
-              (paths.VISION_AND_TEAM === lastSegmentOfURL ||
-                paths.ALBUMS === lastSegmentOfURL ||
-                paths.BLOG === lastSegmentOfURL) &&
+              (paths[currentLanguage].VISION_AND_TEAM === lastSegmentOfURL ||
+                paths[currentLanguage].ALBUMS === lastSegmentOfURL ||
+                paths[currentLanguage].BLOG === lastSegmentOfURL) &&
               headerStyles['child-active']
             }`}
           >
@@ -83,29 +89,41 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
           </button>
           <ul ref={menuRef}>
             <li>
-              <NavLink to={paths.VISION_AND_TEAM} onClick={handleNavLinkClick}>
+              <NavLink
+                to={`/${currentLanguage}/${paths[currentLanguage].VISION_AND_TEAM}`}
+                onClick={handleNavLinkClick}
+              >
                 Vision & Team
               </NavLink>
             </li>
             <li>
-              <NavLink to={paths.ALBUMS} onClick={handleNavLinkClick}>
+              <NavLink
+                to={`/${currentLanguage}/${paths[currentLanguage].ALBUMS}`}
+                onClick={handleNavLinkClick}
+              >
                 Gallery
               </NavLink>
             </li>
             <li>
-              <NavLink to={paths.BLOG} onClick={handleNavLinkClick}>
+              <NavLink
+                to={`/${currentLanguage}/${paths[currentLanguage].BLOG}`}
+                onClick={handleNavLinkClick}
+              >
                 News / Blog
               </NavLink>
             </li>
           </ul>
         </li>
         <li>
-          <NavLink to={paths.ACTIVITIES} onClick={handleNavLinkClick}>
+          <NavLink to={`/${currentLanguage}/${paths[currentLanguage].ACTIVITIES}`}>
             Activities
           </NavLink>
         </li>
         <li>
-          <NavLink to={paths.SUPPORT} onClick={handleNavLinkClick}>
+          <NavLink
+            to={`/${currentLanguage}/${paths[currentLanguage].SUPPORT_US}`}
+            onClick={handleNavLinkClick}
+          >
             Get involved
           </NavLink>
         </li>
