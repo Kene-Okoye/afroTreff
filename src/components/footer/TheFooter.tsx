@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
-
-import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
 
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
@@ -15,9 +14,9 @@ import instagramLogo from '@/assets/svg/instagram_logo.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo.svg';
 
 const TheFooter = () => {
-  const languageSelectContext = useContext(LanguageSelectContext);
-  const currentLanguage: LanguageType =
-    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
+  const { i18n } = useTranslation();
+
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
   return (
     <>

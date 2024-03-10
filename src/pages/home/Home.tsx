@@ -3,8 +3,45 @@ import HeroSection from '@/components/hero/HeroSection';
 import homeStyles from '@/pages/home/Home.module.css';
 import heroImageHome from '@/assets/images/hero_image_home.webp';
 import TeaserBoxes from '@/pages/home/TeaserBoxes';
+import { useEffect, useState } from 'react';
+
+import sanityClient from '@/client';
 
 const Home = () => {
+  // const [allPostsData, setAllPosts] = useState<DynamicDataType[]>(null);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setIsLoading(true);
+  //     try {
+  //       const data = await sanityClient.fetch(`
+  //       *[_type == "homePage" && language == 'de']{
+  //         title,
+  //         heroSectionHome,
+  //         CTA,
+  //         language,
+  //         "_translations": *[_type == "translation.metadata" && references(^._id)].translations[].value->{
+  //           title,
+  //           heroSectionHome,
+  //           CTA,
+  //           language
+  //         },
+  //       }
+  //       `);
+  //       setAllPosts(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  // console.log({ isLoading: isLoading, allPostsData: allPostsData });
+
   return (
     <>
       <div className={homeStyles['home--hero-section-wrapper']}>
@@ -15,6 +52,18 @@ const Home = () => {
           backGroundImage={heroImageHome}
         />
       </div>
+
+      {/* <section>
+        <h1>SANITY TRIAL</h1>
+        {allPostsData &&
+          allPostsData.map((data) => (
+            <div key={data.slug}>
+              <h2>{data.title}</h2>
+              <img src={data.mainImage.asset.url} alt="" />
+            </div>
+          ))}
+      </section> */}
+
       <section>
         <h2>Our mission</h2>
         <p>

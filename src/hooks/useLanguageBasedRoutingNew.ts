@@ -23,10 +23,10 @@
 */
 
 // Import necessary dependencies
-import { ChangeEvent, useCallback, useContext } from 'react';
+import { ChangeEvent, useCallback } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
 import paths from '@/routes/paths';
 import { LanguagePathType, PathsType } from '@/routes/types/routesType';
 
@@ -35,29 +35,25 @@ const useLanguageBasedRouting = () => {
   const location = useLocation();
   const params = useParams();
   const navigate = useNavigate();
-  const languageSelectContext = useContext(LanguageSelectContext); // Get language select context
+  const { i18n } = useTranslation();
 
   // THE EVENT HANDLER FOR SWITCHING THE LANGUAGE
+
   const handleLanguageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedLanguage = event.target.value;
-    updateLanguageContext(selectedLanguage); // Update language context
-    updateHTMLLangAttribute(selectedLanguage); // Update the HTML lang attribute
-    updateRoute(selectedLanguage); // Update route based on selected language
+
+    i18n.changeLanguage(selectedLanguage, () => {
+      updateHTMLLangAttribute();
+      updateRoute(selectedLanguage);
+    });
   };
 
-  /* HELPER FUNCTIONS */
-  // Update language context with selected language
-  const updateLanguageContext = useCallback(
-    (selectedLanguage: string) => {
-      languageSelectContext?.setSelectedLanguage(selectedLanguage);
-    },
-    [languageSelectContext],
-  );
-
   // Update HTML lang attribute with selected language
-  const updateHTMLLangAttribute = useCallback((selectedLanguage: string) => {
-    document.documentElement.setAttribute('lang', selectedLanguage);
-  }, []);
+  const updateHTMLLangAttribute = useCallback(() => {
+    if (i18n.resolvedLanguage) {
+      document.documentElement.setAttribute('lang', i18n.resolvedLanguage);
+    }
+  }, [i18n.resolvedLanguage]);
 
   // Get key from value in the paths object. This is used to get the
   // respective language path value from the paths.ts file
@@ -75,7 +71,7 @@ const useLanguageBasedRouting = () => {
 
   // Update the route based on selected language
   const updateRoute = useCallback(
-    (selectedLanguage: string) => {
+    (selectedLanguage: string | undefined) => {
       const pathName = location.pathname;
       const firstSegmentURL = pathName.split('/')[1];
       const secondSegmentURL = pathName.split('/')[2];

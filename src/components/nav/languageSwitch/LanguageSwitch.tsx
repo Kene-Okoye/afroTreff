@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 import useLanguageBasedRouting from '@/hooks/useLanguageBasedRoutingNew';
 
 import languageSwitchStyles from '@/components/nav/languageSwitch/LanguageSwitch.module.css';
 
 const LanguageSwitch = () => {
+  const { i18n } = useTranslation();
   const { handleLanguageChange } = useLanguageBasedRouting();
 
   return (
@@ -24,7 +27,7 @@ const LanguageSwitch = () => {
             name="language"
             value="en"
             aria-describedby="eng-en"
-            defaultChecked
+            defaultChecked={i18n.resolvedLanguage === 'en'}
             onChange={handleLanguageChange}
           />
           <label
@@ -48,6 +51,7 @@ const LanguageSwitch = () => {
             name="language"
             value="de"
             aria-describedby="eng-de"
+            defaultChecked={i18n.resolvedLanguage === 'de'}
             onChange={handleLanguageChange}
           />
           <label

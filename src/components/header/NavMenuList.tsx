@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, RefObject, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { LanguageType } from '@/routes/types/languageType';
 import paths from '@/routes/paths';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
 import headerStyles from '@/components/header/TheHeader.module.css';
-import LanguageSelectContext from '@/contexts/languageSelectContext/LanguageSelectContext';
 
 interface NavMenuListProps {
   firstFocusableElementRef: RefObject<HTMLButtonElement>;
@@ -17,9 +17,8 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
   const [isOpen, setIsOpen] = useState(false); // State to track whether the menu is open or closed
   const menuRef = useRef<HTMLUListElement>(null); // Reference to the menu element
 
-  const languageSelectContext = useContext(LanguageSelectContext);
-  const currentLanguage: LanguageType =
-    (languageSelectContext?.selectedLanguage as LanguageType) || 'en';
+  const { i18n } = useTranslation();
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
   // Get the last segment of an URL
   const location = useLocation();
