@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, RefObject, useContext } from 'react';
+import { useState, useEffect, useRef, RefObject } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -17,7 +17,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
   const [isOpen, setIsOpen] = useState(false); // State to track whether the menu is open or closed
   const menuRef = useRef<HTMLUListElement>(null); // Reference to the menu element
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
   // Get the last segment of an URL
@@ -84,7 +84,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
               headerStyles['child-active']
             }`}
           >
-            About
+            {t('about')}
           </button>
           <ul ref={menuRef}>
             <li>
@@ -92,7 +92,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
                 to={`/${currentLanguage}/${paths[currentLanguage].VISION_AND_TEAM}`}
                 onClick={handleNavLinkClick}
               >
-                Vision & Team
+                {t('vision_and_team')}
               </NavLink>
             </li>
             <li>
@@ -100,7 +100,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
                 to={`/${currentLanguage}/${paths[currentLanguage].ALBUMS}`}
                 onClick={handleNavLinkClick}
               >
-                Gallery
+                {t('albums')}
               </NavLink>
             </li>
             <li>
@@ -108,14 +108,14 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
                 to={`/${currentLanguage}/${paths[currentLanguage].BLOG}`}
                 onClick={handleNavLinkClick}
               >
-                News / Blog
+                {t('blog')}
               </NavLink>
             </li>
           </ul>
         </li>
         <li>
           <NavLink to={`/${currentLanguage}/${paths[currentLanguage].ACTIVITIES}`}>
-            Activities
+            {t('activities')}
           </NavLink>
         </li>
         <li>
@@ -123,7 +123,7 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
             to={`/${currentLanguage}/${paths[currentLanguage].SUPPORT_US}`}
             onClick={handleNavLinkClick}
           >
-            Get involved
+            {t('get_involved')}
           </NavLink>
         </li>
         <li>

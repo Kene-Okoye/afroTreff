@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -23,7 +22,7 @@ const TheHeader = () => {
     setSkipNavClicked && setSkipNavClicked(true);
   };
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
   return (
@@ -40,12 +39,12 @@ const TheHeader = () => {
           className={headerStyles['skip-to-main']}
           onClick={handleSkipNavClick}
         >
-          Skip to Main Content
+          {t('skip_to_main_content')}
         </a>
         <Link to={`/${paths[currentLanguage].HOME}`} className={headerStyles['logo']}>
           <img
             src={afroTreffLogo}
-            alt="AfroTreff homepage"
+            alt={`${t('afroTreff_homepage')}`}
             className={headerStyles['logo-image']}
           />
         </Link>

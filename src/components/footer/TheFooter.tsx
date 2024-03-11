@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +13,7 @@ import instagramLogo from '@/assets/svg/instagram_logo.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo.svg';
 
 const TheFooter = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
@@ -33,28 +32,31 @@ const TheFooter = () => {
                 className={footerStyles['logo-image']}
               />
             </NavLink>
-            <p>Made with love in Köln</p>
+            <p>{t('made_with_love_in_Cologne')}</p>
           </div>
           <div>
-            <h2>Get to know us</h2>
+            <h2>{t('get_to_know_us')}</h2>
             <ul>
               <li>
                 <NavLink to={`/${currentLanguage}/${paths[currentLanguage].VISION_AND_TEAM}`}>
-                  About us
+                  {t('about_us')}
                 </NavLink>
               </li>
               <li>
                 <NavLink to={`/${currentLanguage}/${paths[currentLanguage].CONTACT}`}>
-                  Contact
+                  {t('contact')}
                 </NavLink>
               </li>
               <li>
-                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].FAQ}`}>FAQ</NavLink>
+                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].FAQ}`}>
+                  {' '}
+                  {t('faq')}
+                </NavLink>
               </li>
             </ul>
           </div>
           <div>
-            <h2>Get involved</h2>
+            <h2>{t('get_involved')}</h2>
             <ul>
               <li>
                 <a
@@ -62,19 +64,19 @@ const TheFooter = () => {
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >
-                  Individual donations
+                  {t('individual_donations')}
                 </a>
                 {/* <NavLink to={paths.SUPPORT}>Individual donations</NavLink> */}
               </li>
               <li>
                 <NavLink to={`/${currentLanguage}/${paths[currentLanguage].SUPPORT_US}`}>
-                  Volunteer
+                  {t('volunteer')}
                 </NavLink>
               </li>
             </ul>
           </div>
           <div>
-            <h2>Social</h2>
+            <h2>{t('social')}</h2>
             <ul>
               <li>
                 <LinkOpenInNewWindow
@@ -104,9 +106,11 @@ const TheFooter = () => {
 
         <div className={footerStyles['privacy-wrapper']}>
           <p>&copy;Afrotreff {new Date().getFullYear()}</p>
-          <NavLink to={`/${currentLanguage}/${paths[currentLanguage].IMPRINT}`}>Imprint</NavLink>
+          <NavLink to={`/${currentLanguage}/${paths[currentLanguage].IMPRINT}`}>
+            {t('imprint')}
+          </NavLink>
           <NavLink to={`/${currentLanguage}/${paths[currentLanguage].PRIVACY}`}>
-            Privacy policy
+            {t('privacy')}
           </NavLink>
         </div>
       </footer>

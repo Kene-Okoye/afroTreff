@@ -10,7 +10,7 @@ const LanguageSwitch = () => {
 
   return (
     <>
-      <fieldset>
+      <fieldset className={languageSwitchStyles['language-switch__fieldset']}>
         <legend
           className={`${languageSwitchStyles['language-switch__legend']} ${languageSwitchStyles['visually-hidden']}`}
         >
