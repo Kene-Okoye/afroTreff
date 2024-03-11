@@ -131,12 +131,12 @@ NEWS CATEGORY STYLES
   }
 
   .blog-item:nth-child(odd) {
-    padding-inline-end: var(--spacing-lg);
+    padding-inline-end: var(--spacing-md);
     margin-block-start: var(--spacing-xl);
   }
 
   .blog-item:nth-child(even) {
-    padding-inline-start: var(--spacing-lg);
+    padding-inline-start: var(--spacing-md);
     margin-block-end: var(--spacing-xl);
   }
 }

@@ -75,6 +75,8 @@ type initialBlogContentType = {
   buttonText: string;
 };
 
+const blogCategories = ['all', 'news', 'story', 'interviews', 'biography'];
+
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [blogContent, setBlogContent] = useState<initialBlogContentType[]>(initialBlogContent);
@@ -99,8 +101,34 @@ const Blog = () => {
         pText="Discover the latest news and stories"
         backGroundImage={heroImageBlog}
       />
-      <section>
+      <section className={blogStyles['blog__main-section-container']}>
         <HeadingTopSmallVariant h2SmallerVariant="latest" h2BiggerVariant="posts" />
+
+        <fieldset className={blogStyles['blog__filter-category-button-fieldset']}>
+          <legend className={blogStyles['visually-hidden']}>
+            Filter the blog contents by categrory
+          </legend>
+          {/* Language - ENGLISH */}
+          {blogCategories.map((category) => (
+            <>
+              <div className={blogStyles['blog__filter-category-button-wrapper']}>
+                <input
+                  className={blogStyles['blog__filter-category-input']}
+                  key={category}
+                  id={category}
+                  type="radio"
+                  name="category"
+                  value={category}
+                  defaultChecked={category === 'all'}
+                  // onChange={handleLanguageChange}
+                />
+                <label className={blogStyles['blog__filter-category-label']} htmlFor={category}>
+                  {category}
+                </label>
+              </div>
+            </>
+          ))}
+        </fieldset>
 
         <div className={blogStyles['blog-container']}>
           {blogContent.map(

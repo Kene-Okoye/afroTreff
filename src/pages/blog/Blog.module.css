@@ -1,6 +1,94 @@
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
 .blog-container {
   width: 100%;
-  max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.blog__filter-category-button-wrapper {
+  margin-block-end: var(--spacing-xs);
+  /* display: flex; */
+}
+
+.blog__filter-category-button-fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin-block-end: var(--spacing-md);
+  border: none;
+}
+
+.blog__filter-category-button {
+  color: var(--carrot-orange-color);
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 2px solid;
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 20px 5px 15px;
+  transition: all 0.25s ease-in-out;
+}
+
+.blog__filter-category-label {
+  color: --carnaby-tan-color;
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 2px solid;
+  border-radius: 6px;
+  display: inline-block;
+  /* width: inherit; */
+  font-weight: 500;
+  padding: 5px 20px 5px 15px;
+  transition: all 0.25s ease-in-out;
+}
+
+.blog__filter-category-input {
+  -webkit-appearance: none; /* Add if not using autoprefixer */
+  appearance: none;
+  background-color: var(--satin-linen-color); /* For iOS < 15 to remove gradient background */
+  margin: 0; /* Not removed via appearance */
+}
+
+.blog__filter-category-button:hover {
+  background-color: var(--carnaby-tan-color);
+  color: #ffff;
+  border-color: var(--carnaby-tan-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blog__filter-category-label:hover,
+.blog__filter-category-input:checked + .blog__filter-category-label {
+  background-color: var(--carnaby-tan-color);
+  color: #ffff;
+  border-color: var(--carnaby-tan-color);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .blog__main-section-container > h2 {
+    padding-block-end: 0;
+  }
+
+  .blog__filter-category-button-fieldset {
+    justify-content: flex-end;
+  }
 }

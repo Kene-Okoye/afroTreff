@@ -1,4 +1,5 @@
 import { CSSProperties, PropsWithChildren } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import linkOpenInNewWindowStyles from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow.module.css';
 
@@ -27,6 +28,8 @@ const LinkOpenInNewWindow = ({
   hideOpenInNewTablIcon = false,
   children,
 }: PropsWithChildren<LinkOpenInNewWindowProps>) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <a
@@ -47,12 +50,14 @@ const LinkOpenInNewWindow = ({
         {text && <span>{text}</span>}
         {children}
         {hideOpenInNewTablIcon && (
-          <span className={linkOpenInNewWindowStyles['visually-hidden']}>Opens in new tab</span>
+          <span className={linkOpenInNewWindowStyles['visually-hidden']}>
+            {t('opens_in_new_tab')}
+          </span>
         )}
         {!hideOpenInNewTablIcon && useWhiteIcon && (text || socialMediaIconAlt) && (
           <img
             src={newWindowIconWhite}
-            alt="(Opens in a new tab)"
+            alt={`(${t('opens_in_new_tab')})`}
             role="image"
             className={linkOpenInNewWindowStyles['link__new-tab-icon']}
             style={styleNewTabIcon}
@@ -61,7 +66,7 @@ const LinkOpenInNewWindow = ({
         {!hideOpenInNewTablIcon && !useWhiteIcon && (text || socialMediaIconAlt) && (
           <img
             src={newWindowIconBlack}
-            alt="(Opens in a new tab)"
+            alt={`(${t('opens_in_new_tab')})`}
             role="image"
             className={linkOpenInNewWindowStyles['link__new-tab-icon']}
             style={styleNewTabIcon}
