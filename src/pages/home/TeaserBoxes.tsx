@@ -1,3 +1,6 @@
+import { useTranslation } from 'react-i18next';
+import { LanguageType } from '@/routes/types/languageType';
+
 import LinkButton from '@/components/linkButton/LinkButton';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
@@ -5,27 +8,32 @@ import teaserBoxesStyles from '@/pages/home/TeaserBoxes.module.css';
 
 import instagramLogo from '@/assets/svg/instagram_logo.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo_outlined.svg';
+import paths from '@/routes/paths';
+import { PathsType } from '@/routes/types/routesType';
 
-const teaserBoxContent = [
-  { id: 1, linkButtonText: 'Discover the previous events', path: 'activities' },
-  {
-    id: 2,
-    // eslint-disable-next-line quotes
-    linkButtonText: "We'll be thrilled for your support to the community",
-    path: 'support',
-  },
-  { id: 3, linkButtonText: 'Meet the team', path: 'vision-and-team' },
-  { id: 4, linkButtonText: 'Get in touch', path: 'contact' },
-];
+export type TeaserBoxesType = {
+  buttonPath: keyof PathsType['en'];
+  ctaButtonText: string;
+};
 
-const TeaserBoxes = () => {
+export type TeaserBoxesProps = {
+  teaserBoxTextContent: TeaserBoxesType[];
+};
+
+const TeaserBoxes = ({ teaserBoxTextContent }: TeaserBoxesProps) => {
+  const { i18n } = useTranslation();
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
+
   return (
     <>
       <div className={teaserBoxesStyles['teaser-box__wrapper--group-text-only']}>
-        {teaserBoxContent &&
-          teaserBoxContent.map(({ id, linkButtonText, path }) => (
-            <div key={id} className={teaserBoxesStyles['teaser-box__CTA-box-text-only']}>
-              <LinkButton linkText={linkButtonText} path={path} />
+        {teaserBoxTextContent &&
+          teaserBoxTextContent.map(({ buttonPath, ctaButtonText }) => (
+            <div key={ctaButtonText} className={teaserBoxesStyles['teaser-box__CTA-box-text-only']}>
+              <LinkButton
+                linkText={ctaButtonText}
+                path={`/${currentLanguage}/${paths[currentLanguage][buttonPath]}`}
+              />
             </div>
           ))}
       </div>

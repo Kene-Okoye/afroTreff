@@ -83,8 +83,30 @@ export default {
       type: 'array',
       of: [
         {
-          title: 'ctaButtons',
-          type: 'string',
+          title: 'Cta Button',
+          type: 'object',
+          fields: [
+            {
+              name: 'ctaButtonText',
+              title: 'Cta Button Text',
+              type: 'string',
+            },
+            {
+              name: 'buttonPath',
+              title: 'Button Path',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'Activities', value: 'ACTIVITIES'},
+                  {title: 'Support Us', value: 'SUPPORT_US'},
+                  {title: 'Vision and Team', value: 'VISION_AND_TEAM'},
+                  {title: 'Contact', value: 'CONTACT'},
+                ],
+              },
+              description: '⛔ This section MUST NOT be altered!',
+              readOnly: true,
+            },
+          ],
         },
       ],
       description: 'This section MUST include 4 a total of 4 entries',
