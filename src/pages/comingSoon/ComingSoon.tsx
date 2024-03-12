@@ -14,22 +14,22 @@ import instagramLogo from '@/assets/svg/instagram_logo_orange.svg';
 import linkedInLogo from '@/assets/svg/linkedin_logo_orange.svg';
 
 function ComingSoon() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
   return (
     <>
       <div className={comingSoonStyles['coming-soon--hero-section-wrapper']}>
         <HeroSection
-          h1Text="Coming soon"
-          pText="We‘re currently working on this page. Stay tuned for some exciting updates"
+          h1Text={`${t('coming_soon')}`}
+          pText={`${t('coming_soon_elaboration_text')}`}
           backGroundImage={heroImageComingSoon}
         >
           <Link
             className={comingSoonStyles['coming-soon--link']}
             to={`/${paths[currentLanguage].HOME}`}
           >
-            Return to the home page
+            {t('return_to_homepage')}
           </Link>
 
           <div className={comingSoonStyles['coming-soon--icon-wrapper']}>

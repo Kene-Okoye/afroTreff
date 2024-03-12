@@ -11,4 +11,6 @@
   color: var(--carrot-orange-color);
   text-decoration: underline;
   margin-block-start: var(--spacing-sm) !important;
+  width: -moz-fit-content;
+  width: fit-content;
 }
