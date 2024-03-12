@@ -1,7 +1,7 @@
 {
   "afroTreff_homepage": "AfroTreff Startseite",
   "skip_to_main_content": "Zum Hauptinhalt springen",
-  "about": "About",
+  "about": "Über uns",
   "vision_and_team": "Vision und team",
   "albums": "Alben",
   "blog": "Blog",
@@ -19,5 +19,10 @@
   "privacy": "Datenschutz",
   "imprint": "Impressum",
 
-  "opens_in_new_tab": "Öffnet in einem neuen Tab"
+  "opens_in_new_tab": "Öffnet in einem neuen Tab",
+  "page_is_loading": "Seite wird geladen",
+  "coming_soon": "Seite kommt demnächst",
+  "coming_soon_elaboration_text": "Wir arbeiten derzeit an dieser Seite. Bleiben Sie dran für einige spannende Updates",
+  "return_to_homepage": "Zurück zur Startseite",
+  "page_not_found": "404: Die von Ihnen angeforderte Seite konnte nicht gefunden werden."
 }

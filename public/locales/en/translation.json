@@ -19,5 +19,10 @@
   "privacy": "Privacy policy",
   "imprint": "Imprint",
 
-  "opens_in_new_tab": "Opens in new tab"
+  "opens_in_new_tab": "Opens in new tab",
+  "page_is_loading": "Page is loading",
+  "coming_soon": "coming soon",
+  "coming_soon_elaboration_text": "We‘re currently working on this page. Stay tuned for some exciting updates",
+  "return_to_homepage": "Return to the home page",
+  "page_not_found": "404: The page you requested could not be found."
 }
