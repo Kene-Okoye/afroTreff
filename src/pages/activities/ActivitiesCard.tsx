@@ -1,3 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
+import { LanguageType } from '@/routes/types/languageType';
+
 import LinkButton from '@/components/linkButton/LinkButton';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
@@ -24,29 +28,28 @@ const ActivitiesCard = ({
   eventVenue,
   linkText,
   href,
-  backgroundColorNumber = '0',
 }: // backgroundColor = '#736357',
 ActivitiesCardProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className={activitiesCardStyles['activities__container']}>
       <div
         // style={{ backgroundColor: `${backgroundColor}` }}
         // TODO: There seems to be an issue when backgroundColor is used in the CSS style attribute.
         // TODO: The attribute does not appear. FIX THIS! Then reintergarte else leave out
-        className={`${activitiesCardStyles['activities__banner-wrapper']} ${
-          activitiesCardStyles[`activities__banner-backround-color-${backgroundColorNumber}`]
-        }`}
+        className={`${activitiesCardStyles['activities__banner-wrapper']} ${activitiesCardStyles['activities__banner-backround-color']}`}
       >
-        <p>Afro treff 18.0</p>
+        <p>{eventName}</p>
       </div>
       <div className={activitiesCardStyles['activities__text-button-wrapper']}>
         <div className={activitiesCardStyles['activities__text-wrapper']}>
           <h3>{eventName}</h3>
-          <strong>Date:</strong>
+          <strong>{t('date')}</strong>
           <p>{eventDate}</p>
-          <strong>Time:</strong>
+          <strong>{t('time')}</strong>
           <p>{eventTime}</p>
-          <strong>Venue:</strong>
+          <strong>{t('venue')}</strong>
           <p className={activitiesCardStyles['activities__venue']}>
             <img
               src={googleMapsIcon}

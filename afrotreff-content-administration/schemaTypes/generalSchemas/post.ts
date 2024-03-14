@@ -7,6 +7,27 @@ export default {
   icon: RiArticleFill,
 
   fields: [
+    /*-------------------------
+     * Mandatory Fields
+     *------------------------*/
+    {
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'English', value: 'english'},
+          {title: 'German', value: 'german'},
+        ],
+      },
+      description: `Please ensure to select your desired language. This would be used for the
+          preview pane on the left and help you as an editor to get a quick overview of 
+          the albums for the individual languages (DE & EN)`,
+    },
+
+    /*-------------------------
+     * Other Fields
+     *------------------------*/
     {
       name: 'title',
       title: 'Title',
@@ -50,6 +71,7 @@ export default {
               {title: 'News', value: 'news'},
               {title: 'Story', value: 'story'},
               {title: 'Interviews', value: 'interviews'},
+              {title: 'Biography', value: 'biography'},
             ],
           },
         },
@@ -60,6 +82,11 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+    },
+    {
+      name: 'briefIntro',
+      title: 'Brief Intro',
+      type: 'text',
     },
     {
       name: 'body',
@@ -73,10 +100,20 @@ export default {
       title: 'title',
       author: 'author.name',
       media: 'mainImage',
+      language: 'language',
     },
-    prepare(selection: {author: any}) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+    prepare(selection: {author: any; language: string}) {
+      const {author, language} = selection
+      const LANGUAGES: {[key: string]: string} = {
+        english: 'EN',
+        german: 'DE',
+      }
+      return {
+        ...selection,
+        subtitle:
+          author &&
+          `by ${author} - written in ${language.toUpperCase()} (${LANGUAGES[language].toUpperCase()})`,
+      }
     },
   },
 }

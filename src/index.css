@@ -166,6 +166,29 @@ a {
   END - CSS reset
 ----------------- */
 
+/* -----------------------------------------
+  START - React Portable Global Text Styles
+------------------------------------------ */
+.portableText-paragraph,
+.portableText-blockquote,
+.portableText-strong,
+.portableText-link {
+  padding-block-end: var(--spacing-sm);
+}
+
+.portableText-link {
+  color: #0640f1;
+  text-decoration: underline;
+}
+
+.portableText-link:visited {
+  color: #681dbb;
+}
+
+/* -----------------------------------------
+  END - React Portable Global Text Styles
+------------------------------------------ */
+
 /* ----------------
   MEDIA QUERRIES
 ----------------- */

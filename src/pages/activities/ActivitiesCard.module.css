@@ -59,9 +59,17 @@
   margin-block-end: var(--spacing-sm);
 }
 
-.activities__venue > span > a:hover {
+.activities__venue > span > a {
+  padding-inline: 8px;
+  padding-block: 5px;
+}
+
+.activities__venue > span > a:hover,
+.activities__venue > span > a:focus {
   color: var(--carrot-orange-color);
-  box-shadow: 0px 1.5px 0px 0px var(--carrot-orange-color);
+  background: var(--carrot-orange-color);
+  color: white;
+  /* box-shadow: 0px 1.5px 0px 0px var(--carrot-orange-color); */
 }
 
 .activities__google-maps-icon {
@@ -70,19 +78,19 @@
   width: 30px;
 }
 
-.activities__banner-backround-color-0 {
+.activities__container:nth-of-type(1) > .activities__banner-backround-color {
   background-color: #736357;
 }
 
-.activities__banner-backround-color-1 {
+.activities__container:nth-of-type(2) > .activities__banner-backround-color {
   background-color: #bf0d0d;
 }
 
-.activities__banner-backround-color-2 {
+.activities__container:nth-of-type(3) > .activities__banner-backround-color {
   background-color: #004aad;
 }
 
-.activities__banner-backround-color-3 {
+.activities__container:nth-of-type(4) > .activities__banner-backround-color {
   background-color: #0097b2;
 }
 

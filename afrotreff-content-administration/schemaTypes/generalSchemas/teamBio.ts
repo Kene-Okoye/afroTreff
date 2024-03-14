@@ -8,19 +8,53 @@ export default defineType({
   icon: BsPersonVcardFill,
 
   fields: [
+    /*-------------------------
+     * Mandatory Fields
+     *------------------------*/
     {
-      name: 'nameOfTeamMember',
-      title: 'Name of Team Member',
+      name: 'language',
+      title: 'Language',
       type: 'string',
+      options: {
+        list: [
+          {title: 'English', value: 'english'},
+          {title: 'German', value: 'german'},
+        ],
+      },
+      description: `Please ensure to select your desired language. This would be used for the
+          preview pane on the left and help you as an editor to get a quick overview of 
+          the albums for the individual languages (DE & EN)`,
+    },
+
+    /*-------------------------
+     * Other Fields
+     *------------------------*/
+    {
+      name: 'firstName',
+      title: 'First Name',
+      type: 'string',
+      validation: (rule: any) =>
+        rule.required().error(`The first name MUST be icluded as this is used to generate 
+        a unique slug for each person's bio.`),
+    },
+    {
+      name: 'lastName',
+      title: 'Last Name',
+      type: 'string',
+      validation: (rule: any) =>
+        rule.required().error(`The last name MUST be icluded as this is used to generate 
+        a unique slug for each person's bio.`),
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'nameOfTeamMember',
+        source: (doc: {firstName: string; lastName: string; language: string}) =>
+          `team-member-${doc.firstName}-${doc.lastName}-bio-in-${doc.language}`,
         maxLength: 96,
       },
+      validation: (rule: any) => rule.required(),
     },
     {
       name: 'imageOfTeamMember',
@@ -54,4 +88,26 @@ export default defineType({
       ],
     },
   ],
+
+  preview: {
+    select: {
+      title: 'firstName',
+      firstName: 'firstName',
+      media: 'imageOfTeamMember',
+      language: 'language',
+    },
+    prepare(selection: {firstName: any; language: string}) {
+      const {firstName, language} = selection
+      const LANGUAGES: {[key: string]: string} = {
+        english: 'EN',
+        german: 'DE',
+      }
+      return {
+        ...selection,
+        subtitle:
+          firstName &&
+          `${firstName}'s bio in ${language.toUpperCase()} (${LANGUAGES[language].toUpperCase()})`,
+      }
+    },
+  },
 })

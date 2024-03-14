@@ -67,15 +67,10 @@ export default {
     {
       name: 'bio_Founder',
       title: 'Bio - Founder',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      type: 'reference',
+      to: [{type: 'teamMemberBio'}],
+      validation: (rule: any) =>
+        rule.required().error('Only the bio for the founder (Francis) is allowed here.'),
     },
     {
       name: 'heading_WorkingTeam',
@@ -86,7 +81,7 @@ export default {
       name: 'workingTeam',
       title: 'Working Team',
       type: 'array',
-      of: [{type: 'teamMemberBio'}],
+      of: [{type: 'reference', to: {type: 'teamMemberBio'}}],
     },
   ],
 

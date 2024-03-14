@@ -127,7 +127,8 @@ nav [aria-current='page'],
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  padding-inline-start: var(--spacing-md);
+  padding: 0;
+  padding-inline: var(--spacing-md);
   padding-block-start: var(--spacing-xxl);
 
   background-color: #1d1c1c;
@@ -154,7 +155,7 @@ nav [aria-current='page'],
 }
 
 .main-menu > li {
-  width: max-content;
+  width: 100%;
 }
 
 .main-menu > li > a {
@@ -317,6 +318,10 @@ nav [aria-current='page'],
   .main-menu li button {
     font-size: inherit;
     font-weight: inherit;
+  }
+
+  .main-menu > li {
+    width: max-content;
   }
 
   .main-menu > li > a {

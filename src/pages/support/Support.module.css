@@ -13,6 +13,14 @@
   margin-block-start: var(--spacing-sm);
 }
 
+.support__donote-message-container {
+  padding-block-end: 0;
+}
+
+.support__donors-container {
+  padding-block-start: 0;
+}
+
 .support__donors-logo-grid {
   display: grid;
   gap: var(--spacing-md);

@@ -1,10 +1,19 @@
+import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { LanguageType } from '@/routes/types/languageType';
+import { heroSectionGeneralDataType } from '../types/pagesDataType';
+
 import HeroSection from '@/components/hero/HeroSection';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
 import ActivitiesCard from '@/pages/activities/ActivitiesCard';
+import PageLoading from '../pageLoading/PageLoading';
 
 import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
 import eventImage1 from '@/assets/images/blog_image_4.webp';
-import heroImageActivities from '@/assets/images/blog_image_5.webp';
+
+import useFetchData from '@/hooks/useFetchData';
+import { formatDate, formatTime } from '@/utils/formatDate';
 
 const activitiesContent = [
   {
@@ -57,50 +66,91 @@ const activitiesContent = [
   },
 ];
 
-const Faq = () => {
+const LANGUAGES: { [key: string]: string } = {
+  en: 'english',
+  de: 'german',
+};
+
+export type queryHomeType = {
+  language: string;
+  heroSection_activities: heroSectionGeneralDataType;
+  upcomingEventsHeading: { [key: string]: string };
+  upcomingEventsList: { [key: string]: string }[];
+};
+
+const Activities = () => {
+  const { i18n } = useTranslation();
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
+
+  const [data, isLoading] = useFetchData<queryHomeType>(
+    `*[_type == "activitiesPage_${currentLanguage}" && language == '${LANGUAGES[currentLanguage]}']{
+      language,
+      heroSection_activities{
+        ...,
+        "imageUrl": backgroundImage.asset->url
+      },
+      upcomingEventsHeading,
+      upcomingEventsList | order(eventDateAndTime desc),
+    }`,
+    [],
+  );
+
+  if (isLoading) {
+    return <PageLoading />;
+  }
+
   return (
     <>
-      <HeroSection
-        h1Text="Activities"
-        pText="Discover AfroTreff events, workshops, outreach, and networking opportunities taking place in Germany"
-        backGroundImage={heroImageActivities}
-      />
-      <section>
-        <HeadingTopSmallVariant h2SmallerVariant="Our 2023" h2BiggerVariant="Events" />
-        {activitiesContent.map(
-          ({
-            id,
-            eventName,
-            eventDate,
-            eventTime,
-            eventVenue,
-            linkText,
-            href,
-            backgroundColorNumber,
-
-            //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
-            // reintegrate if fixed.
-            // backgroundColor,
-          }) => (
-            <ActivitiesCard
-              key={id}
-              eventName={eventName}
-              eventDate={eventDate}
-              eventTime={eventTime}
-              eventVenue={eventVenue}
-              linkText={linkText}
-              href={href}
-              backgroundColorNumber={backgroundColorNumber}
-
-              //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
-              // reintegrate if fixed.
-              // backgroundColor={backgroundColor}
+      {data &&
+        data.map(({ heroSection_activities, upcomingEventsHeading, upcomingEventsList }) => (
+          <Fragment key={heroSection_activities.headingText}>
+            <HeroSection
+              h1Text={heroSection_activities.headingText}
+              pText={heroSection_activities.smallText}
+              backGroundImage={heroSection_activities.imageUrl}
             />
-          ),
-        )}
-      </section>
+            <section>
+              <HeadingTopSmallVariant
+                h2SmallerVariant={upcomingEventsHeading.headingSmallerVariant}
+                h2BiggerVariant={upcomingEventsHeading.headingLargerVariant}
+              />
+              {upcomingEventsList &&
+                upcomingEventsList.map(
+                  ({
+                    eventDateAndTime,
+                    eventTitle,
+                    eventLocation,
+                    buttonText,
+                    //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
+                    // reintegrate if fixed.
+                    // backgroundColor,
+                  }) => (
+                    <ActivitiesCard
+                      key={eventTitle}
+                      eventName={eventTitle}
+                      eventDate={formatDate(
+                        eventDateAndTime,
+                        currentLanguage === 'de' ? 'de-DE' : 'en-US',
+                      )}
+                      eventTime={formatTime(
+                        eventDateAndTime,
+                        currentLanguage === 'de' ? 'de-DE' : 'en-US',
+                      )}
+                      eventVenue={eventLocation}
+                      linkText={buttonText}
+                      href="#"
+
+                      //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
+                      // reintegrate if fixed.
+                      // backgroundColor={backgroundColor}
+                    />
+                  ),
+                )}
+            </section>
+          </Fragment>
+        ))}
     </>
   );
 };
 
-export default Faq;
+export default Activities;

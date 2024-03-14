@@ -36,6 +36,9 @@ type ElementRefs<T extends HTMLElement> = {
   firstFocusableElementRef: RefObject<T | null>;
 };
 
+// Generate a unique identifier for the transient style tag
+const uniqueId = `modal-dialog-style-${Date.now()}`;
+
 const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): ElementRefs<T> => {
   // Refs for trigger, dialog, and first focusable element
   const triggerRef = useRef<T | null>(null);
@@ -72,9 +75,12 @@ const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): 
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     const handleEscapeKey = (event: KeyboardEvent) => {
+      const styleTag = document.head.querySelector(`style[id="${uniqueId}"]`);
+
       if (event.key === 'Escape') {
         onClose();
         setShouldFocusTriggerElement(true);
+        styleTag?.remove();
       }
     };
 
@@ -95,6 +101,16 @@ const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): 
         firstFocusableElement?.focus();
       }, 100);
 
+      /*  Create a transient stylesheet: the style tag with a unique id. 
+        The implementation below TURNS OFF / PREVENTS scrolling on the 
+        body when the modal window is open*/
+
+      const node = document.createElement('style');
+      node.setAttribute('type', 'text/css');
+      node.setAttribute('id', uniqueId);
+      node.textContent = 'html, body { height: auto ! important ; overflow: hidden ! important ; }';
+      document.head.prepend(node);
+
       // Listen for the 'Escape' keydown event to close the modal dialog
       document.addEventListener('keydown', handleEscapeKey);
     } else {
@@ -106,6 +122,11 @@ const useInert = <T extends HTMLElement>(isOpen: boolean, onClose: () => void): 
         (element as HTMLElement).style.backgroundColor = '';
         (element as HTMLElement).style.transition = '';
       });
+
+      /*  Select and remove the style tag with the unique id in oder to
+        re-enable scrolling on the body when the modal is closed. */
+
+      document.head.querySelector(`style[id="${uniqueId}"]`)?.remove();
 
       // Remove the 'Escape' keydown event listener
       document.removeEventListener('keydown', handleEscapeKey);

@@ -1,54 +1,96 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { PortableText } from '@portabletext/react';
 
+import { LanguageType } from '@/routes/types/languageType';
+import { queryAlbumType } from './types/albumTypes';
+
+import { components } from '@/components/portableTextCustomComponent/PortableTextCustomComponent';
 import HeroSection from '@/components/hero/HeroSection';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
-import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
-
-import { albumDataType } from '@/pages/album/types/albumTypes';
-import albumData from '@/pages/album/albumData.json';
-
+import PageLoading from '../pageLoading/PageLoading';
 import albumStyles from '@/pages/album/Album.module.css';
 
-import heroImageAlbum from '@/assets/images/blog_image_5.webp';
+import photoGalleryDefault from '@/assets/images/photo-gallery_default.webp';
+
+import useFetchData from '@/hooks/useFetchData';
+
+const LANGUAGES: { [key: string]: string } = {
+  en: 'english',
+  de: 'german',
+};
 
 const Album = () => {
+  const { i18n, t } = useTranslation();
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
+
+  const [data, isLoading] = useFetchData<queryAlbumType>(
+    `*[_type == "albumsPage_${currentLanguage}" && language == '${LANGUAGES[currentLanguage]}']{
+      language,
+      heroSection_albumsPage{
+        ...,
+        "imageUrl": backgroundImage.asset->url
+      },
+      albumsSectionheading,
+      bodyText,
+      albums[]-> {
+        month,
+        slug,
+        previewBackgroundImage{
+          'url': asset->url
+        },
+        "images": photos[]{
+          imageDescription_alt,
+          "url": asset->url,
+        }
+    }  
+  }`,
+    [],
+  );
+
+  if (isLoading) {
+    return <PageLoading />;
+  }
+
   return (
     <>
-      <HeroSection
-        h1Text="albums"
-        pText="Discover our past events"
-        backGroundImage={heroImageAlbum}
-      />
-      <section>
-        <HeadingTopSmallVariant h2SmallerVariant="AfroTreff 2024" h2BiggerVariant="photo album" />
+      {data &&
+        data.map(({ albumsSectionheading, heroSection_albumsPage, bodyText, albums }) => (
+          <Fragment key={heroSection_albumsPage.headingText}>
+            <HeroSection
+              h1Text={heroSection_albumsPage.headingText}
+              pText={heroSection_albumsPage.smallText}
+              backGroundImage={heroSection_albumsPage.imageUrl}
+            />
+            <section>
+              <HeadingTopSmallVariant
+                h2SmallerVariant={albumsSectionheading.headingSmallerVariant}
+                h2BiggerVariant={albumsSectionheading.headingLargerVariant}
+              />
 
-        <p className={albumStyles['album__paragraph-text']}>
-          See a few teasers from our last meet-ups.{' '}
-          <LinkOpenInNewWindow
-            href="https://www.instagram.com/afrotreff/?hl=en"
-            text="Follow the AfroTreff page on Instagram to explore more"
-          />
-        </p>
+              <PortableText value={bodyText} components={components} />
 
-        <div className={albumStyles['album__grid']}>
-          {albumData.map(({ id, month, albumBackgroundImage, photoCollection }: albumDataType) => (
-            <Fragment key={id}>
-              <Link
-                to={`photo-collection-from-${month}`}
-                state={{ month: month, photoCollection: photoCollection }}
-                className={albumStyles['album__link']}
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url(${albumBackgroundImage})`,
-                }}
-              >
-                <span className={albumStyles['album__link-text']}>{month}</span>
-              </Link>
-            </Fragment>
-          ))}
-        </div>
-      </section>
+              <div className={albumStyles['album__grid']}>
+                {albums &&
+                  albums.map(({ month, slug, previewBackgroundImage }) => (
+                    <Fragment key={slug.current}>
+                      <Link
+                        to={`${t('photo-collection-from')}__${slug.current}`}
+                        className={albumStyles['album__link']}
+                        style={{
+                          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                            url(${previewBackgroundImage.url || photoGalleryDefault})`,
+                        }}
+                      >
+                        <span className={albumStyles['album__link-text']}>{month}</span>
+                      </Link>
+                    </Fragment>
+                  ))}
+              </div>
+            </section>
+          </Fragment>
+        ))}
     </>
   );
 };

@@ -41,6 +41,11 @@ export default {
       type: 'heroSection',
     },
     {
+      name: 'postSectionheading',
+      title: 'Post Section Heading',
+      type: 'smallLargeHeading',
+    },
+    {
       name: 'post',
       title: 'Post',
       type: 'array',

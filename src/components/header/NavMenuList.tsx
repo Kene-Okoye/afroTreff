@@ -114,7 +114,10 @@ const NavMenuList = ({ firstFocusableElementRef, onNavLinkClick }: NavMenuListPr
           </ul>
         </li>
         <li>
-          <NavLink to={`/${currentLanguage}/${paths[currentLanguage].ACTIVITIES}`}>
+          <NavLink
+            to={`/${currentLanguage}/${paths[currentLanguage].ACTIVITIES}`}
+            onClick={handleNavLinkClick}
+          >
             {t('activities')}
           </NavLink>
         </li>

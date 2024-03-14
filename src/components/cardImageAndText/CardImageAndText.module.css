@@ -1,6 +1,7 @@
 .image-text-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  column-gap: var(--spacing-md);
 }
 
 .text-wrapper {
@@ -34,10 +35,11 @@
   }
 
   .text-wrapper {
-    width: 70%;
+    flex-basis: 75%;
   }
 
   .image-wrapper {
     padding-block-end: 0;
+    flex-basis: 50%;
   }
 }

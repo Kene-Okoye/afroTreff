@@ -40,35 +40,30 @@ export default {
       title: 'HERO SECTION - FAQ',
       type: 'heroSection',
     },
+
     {
-      name: 'questionAndAnswersSection',
-      title: 'QUESTION AND ANSWERS SECTION',
-      type: 'object',
-      fields: [
+      name: 'QandAheading',
+      title: 'Q & As Heading',
+      type: 'string',
+    },
+    {
+      name: 'qandAs',
+      title: 'Q & As',
+      type: 'array',
+      of: [
         {
-          name: 'heading',
-          title: 'Heading',
-          type: 'string',
-        },
-        {
-          name: 'qandAs',
-          title: 'Q & As',
-          type: 'array',
-          of: [
+          title: 'Question and Answers',
+          type: 'object',
+          fields: [
             {
-              type: 'object',
-              fields: [
-                {
-                  name: 'question',
-                  title: 'Question',
-                  type: 'text',
-                },
-                {
-                  name: 'answer',
-                  title: 'Answer',
-                  type: 'text',
-                },
-              ],
+              name: 'question',
+              title: 'Question',
+              type: 'string',
+            },
+            {
+              name: 'answer',
+              title: 'Answer',
+              type: 'text',
             },
           ],
         },

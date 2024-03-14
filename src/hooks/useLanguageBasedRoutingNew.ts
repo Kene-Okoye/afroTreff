@@ -24,7 +24,7 @@
 
 // Import necessary dependencies
 import { ChangeEvent, useCallback } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import paths from '@/routes/paths';
@@ -33,7 +33,6 @@ import { LanguagePathType, PathsType } from '@/routes/types/routesType';
 const useLanguageBasedRouting = () => {
   /* HOOKS */
   const location = useLocation();
-  const params = useParams();
   const navigate = useNavigate();
   const { i18n } = useTranslation();
 
@@ -76,16 +75,14 @@ const useLanguageBasedRouting = () => {
       const firstSegmentURL = pathName.split('/')[1];
       const secondSegmentURL = pathName.split('/')[2];
       const key = getKeyFromValue(secondSegmentURL ? secondSegmentURL : firstSegmentURL);
-      const paramsKey = Object.keys(params);
-      const paramsPath = paramsKey.length > 0 ? `/${params[paramsKey[0]]}` : '';
       const newPath = secondSegmentURL
         ? `/${selectedLanguage}/${
             paths[selectedLanguage as keyof PathsType][key as keyof LanguagePathType]
-          }${paramsPath}`
+          }`
         : `/${selectedLanguage}`;
       navigate(newPath, { replace: true }); // Navigate to the new path
     },
-    [location.pathname, navigate, params],
+    [location.pathname, navigate],
   );
 
   return {

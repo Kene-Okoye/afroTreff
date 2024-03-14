@@ -24,5 +24,21 @@
   "coming_soon": "coming soon",
   "coming_soon_elaboration_text": "We‘re currently working on this page. Stay tuned for some exciting updates",
   "return_to_homepage": "Return to the home page",
-  "page_not_found": "404: The page you requested could not be found."
+  "page_not_found": "404: The page you requested could not be found.",
+
+  "date": "Date:",
+  "time": "Time:",
+  "venue": "Venue:",
+
+  "donate": "Donate",
+
+  "photo_shots_from": "Photo shots from",
+  "explore_more_photos": "Explore more photos of the last meet-up on",
+  "photo-collection-from": "photo-collection-from",
+  "filter_blog_category": "Filter the blog contents by categrory",
+  "story": "Story",
+  "news": "News",
+  "interviews": "Interviews",
+  "biography": "Biography",
+  "all": "All"
 }

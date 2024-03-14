@@ -1,14 +1,22 @@
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
+import { PortableText } from '@portabletext/react';
+import { components } from '@/components/portableTextCustomComponent/PortableTextCustomComponent';
 
 import HeroSection from '@/components/hero/HeroSection';
 import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingTopSmallVariant';
 import CardImageAndText from '@/components/cardImageAndText/CardImageAndText';
+import PageLoading from '../pageLoading/PageLoading';
 
 import visionAndTeamStyles from '@/pages/visionAndTeam/VisionAndTeam.module.css';
 
-import heroImageVisionAndTeam from '@/assets/images/blog_image_4.webp';
 import teamFrancis from '@/assets/images/team_Francis.webp';
 import teamSmilingLady from '@/assets/images/team_smiling_lady.webp';
+
+import { LanguageType } from '@/routes/types/languageType';
+import { QueryVisionAndTeamType } from './types/visionAndTeamTypes';
+
+import useFetchData from '@/hooks/useFetchData';
 
 const visionAndTeamContent = [
   {
@@ -53,55 +61,117 @@ const visionAndTeamContent = [
   },
 ];
 
+const LANGUAGES: { [key: string]: string } = {
+  en: 'english',
+  de: 'german',
+};
+
 const VisionAndTeam = () => {
+  const { i18n } = useTranslation();
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
+
+  const [data, isLoading] = useFetchData<QueryVisionAndTeamType>(
+    `*[_type == "visionAndTeamPage_${currentLanguage}" && language == '${LANGUAGES[currentLanguage]}']{
+      language,
+      heroSection_VisonAndTeam{
+        ...,
+        "imageUrl": backgroundImage.asset->url
+      },
+      heading_OurMission,
+      textContent_OurMission,
+      heading_MeetTheFounder,
+      bio_Founder->{
+        firstName,
+        slug,
+        imageOfTeamMember{
+          "imageDescription_alt": imageDescription_alt,
+          "imageUrl": asset->url
+        },
+        bio_TeamMember,
+      },
+      heading_WorkingTeam,
+      workingTeam[]-> {
+        firstName,
+        slug,
+        imageOfTeamMember{
+          "imageDescription_alt": imageDescription_alt,
+          "imageUrl": asset->url
+        },
+        bio_TeamMember,
+      },
+    }`,
+    [],
+  );
+
+  if (isLoading) {
+    return <PageLoading />;
+  }
+
+  console.log({ DATA: data });
+
   return (
     <>
-      <div className={visionAndTeamStyles['vision-team--container']}>
-        <HeroSection h1Text="Vision and Team" pText="" backGroundImage={heroImageVisionAndTeam} />
-        <section>
-          <HeadingTopSmallVariant h2SmallerVariant="Our" h2BiggerVariant="mission" />
-          <p>
-            Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix
-            ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
-            hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu.
-            Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui
-            posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei
-            mea falli legere efficiantur et tollit aliquip debitis mei. No deserunt mediocritatem
-            mel. Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at
-            vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
-            hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu.
-            Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui
-            posse omnium
-          </p>
-        </section>
-
-        <section className={visionAndTeamStyles['vision-team--founder']}>
-          <HeadingTopSmallVariant h2SmallerVariant="Meeet the founder" h2BiggerVariant="Francis" />
-          <CardImageAndText
-            text1={visionAndTeamContent[0].text1}
-            text2={visionAndTeamContent[0].text2}
-            imageSrc={visionAndTeamContent[0].imageSrc}
-            imageAlt={visionAndTeamContent[0].imageAlt}
-          />
-        </section>
-
-        <section className={visionAndTeamStyles['vision-team__working-team']}>
-          <HeadingTopSmallVariant h2SmallerVariant="Meeet the" h2BiggerVariant="Working team" />
-          <div className={visionAndTeamStyles['vision-team__working-team--card']}>
-            {visionAndTeamContent.map(({ id, header, text1, text2, imageSrc, imageAlt }) => (
-              <Fragment key={id}>
-                <CardImageAndText
-                  header={header}
-                  text1={text1}
-                  text2={text2}
-                  imageSrc={imageSrc}
-                  imageAlt={imageAlt}
+      {data &&
+        data.map(
+          ({
+            heading_OurMission,
+            heroSection_VisonAndTeam,
+            textContent_OurMission,
+            heading_MeetTheFounder,
+            bio_Founder,
+            heading_WorkingTeam,
+            workingTeam,
+          }) => (
+            <Fragment key={heroSection_VisonAndTeam.headingText}>
+              <div className={visionAndTeamStyles['vision-team--container']}>
+                <HeroSection
+                  h1Text={heroSection_VisonAndTeam.headingText}
+                  pText=""
+                  backGroundImage={heroSection_VisonAndTeam.imageUrl}
                 />
-              </Fragment>
-            ))}
-          </div>
-        </section>
-      </div>
+                <section>
+                  <HeadingTopSmallVariant
+                    h2SmallerVariant={heading_OurMission.headingSmallerVariant}
+                    h2BiggerVariant={heading_OurMission.headingLargerVariant}
+                  />
+                  <PortableText value={textContent_OurMission} components={components} />
+                </section>
+
+                <section className={visionAndTeamStyles['vision-team--founder']}>
+                  <HeadingTopSmallVariant
+                    h2SmallerVariant={heading_MeetTheFounder.headingSmallerVariant}
+                    h2BiggerVariant={heading_MeetTheFounder.headingLargerVariant}
+                  />
+                  <CardImageAndText
+                    portableTextContent={bio_Founder.bio_TeamMember}
+                    imageSrc={bio_Founder.imageOfTeamMember.imageUrl}
+                    imageAlt={bio_Founder.imageOfTeamMember.imageDescription_alt}
+                  />
+                </section>
+
+                <section className={visionAndTeamStyles['vision-team__working-team']}>
+                  <HeadingTopSmallVariant
+                    h2SmallerVariant={heading_WorkingTeam.headingSmallerVariant}
+                    h2BiggerVariant={heading_WorkingTeam.headingLargerVariant}
+                  />
+                  <div className={visionAndTeamStyles['vision-team__working-team--card']}>
+                    {workingTeam &&
+                      workingTeam.map(({ firstName, slug, imageOfTeamMember, bio_TeamMember }) => (
+                        <Fragment key={slug.current}>
+                          <CardImageAndText
+                            header={firstName}
+                            portableTextContent={bio_TeamMember}
+                            imageSrc={imageOfTeamMember.imageUrl}
+                            imageAlt={imageOfTeamMember.imageDescription_alt}
+                          />
+                        </Fragment>
+                      ))}
+                  </div>
+                </section>
+              </div>
+            </Fragment>
+          ),
+        )}
     </>
   );
 };

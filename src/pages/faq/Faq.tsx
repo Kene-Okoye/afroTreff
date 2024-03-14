@@ -1,69 +1,73 @@
+import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { LanguageType } from '@/routes/types/languageType';
+import { heroSectionGeneralDataType } from '@/pages/types/pagesDataType';
+
 import HeroSection from '@/components/hero/HeroSection';
-import Accordion from '@/components/accordion/Accordion';
+import PageLoading from '../pageLoading/PageLoading';
 
 import faqStyles from '@/pages/faq/Faq.module.css';
-import heroImageFaq from '@/assets/images/blog_image_2.webp';
 
-const faqContent = [
-  {
-    id: 1,
-    summaryText: 'Where does the AfroTreff event take place?',
-    undisclosedText:
-      ' Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix a putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei mea falli legere',
-  },
-  {
-    id: 2,
-    summaryText: 'When does the AfroTreff event take place?',
-    undisclosedText:
-      ' Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix a putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei mea falli legere',
-  },
-  {
-    id: 3,
-    summaryText: 'How much does it cost / Is there an entrance fee for the AfroTreff event?',
-    undisclosedText:
-      ' Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix a putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei mea falli legere',
-  },
-  {
-    id: 4,
-    summaryText: 'When does the AfroTreff event take place?',
-    undisclosedText:
-      ' Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix a putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei mea falli legere',
-  },
-  {
-    id: 5,
-    summaryText: 'How can I support AfroTreff?',
-    undisclosedText:
-      ' Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix a putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos erant dolorum an. Per facer affert ut. Mei iisque mentitum moderatius cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus argumentum ne qui tation efficiendi in eos. Ei mea falli legere',
-  },
-];
+import useFetchData from '@/hooks/useFetchData';
+
+const LANGUAGES: { [key: string]: string } = {
+  en: 'english',
+  de: 'german',
+};
+
+export type queryHomeType = {
+  language: string;
+  heroSection_Faq: heroSectionGeneralDataType;
+  QandAheading: string;
+  qandAs: { [key: string]: string }[];
+};
 
 const Faq = () => {
+  const { i18n } = useTranslation();
+  const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
+
+  const [data, isLoading] = useFetchData<queryHomeType>(
+    `*[_type == "FAQPage_${currentLanguage}" && language == '${LANGUAGES[currentLanguage]}']{
+      language,
+      heroSection_Faq{
+       ...,
+       "imageUrl": backgroundImage.asset->url
+     },
+     QandAheading,
+     qandAs
+  }`,
+    [],
+  );
+
+  if (isLoading) {
+    return <PageLoading />;
+  }
+
   return (
     <>
-      <HeroSection
-        h1Text="FAQ"
-        pText="Got possible questions about AfroTreff? We've got your back"
-        backGroundImage={heroImageFaq}
-      />
-      <section>
-        <h2>General questions and answers</h2>
-        <ul className={faqStyles['faq--mobile']} role="list" aria-roledescription="accordion">
-          {faqContent.map(({ id, summaryText, undisclosedText }) => (
-            <li key={id}>
-              <Accordion summaryText={summaryText} undisclosedText={undisclosedText} />
-            </li>
-          ))}
-        </ul>
+      {data &&
+        data.map(({ heroSection_Faq, QandAheading, qandAs }) => (
+          <Fragment key={heroSection_Faq.headingText}>
+            <HeroSection
+              h1Text={heroSection_Faq.headingText}
+              pText={heroSection_Faq.smallText}
+              backGroundImage={heroSection_Faq.imageUrl}
+            />
+            <section>
+              <h2>{QandAheading}</h2>
 
-        <ul className={faqStyles['faq--desktop']} role="list">
-          {faqContent.map(({ id, summaryText, undisclosedText }) => (
-            <li key={id}>
-              <h3> {summaryText}</h3>
-              <p>{undisclosedText}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+              <ul className={faqStyles['faq--desktop']} role="list">
+                {qandAs.map(({ question, answer }) => (
+                  <li key={question}>
+                    <h3> {question}</h3>
+                    <p>{answer}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </Fragment>
+        ))}
     </>
   );
 };

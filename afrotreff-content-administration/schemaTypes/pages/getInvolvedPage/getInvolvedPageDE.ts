@@ -75,7 +75,8 @@ export default {
     {
       name: 'textDonationSection',
       title: 'Text Donation Section',
-      type: 'string',
+      type: 'array',
+      of: [{type: 'block'}],
     },
 
     {
@@ -89,24 +90,19 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'object',
+          name: 'imageOfLogo',
+          title: 'Image of Logo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
           fields: [
             {
-              name: 'imageOfLogo',
-              title: 'Image of Logo',
-              type: 'image',
-              options: {
-                hotspot: true,
-              },
-              fields: [
-                {
-                  name: 'imageDescription_alt',
-                  title: 'Image Description (alt)',
-                  type: 'string',
-                  description: `Please provide the name of the sponsor or donor. 
-                      This is very important for accessibility purposes`,
-                },
-              ],
+              name: 'imageDescription_alt',
+              title: 'Image Description (alt)',
+              type: 'string',
+              description: `Please provide the name of the sponsor or donor.
+                  This is very important for accessibility purposes`,
             },
           ],
         },

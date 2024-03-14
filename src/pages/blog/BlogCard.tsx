@@ -27,18 +27,31 @@ const BlogCard = ({
       <div className={blogCardStyles['blog-item']}>
         <div className={blogCardStyles['blog-item--image-wrapper']}>
           {/* //TODO: Reintergrate after pics with the perfect dimension are ontained from Francis */}
-          <img src={imageSrc} alt={imageAlt} className={blogCardStyles['blog-item--image']} />
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className={blogCardStyles['blog-item--image']}
+            aria-hidden="true"
+          />
         </div>
         <div
           className={`${blogCardStyles['blog-item--text-wrapper']} ${
-            category === 'news' && blogCardStyles['blog-item--text-wrapper-news']
+            (category === 'News' ||
+              category === 'Nachrichten' ||
+              category === 'Biography' ||
+              category === 'Biographie') &&
+            blogCardStyles['blog-item--text-wrapper-news']
           }`}
         >
           <div className={blogCardStyles['blog-item--header-category-wrapper']}>
             <h2 className={blogCardStyles['blog-item--heading']}>{heading}</h2>
             <p
               className={`${blogCardStyles['blog-item--category']} ${
-                category === 'news' && blogCardStyles['blog-item--category-news']
+                (category === 'News' ||
+                  category === 'Nachrichten' ||
+                  category === 'biography' ||
+                  category === 'Biographie') &&
+                blogCardStyles['blog-item--category-news']
               }`}
             >
               {category}
@@ -46,7 +59,11 @@ const BlogCard = ({
           </div>
           <div
             className={`${blogCardStyles['blog-item--text-button-wrapper']} ${
-              category === 'story' && blogCardStyles['blog-item--text-button-wrapper-story']
+              (category === 'Story' ||
+                category === 'Geschichte' ||
+                category === 'Interviews' ||
+                category === 'Interviews') &&
+              blogCardStyles['blog-item--text-button-wrapper-story']
             }`}
           >
             <p className={blogCardStyles['blog-item--text']}>{textContent}</p>
