@@ -20,14 +20,18 @@
 
 .activities__banner-wrapper > p {
   color: #fff;
-  font-family: var(--font-family-ubuntu);
-  font-weight: var(--font-weight-bold);
+  font-family: 'League Gothic', sans-serif;
+  font-weight: var(--font-weight-extra-bold);
   font-size: clamp(4rem, 3.56rem + 2.22vw, var(--font-size-xl));
   line-height: 1;
-  overflow-wrap: break-word;
   text-transform: uppercase;
   text-align: center;
   max-width: 250px;
+
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .activities__text-button-wrapper {

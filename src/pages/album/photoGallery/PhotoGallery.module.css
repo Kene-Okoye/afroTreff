@@ -1,5 +1,7 @@
 .photo-gallery__container {
   padding: 0;
+  position: relative;
+  isolation: isolate;
 }
 
 .photo-gallery__hero-section {
@@ -63,6 +65,50 @@
   gap: var(--spacing-sm);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-block-start: var(--spacing-md);
+}
+
+/* ------------------------
+ BACK TO TOP BUTTON STYLES
+  ---------------------- */
+
+.photo-gallery__back-to-top {
+  position: sticky;
+  inset-block-end: var(--spacing-xs);
+  margin-inline-start: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--carrot-orange-color);
+  background-color: var(--carrot-orange-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-block: var(--spacing-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.photo-gallery__back-to-top-arrow {
+  display: inline-block;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-block-start: var(--spacing-xs);
+  border-top: 5px solid #ffff;
+  border-right: 5px solid #ffff;
 }
 
 /* ----------------

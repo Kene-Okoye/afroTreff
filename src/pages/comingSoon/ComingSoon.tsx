@@ -47,11 +47,6 @@ function ComingSoon() {
               hideOpenInNewTablIcon
               styleSocialMediaIcon={{ width: '50px', marginInlineStart: '10px' }}
             />
-            {/* <LinkOpenInNewWindow
-              href="https://www.instagram.com/afrotreff/?hl=en"
-              imageSrc={instagramLogo}
-              socialMediaIconAlt="Visit us on instagram"
-            /> */}
           </div>
         </HeroSection>
       </div>

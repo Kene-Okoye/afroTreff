@@ -9,62 +9,8 @@ import HeadingTopSmallVariant from '@/components/headingTopSmallVariant/HeadingT
 import ActivitiesCard from '@/pages/activities/ActivitiesCard';
 import PageLoading from '../pageLoading/PageLoading';
 
-import afroTreffLogo from '@/assets/images/afrotreff_logo.webp';
-import eventImage1 from '@/assets/images/blog_image_4.webp';
-
 import useFetchData from '@/hooks/useFetchData';
 import { formatDate, formatTime } from '@/utils/formatDate';
-
-const activitiesContent = [
-  {
-    id: 1,
-    eventName: 'AfroTreff 15.0',
-    eventDate: 'Fri, Aug. 25, 2023',
-    eventTime: '18:30 CET',
-    eventVenue: 'Rautenstrauch-Joest-Museum',
-    imageSrc: afroTreffLogo,
-    imageAlt: 'event image',
-    linkText: 'register',
-    href: '#',
-    backgroundColorNumber: '1',
-
-    //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
-    // reintegrate if fixed.
-    // backgroundColor: '#BF0D0D',
-  },
-  {
-    id: 2,
-    eventName: 'Smile Workshop, 2023',
-    eventDate: 'Fri, Sep. 1, 2023 ',
-    eventVenue: 'TBD',
-    eventTime: '17:00 CET',
-    imageSrc: eventImage1,
-    imageAlt: 'event image',
-    linkText: 'find out more',
-    href: '#',
-    backgroundColorNumber: '2',
-
-    //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
-    // reintegrate if fixed.
-    // backgroundColor: '#0097b2',
-  },
-  {
-    id: 3,
-    eventName: 'AfroTreff 16.0',
-    eventDate: 'Fri, Sep. 22, 2023 ',
-    eventTime: '18:30 CET',
-    eventVenue: 'Rautenstrauch-Joest-Museum',
-    imageSrc: afroTreffLogo,
-    imageAlt: 'event image',
-    linkText: 'register',
-    href: '#',
-    backgroundColorNumber: '3',
-
-    //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
-    // reintegrate if fixed.
-    // backgroundColor: '#004AAD',
-  },
-];
 
 const LANGUAGES: { [key: string]: string } = {
   en: 'english',
@@ -126,7 +72,7 @@ const Activities = () => {
                     // backgroundColor,
                   }) => (
                     <ActivitiesCard
-                      key={eventTitle}
+                      key={`${eventTitle}-${Date.now()}-${Math.random()}`}
                       eventName={eventTitle}
                       eventDate={formatDate(
                         eventDateAndTime,

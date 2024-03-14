@@ -48,8 +48,6 @@ const BlogPost = () => {
     return <PageLoading />;
   }
 
-  console.log({ DATA: data });
-
   return (
     <section className={blogPostStyles['blog-post__container']}>
       {data &&

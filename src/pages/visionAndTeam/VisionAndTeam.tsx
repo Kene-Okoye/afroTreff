@@ -10,56 +10,10 @@ import PageLoading from '../pageLoading/PageLoading';
 
 import visionAndTeamStyles from '@/pages/visionAndTeam/VisionAndTeam.module.css';
 
-import teamFrancis from '@/assets/images/team_Francis.webp';
-import teamSmilingLady from '@/assets/images/team_smiling_lady.webp';
-
 import { LanguageType } from '@/routes/types/languageType';
 import { QueryVisionAndTeamType } from './types/visionAndTeamTypes';
 
 import useFetchData from '@/hooks/useFetchData';
-
-const visionAndTeamContent = [
-  {
-    id: 1,
-    header: 'Ade',
-    text1:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, accusantium. Quos voluptates rerum porro aliquid, sed cupiditate, quod eligendi laboriosam, excepturi earum itaque. Nostrum est repellendus assumenda placeat totam veritatis! Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
-    text2:
-      'Officiis inventore, veniam doloribus temporibus obcaecati nobis est qui nihil cupiditate amet reiciendis deserunt impedit! Quibusdam corrupti optio exercitationem sapiente harum obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur amet dicta, recusandae repudiandae a ad illo aliquam. Aspernatur quisquam sit doloribus et rerum similique recusandae doloremque iste soluta perspiciatis.',
-    imageSrc: teamFrancis,
-    imageAlt: 'picture of some person',
-  },
-  {
-    id: 2,
-    header: 'Mavis',
-    text1:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, accusantium. Quos voluptates rerum porro aliquid, sed cupiditate, quod eligendi laboriosam, excepturi earum itaque. Nostrum est repellendus assumenda placeat totam veritatis! Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
-    text2:
-      'Officiis inventore, veniam doloribus temporibus obcaecati nobis est qui nihil cupiditate amet reiciendis deserunt impedit! Quibusdam corrupti optio exercitationem sapiente harum obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur amet dicta, recusandae repudiandae a ad illo aliquam. Aspernatur quisquam sit doloribus et rerum similique recusandae doloremque iste soluta perspiciatis.',
-    imageSrc: teamSmilingLady,
-    imageAlt: 'picture of some person',
-  },
-  {
-    id: 3,
-    header: 'Maku',
-    text1:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, accusantium. Quos voluptates rerum porro aliquid, sed cupiditate, quod eligendi laboriosam, excepturi earum itaque. Nostrum est repellendus assumenda placeat totam veritatis! Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
-    text2:
-      'Officiis inventore, veniam doloribus temporibus obcaecati nobis est qui nihil cupiditate amet reiciendis deserunt impedit! Quibusdam corrupti optio exercitationem sapiente harum obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur amet dicta, recusandae repudiandae a ad illo aliquam. Aspernatur quisquam sit doloribus et rerum similique recusandae doloremque iste soluta perspiciatis.',
-    imageSrc: teamSmilingLady,
-    imageAlt: 'picture of some person',
-  },
-  {
-    id: 4,
-    header: 'Chima',
-    text1:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, accusantium. Quos voluptates rerum porro aliquid, sed cupiditate, quod eligendi laboriosam, excepturi earum itaque. Nostrum est repellendus assumenda placeat totam veritatis! Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
-    text2:
-      'Officiis inventore, veniam doloribus temporibus obcaecati nobis est qui nihil cupiditate amet reiciendis deserunt impedit! Quibusdam corrupti optio exercitationem sapiente harum obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur amet dicta, recusandae repudiandae a ad illo aliquam. Aspernatur quisquam sit doloribus et rerum similique recusandae doloremque iste soluta perspiciatis.',
-    imageSrc: teamSmilingLady,
-    imageAlt: 'picture of some person',
-  },
-];
 
 const LANGUAGES: { [key: string]: string } = {
   en: 'english',
@@ -106,8 +60,6 @@ const VisionAndTeam = () => {
   if (isLoading) {
     return <PageLoading />;
   }
-
-  console.log({ DATA: data });
 
   return (
     <>

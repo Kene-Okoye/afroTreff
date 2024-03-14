@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { ChangeEvent, Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { LanguageType } from '@/routes/types/languageType';
@@ -22,20 +22,11 @@ const LANGUAGES: { [key: string]: string } = {
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
-  // const [blogContent, setBlogContent] = useState<initialBlogContentType[]>(initialBlogContent);
 
-  // const handleCategoryChange = (category: string) => {
-  //   setSelectedCategory(category);
-  // };
-
-  // // React to changes in selectedCategory and update filteredBlogContent accordingly
-  // useEffect(() => {
-  //   if (selectedCategory) {
-  //     setBlogContent(initialBlogContent.filter((item) => item.category === selectedCategory));
-  //   } else {
-  //     setBlogContent(initialBlogContent);
-  //   }
-  // }, [selectedCategory]);
+  const handleCategoryChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const category = event.target.value;
+    setSelectedCategory(category);
+  };
 
   const { i18n, t } = useTranslation();
   const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
@@ -48,7 +39,9 @@ const Blog = () => {
         "imageUrl": backgroundImage.asset->url
       },
       postSectionheading,
-      post[]-> {
+      "post": *[_type == 'post' && language == '${LANGUAGES[currentLanguage]}' ${
+      selectedCategory && `&& "${selectedCategory}" in categories[]`
+    }] {
         title,
         author->{
           name,
@@ -71,13 +64,11 @@ const Blog = () => {
     return <PageLoading />;
   }
 
-  console.log({ DATA: data });
-
   return (
     <>
       {data &&
         data.map(({ heroSection_Blog, postSectionheading, post }) => (
-          <Fragment key={heroSection_Blog.smallText}>
+          <Fragment key={`${heroSection_Blog.smallText}-${Date.now()}-${Math.random()}`}>
             <HeroSection
               h1Text={heroSection_Blog.headingText}
               pText={heroSection_Blog.smallText}
@@ -96,7 +87,7 @@ const Blog = () => {
                 {blogCategories.map((category) => (
                   <>
                     <div
-                      key={category}
+                      key={`${category}-${Date.now()}-${Math.random()}`}
                       className={blogStyles['blog__filter-category-button-wrapper']}
                     >
                       <input
@@ -104,9 +95,9 @@ const Blog = () => {
                         id={category}
                         type="radio"
                         name="category"
-                        value={category}
-                        defaultChecked={category === 'all'}
-                        // onChange={handleLanguageChange}
+                        value={category === 'all' ? '' : category}
+                        defaultChecked={category === selectedCategory}
+                        onChange={handleCategoryChange}
                       />
                       <label
                         className={blogStyles['blog__filter-category-label']}
@@ -122,9 +113,8 @@ const Blog = () => {
               <div className={blogStyles['blog-container']}>
                 {post &&
                   post.map(({ categories, title, briefIntro, slug, mainImage }) => (
-                    <Fragment key={slug.current}>
+                    <Fragment key={`${slug.current}-${Date.now()}-${Math.random()}`}>
                       <BlogCard
-                        key={slug.current}
                         heading={title}
                         category={t(`${categories[0]}`)}
                         textContent={briefIntro}
@@ -136,6 +126,12 @@ const Blog = () => {
                     </Fragment>
                   ))}
               </div>
+
+              {post.length === 0 && (
+                <div className={blogStyles['blog__no-posts-available']}>
+                  {t('category_not_available')}
+                </div>
+              )}
             </section>
           </Fragment>
         ))}

@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -14,13 +14,13 @@ import useFetchData from '@/hooks/useFetchData';
 import photoGalleryStyles from '@/pages/album/photoGallery/PhotoGallery.module.css';
 
 const PhotoGallery = () => {
-  const navigate = useNavigate();
+  const topElementRef = useRef<HTMLDivElement>(null);
 
+  const navigate = useNavigate();
   const params = useParams();
+  const { t } = useTranslation();
 
   const slug = params.meetUpMonth?.split('__')[1];
-
-  const { t } = useTranslation();
 
   const [data, isLoading] = useFetchData<PhotoGalleryDataType>(
     `*[slug.current == "${slug}"]{
@@ -44,11 +44,13 @@ const PhotoGallery = () => {
     }
   }, [data, navigate]);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   if (isLoading || data.length === 0) {
     return <PageLoading />;
   }
-
-  console.log({ DATA: data });
 
   return (
     <>
@@ -65,7 +67,10 @@ const PhotoGallery = () => {
               ></div>
               <div className={photoGalleryStyles['photo-gallery__images-container']}>
                 <div className={photoGalleryStyles['photo-gallery__images-wrapper']}>
-                  <div className={photoGalleryStyles['photo-gallery__images-heading-wrapper']}>
+                  <div
+                    ref={topElementRef}
+                    className={photoGalleryStyles['photo-gallery__images-heading-wrapper']}
+                  >
                     <HeadingTopSmallVariant
                       h1SmallerVariant={`${t('photo_shots_from')}`}
                       h1BiggerVariant={`${month}, ${year}`}
@@ -94,6 +99,14 @@ const PhotoGallery = () => {
                     />
                   </p>
                 </div>
+                <button
+                  type="button"
+                  className={photoGalleryStyles['photo-gallery__back-to-top']}
+                  onClick={handleScrollToTop}
+                >
+                  <span className={photoGalleryStyles['photo-gallery__back-to-top-arrow']}></span>
+                  <span className={photoGalleryStyles['visually-hidden']}>{t('back_to_top')}</span>
+                </button>
               </div>
             </section>
           </Fragment>

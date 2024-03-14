@@ -31,11 +31,11 @@ const Faq = () => {
     `*[_type == "FAQPage_${currentLanguage}" && language == '${LANGUAGES[currentLanguage]}']{
       language,
       heroSection_Faq{
-       ...,
-       "imageUrl": backgroundImage.asset->url
-     },
-     QandAheading,
-     qandAs
+        ...,
+        "imageUrl": backgroundImage.asset->url
+      },
+      QandAheading,
+      qandAs
   }`,
     [],
   );

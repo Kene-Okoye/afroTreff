@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
 
-import { LanguageType } from '@/routes/types/languageType';
-
 import LinkButton from '@/components/linkButton/LinkButton';
 import LinkOpenInNewWindow from '@/components/linkInOpenNewWindow/LinkOpenInNewWindow';
 
@@ -17,8 +15,6 @@ type ActivitiesCardProps = {
   linkText: string;
   href: string;
   backgroundColorNumber?: string;
-
-  // backgroundColor?: string;
 };
 
 const ActivitiesCard = ({
@@ -28,8 +24,7 @@ const ActivitiesCard = ({
   eventVenue,
   linkText,
   href,
-}: // backgroundColor = '#736357',
-ActivitiesCardProps) => {
+}: ActivitiesCardProps) => {
   const { t } = useTranslation();
 
   return (

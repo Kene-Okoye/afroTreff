@@ -18,7 +18,10 @@ const useAnnounceActivePage = () => {
      * the active page. Also update the HTML document title accordignly.
      */
 
-    if (activePageAnnouncerRef.current && location.pathname === '/') {
+    if (
+      (activePageAnnouncerRef.current && location.pathname === '/en') ||
+      (activePageAnnouncerRef.current && location.pathname === '/de')
+    ) {
       activePageAnnouncerRef.current.textContent = 'home page';
     }
     if (activePageAnnouncerRef.current && location.pathname !== '/') {

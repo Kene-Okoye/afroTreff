@@ -43,23 +43,21 @@ function Support() {
   const [data, isLoading] = useFetchData<queryHomeType>(
     `*[_type == "getInvolvedPage_${currentLanguage}" && language == '${LANGUAGES[currentLanguage]}']{
       language,
-      heroSection_getInvolved{
-       ...,
-       "imageUrl": backgroundImage.asset->url
-     },
-     headingDonationSection,
-     textDonationSection,
-     headingSponsorsSection,
-     sponsorLogo[]{
-       imageDescription_alt,
-       "imageUrl": imageOfLogo.asset->url
-     },
-     closingTextSponsorsSection
+        heroSection_getInvolved{
+        ...,
+        "imageUrl": backgroundImage.asset->url
+      },
+      headingDonationSection,
+      textDonationSection,
+      headingSponsorsSection,
+      sponsorLogo[]{
+        imageDescription_alt,
+        "imageUrl": imageOfLogo.asset->url
+      },
+      closingTextSponsorsSection
   }`,
     [],
   );
-
-  console.log('DATA:', data);
 
   if (isLoading) {
     return <PageLoading />;

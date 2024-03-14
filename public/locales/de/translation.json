@@ -40,5 +40,7 @@
   "news": "Nachrichten",
   "interviews": "Interviews",
   "biography": "Biographie",
-  "all": "Alle"
+  "all": "Alle",
+  "category_not_available": "🤔 Upsie... Es gibt derzeit keine Beiträge für die von Ihnen gewählte Kategorie.",
+  "back_to_top": "nach oben"
 }

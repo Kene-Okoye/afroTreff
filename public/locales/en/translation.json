@@ -40,5 +40,7 @@
   "news": "News",
   "interviews": "Interviews",
   "biography": "Biography",
-  "all": "All"
+  "all": "All",
+  "category_not_available": "🤔 Opsie... There are currently no posts for your selected category.",
+  "back_to_top": "Back to top"
 }
