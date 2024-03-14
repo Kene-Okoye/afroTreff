@@ -37,7 +37,7 @@ export type queryHomeType = {
   closingTextSponsorsSection: string;
 };
 function Support() {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLanguage: LanguageType = i18n.resolvedLanguage as LanguageType;
 
   const [data, isLoading] = useFetchData<queryHomeType>(
