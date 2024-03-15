@@ -46,8 +46,6 @@ const Activities = () => {
     return <PageLoading />;
   }
 
-  console.log({ DATA: data });
-
   return (
     <>
       {data &&

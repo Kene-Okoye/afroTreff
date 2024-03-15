@@ -47,8 +47,6 @@ const Home = () => {
     [],
   );
 
-  console.log({ DATA: data });
-
   if (isLoading) {
     return <PageLoading />;
   }
