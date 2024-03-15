@@ -1,0 +1,1 @@
+const a=(e,t="en-UK")=>{const o=new Date(e),n={weekday:"short",month:"short",day:"numeric",year:"numeric"};return o.toLocaleDateString(t,n)},i=(e,t="en-US")=>{const o=new Date(e),n={hour:"2-digit",minute:"2-digit",timeZone:"UTC"};let r=o.toLocaleTimeString(t,n);return t==="de-DE"&&(r+=" Uhr"),r};export{i as a,a as f};

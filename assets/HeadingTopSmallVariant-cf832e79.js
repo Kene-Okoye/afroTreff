@@ -1,1 +1,0 @@
-import{j as a}from"./index-eb380ac2.js";const i="_heading_1q58m_1",s={heading:i,"heading--small":"_heading--small_1q58m_9"},r=({h1SmallerVariant:n,h1BiggerVariant:e})=>a.jsx(a.Fragment,{children:a.jsxs("h2",{className:s.heading,children:[a.jsxs("span",{className:s["heading--small"],children:[n,a.jsx("br",{})]}),a.jsx("span",{children:e})]})});export{r as H};
