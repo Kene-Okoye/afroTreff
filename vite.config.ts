@@ -5,8 +5,8 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
   plugins: [react()],
+  base: '/',
   resolve: {
     /*
      * Maps the @ path alias to the src directory using
