@@ -79,6 +79,13 @@ export default {
               title: 'Button Text',
               type: 'string',
             },
+            {
+              name: 'buttonLink',
+              title: 'Button Link',
+              type: 'string',
+              description: `Please entire a valid URL 
+              where the button should rediredt the user to. For e.g. http://example.com`,
+            },
           ],
         },
       ],

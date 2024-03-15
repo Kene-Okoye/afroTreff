@@ -32,7 +32,16 @@ const TeaserBoxes = ({ teaserBoxTextContent }: TeaserBoxesProps) => {
             <div key={ctaButtonText} className={teaserBoxesStyles['teaser-box__CTA-box-text-only']}>
               <LinkButton
                 linkText={ctaButtonText}
-                path={`/${currentLanguage}/${paths[currentLanguage][buttonPath]}`}
+                path={
+                  paths[currentLanguage][buttonPath] !== 'contact'
+                    ? `/${currentLanguage}/${paths[currentLanguage][buttonPath]}`
+                    : ''
+                }
+                href={
+                  paths[currentLanguage][buttonPath] === 'contact'
+                    ? 'mailto:hallo@afrotreff.de, hallo@afrotreff.de?subject=Volunteer with Afrotreff'
+                    : ''
+                }
               />
             </div>
           ))}

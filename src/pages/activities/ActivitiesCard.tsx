@@ -12,8 +12,9 @@ type ActivitiesCardProps = {
   eventDate: string;
   eventTime: string;
   eventVenue: string;
+  eventRegisterUrlLink?: string;
   linkText: string;
-  href: string;
+  href?: string;
   backgroundColorNumber?: string;
 };
 
@@ -22,6 +23,7 @@ const ActivitiesCard = ({
   eventDate,
   eventTime,
   eventVenue,
+  eventRegisterUrlLink,
   linkText,
   href,
 }: ActivitiesCardProps) => {
@@ -45,25 +47,32 @@ const ActivitiesCard = ({
           <strong>{t('time')}</strong>
           <p>{eventTime}</p>
           <strong>{t('venue')}</strong>
-          <p className={activitiesCardStyles['activities__venue']}>
-            <img
-              src={googleMapsIcon}
-              alt=""
-              role="presentation"
-              aria-hidden="true"
-              className={activitiesCardStyles['activities__google-maps-icon']}
-            />
-
-            <span className={activitiesCardStyles['activities__open-in-maps-wrapper']}>
-              <LinkOpenInNewWindow
-                href="https://www.google.com/maps/search/?api=1&query=Rautenstrauch-Joest-Museum"
-                text={eventVenue}
-                hideOpenInNewTablIcon
+          {href && (
+            <p className={activitiesCardStyles['activities__venue']}>
+              <img
+                src={googleMapsIcon}
+                alt=""
+                role="presentation"
+                aria-hidden="true"
+                className={activitiesCardStyles['activities__google-maps-icon']}
               />
-            </span>
-          </p>
+
+              <span className={activitiesCardStyles['activities__open-in-maps-wrapper']}>
+                <LinkOpenInNewWindow
+                  href={href ? href : ''}
+                  text={eventVenue}
+                  hideOpenInNewTablIcon
+                />
+              </span>
+            </p>
+          )}
+          {!href && (
+            <p className={activitiesCardStyles['activities__venue-text-only']}>{eventVenue}</p>
+          )}
         </div>
-        <LinkButton linkText={linkText} href={href} />
+        {linkText && eventRegisterUrlLink && (
+          <LinkButton linkText={linkText} href={eventRegisterUrlLink} />
+        )}
       </div>
     </div>
   );

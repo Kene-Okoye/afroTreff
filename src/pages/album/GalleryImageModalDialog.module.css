@@ -42,7 +42,7 @@
 }
 
 .gallery__image-modal {
-  height: 100%;
+  height: auto;
   width: auto;
   margin: auto;
 }

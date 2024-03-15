@@ -43,9 +43,9 @@ const TheFooter = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to={`/${currentLanguage}/${paths[currentLanguage].CONTACT}`}>
+                <a href="mailto:hallo@afrotreff.de, hallo@afrotreff.de?subject=Volunteer with Afrotreff">
                   {t('contact')}
-                </NavLink>
+                </a>
               </li>
               <li>
                 <NavLink to={`/${currentLanguage}/${paths[currentLanguage].FAQ}`}>
@@ -66,7 +66,6 @@ const TheFooter = () => {
                 >
                   {t('individual_donations')}
                 </a>
-                {/* <NavLink to={paths.SUPPORT}>Individual donations</NavLink> */}
               </li>
               <li>
                 <NavLink to={`/${currentLanguage}/${paths[currentLanguage].SUPPORT_US}`}>

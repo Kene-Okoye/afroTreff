@@ -12,8 +12,6 @@ import { components } from '@/components/portableTextCustomComponent/PortableTex
 import { LanguageType } from '@/routes/types/languageType';
 import { heroSectionSupportUsDataType } from '@/pages/types/pagesDataType';
 
-import paths from '@/routes/paths';
-
 import supportStyles from '@/pages/support/Support.module.css';
 
 import koelnMuseum from '@/assets/images/Rautenstrauch_Joest_Museum_Koeln.webp';
@@ -98,7 +96,9 @@ function Support() {
                     </a>
                     <LinkButton
                       linkText={heroSection_getInvolved.volunteerButtonText}
-                      path={`/${currentLanguage}/${paths[currentLanguage].CONTACT}`}
+                      href={
+                        'mailto:hallo@afrotreff.de, hallo@afrotreff.de?subject=Volunteer with Afrotreff'
+                      }
                     />
                   </div>
                 </HeroSection>

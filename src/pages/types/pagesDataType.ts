@@ -2,6 +2,7 @@ export type heroSectionGeneralDataType = {
   headingText: string;
   smallText: string;
   imageUrl: string;
+  buttonLink: string;
 };
 
 export type heroSectionHomeDataType = {
@@ -9,6 +10,7 @@ export type heroSectionHomeDataType = {
   dateForNextMeetUp: string;
   registerButtonText: string;
   imageUrl: string;
+  buttonLink: string;
 };
 
 export type heroSectionSupportUsDataType = {

@@ -22,6 +22,7 @@ export type queryHomeType = {
   heroSection_activities: heroSectionGeneralDataType;
   upcomingEventsHeading: { [key: string]: string };
   upcomingEventsList: { [key: string]: string }[];
+  buttonLink: string;
 };
 
 const Activities = () => {
@@ -45,6 +46,8 @@ const Activities = () => {
     return <PageLoading />;
   }
 
+  console.log({ DATA: data });
+
   return (
     <>
       {data &&
@@ -67,6 +70,7 @@ const Activities = () => {
                     eventTitle,
                     eventLocation,
                     buttonText,
+                    buttonLink,
                     //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
                     // reintegrate if fixed.
                     // backgroundColor,
@@ -84,8 +88,10 @@ const Activities = () => {
                       )}
                       eventVenue={eventLocation}
                       linkText={buttonText}
-                      href="#"
-
+                      href={
+                        'https://www.google.com/maps/search/?api=1&query=Rautenstrauch-Joest-Museum'
+                      }
+                      eventRegisterUrlLink={buttonLink}
                       //TODO: Discuss with Francis about the issue with the dynamic backgroundColor and
                       // reintegrate if fixed.
                       // backgroundColor={backgroundColor}

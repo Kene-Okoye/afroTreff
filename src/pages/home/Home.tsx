@@ -47,6 +47,8 @@ const Home = () => {
     [],
   );
 
+  console.log({ DATA: data });
+
   if (isLoading) {
     return <PageLoading />;
   }
@@ -65,6 +67,7 @@ const Home = () => {
                 )}
                 linkText={heroSectionHome.registerButtonText}
                 backGroundImage={heroSectionHome.imageUrl}
+                href={heroSectionHome.buttonLink}
               />
             </div>
 

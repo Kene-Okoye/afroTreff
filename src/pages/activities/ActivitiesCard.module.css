@@ -76,6 +76,11 @@
   /* box-shadow: 0px 1.5px 0px 0px var(--carrot-orange-color); */
 }
 
+.activities__venue-text-only {
+  padding-inline: 8px;
+  padding-block: 5px;
+}
+
 .activities__google-maps-icon {
   display: inline;
   vertical-align: bottom;
