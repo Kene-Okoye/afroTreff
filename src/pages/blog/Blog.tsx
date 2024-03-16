@@ -13,13 +13,7 @@ import blogStyles from '@/pages/blog/Blog.module.css';
 import useFetchData from '@/hooks/useFetchData';
 import { queryPostType } from '@/pages/blog/types/blogTypes';
 
-const blogCategories = [
-  { id: '1', category: 'all' },
-  { id: '2', category: 'news' },
-  { id: '3', category: 'story' },
-  { id: '4', category: 'interviews' },
-  { id: '5', category: 'biography' },
-];
+const blogCategories = ['all', 'news', 'story', 'interviews', 'biography'];
 
 const LANGUAGES: { [key: string]: string } = {
   en: 'english',
@@ -96,18 +90,18 @@ const Blog = () => {
                     <div className={blogStyles['blog__filter-category-button-wrapper']}>
                       <input
                         className={blogStyles['blog__filter-category-input']}
-                        id={category.id}
+                        id={category}
                         type="radio"
                         name="category"
-                        value={category.category === 'all' ? '' : category.category}
-                        defaultChecked={category.category === selectedCategory}
+                        value={category === 'all' ? '' : category}
+                        defaultChecked={category === selectedCategory}
                         onChange={handleCategoryChange}
                       />
                       <label
                         className={blogStyles['blog__filter-category-label']}
-                        htmlFor={category.category}
+                        htmlFor={category}
                       >
-                        {t(category.category)}
+                        {t(category)}
                       </label>
                     </div>
                   </Fragment>
