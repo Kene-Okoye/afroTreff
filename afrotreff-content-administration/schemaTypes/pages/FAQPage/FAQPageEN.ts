@@ -88,7 +88,7 @@ export default {
         ...selection,
         title:
           previewTitle && language && `${previewTitle} (${LANGUAGES[language].toUpperCase()}) `,
-        subtitle: language && `Home page translation in ${language}`,
+        subtitle: language && `FAQ page translation in ${language}`,
       }
     },
   },
