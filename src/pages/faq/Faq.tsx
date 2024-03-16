@@ -44,11 +44,13 @@ const Faq = () => {
     return <PageLoading />;
   }
 
+  console.log({ DATA: data });
+
   return (
     <>
       {data &&
         data.map(({ heroSection_Faq, QandAheading, qandAs }) => (
-          <Fragment key={heroSection_Faq.headingText}>
+          <Fragment key={`${heroSection_Faq.headingText}-${Date.now()}-${Math.random()}`}>
             <HeroSection
               h1Text={heroSection_Faq.headingText}
               pText={heroSection_Faq.smallText}
