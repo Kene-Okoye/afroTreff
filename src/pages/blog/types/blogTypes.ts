@@ -15,6 +15,7 @@ export type PostType = {
   briefIntro: string;
   body: PortableTextBlock;
   mainImage: { url: string };
+  _id: string;
 };
 
 export type SectionHeadingType = {

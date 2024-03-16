@@ -45,8 +45,6 @@ const Faq = () => {
     return <PageLoading />;
   }
 
-  console.log({ DATA: data });
-
   return (
     <>
       {data &&

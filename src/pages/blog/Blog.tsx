@@ -13,7 +13,13 @@ import blogStyles from '@/pages/blog/Blog.module.css';
 import useFetchData from '@/hooks/useFetchData';
 import { queryPostType } from '@/pages/blog/types/blogTypes';
 
-const blogCategories = ['all', 'news', 'story', 'interviews', 'biography'];
+const blogCategories = [
+  { id: '1', category: 'all' },
+  { id: '2', category: 'news' },
+  { id: '3', category: 'story' },
+  { id: '4', category: 'interviews' },
+  { id: '5', category: 'biography' },
+];
 
 const LANGUAGES: { [key: string]: string } = {
   en: 'english',
@@ -55,6 +61,7 @@ const Blog = () => {
         publishedAt,
         briefIntro,
         body,
+        _id
       }  
     }`,
     [],
@@ -85,35 +92,32 @@ const Blog = () => {
                   {t('filter_blog_category')}
                 </legend>
                 {blogCategories.map((category) => (
-                  <>
-                    <div
-                      key={`${category}-${Date.now()}-${Math.random()}`}
-                      className={blogStyles['blog__filter-category-button-wrapper']}
-                    >
+                  <Fragment key={`${category}-${Date.now()}-${Math.random()}`}>
+                    <div className={blogStyles['blog__filter-category-button-wrapper']}>
                       <input
                         className={blogStyles['blog__filter-category-input']}
-                        id={category}
+                        id={category.id}
                         type="radio"
                         name="category"
-                        value={category === 'all' ? '' : category}
-                        defaultChecked={category === selectedCategory}
+                        value={category.category === 'all' ? '' : category.category}
+                        defaultChecked={category.category === selectedCategory}
                         onChange={handleCategoryChange}
                       />
                       <label
                         className={blogStyles['blog__filter-category-label']}
-                        htmlFor={category}
+                        htmlFor={category.category}
                       >
-                        {t(category)}
+                        {t(category.category)}
                       </label>
                     </div>
-                  </>
+                  </Fragment>
                 ))}
               </fieldset>
 
               <div className={blogStyles['blog-container']}>
                 {post &&
-                  post.map(({ categories, title, briefIntro, slug, mainImage }) => (
-                    <Fragment key={`${slug.current}-${Date.now()}-${Math.random()}`}>
+                  post.map(({ categories, title, briefIntro, slug, mainImage, _id }) => (
+                    <Fragment key={`${_id}-${Date.now()}-${Math.random()}`}>
                       <BlogCard
                         heading={title}
                         category={t(`${categories[0]}`)}
