@@ -17,6 +17,7 @@ export default {
           {title: 'News', value: 'news'},
           {title: 'Story', value: 'story'},
           {title: 'Interviews', value: 'interviews'},
+          {title: 'Life Style', value: 'lifeStyle'},
         ],
       },
     },

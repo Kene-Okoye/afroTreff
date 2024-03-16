@@ -55,6 +55,11 @@ export default {
           type: 'string',
         },
         {
+          name: 'heroSectionshortText',
+          title: 'Hero section Short text',
+          type: 'string',
+        },
+        {
           name: 'payPalButtonText',
           title: 'PayPal button text',
           type: 'string',

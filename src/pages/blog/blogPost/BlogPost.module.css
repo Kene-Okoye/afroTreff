@@ -36,3 +36,9 @@
 .blog-post__article-content {
   margin-block-end: var(--spacing-sm);
 }
+
+.blog-post__article-meta-data-author {
+  padding-block-end: var(--spacing-md);
+  font-style: italic;
+  color: var(--carnaby-tan-color);
+}

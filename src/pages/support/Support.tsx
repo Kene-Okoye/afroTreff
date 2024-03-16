@@ -14,10 +14,6 @@ import { heroSectionSupportUsDataType } from '@/pages/types/pagesDataType';
 
 import supportStyles from '@/pages/support/Support.module.css';
 
-import koelnMuseum from '@/assets/images/Rautenstrauch_Joest_Museum_Koeln.webp';
-import visibilitiLogo from '@/assets/images/visibiliti_logo.webp';
-import integrationshausEvLogo from '@/assets/images/integrationshaus_ev_logo.webp';
-
 import paypalLogo from '@/assets/svg/paypal_logo.svg';
 import useFetchData from '@/hooks/useFetchData';
 
@@ -26,12 +22,19 @@ const LANGUAGES: { [key: string]: string } = {
   de: 'german',
 };
 
+export type ImageType = {
+  imageDescription_alt: string;
+  imageUrl: string;
+  _key: string;
+};
+
 export type queryHomeType = {
   language: string;
   heroSection_getInvolved: heroSectionSupportUsDataType;
   headingDonationSection: { [key: string]: string };
   textDonationSection: PortableTextBlock;
   headingSponsorsSection: string;
+  sponsorLogo: ImageType[];
   closingTextSponsorsSection: string;
 };
 function Support() {
@@ -50,7 +53,8 @@ function Support() {
       headingSponsorsSection,
       sponsorLogo[]{
         imageDescription_alt,
-        "imageUrl": imageOfLogo.asset->url
+        "imageUrl": asset->url,
+        _key
       },
       closingTextSponsorsSection
   }`,
@@ -70,12 +74,14 @@ function Support() {
             headingDonationSection,
             headingSponsorsSection,
             textDonationSection,
+            sponsorLogo,
             closingTextSponsorsSection,
           }) => (
             <Fragment key={heroSection_getInvolved.heroSectionHeadingText}>
               <div className={supportStyles['support__hero-section-wrapper']}>
                 <HeroSection
                   h1Text={heroSection_getInvolved.heroSectionHeadingText}
+                  pText={heroSection_getInvolved.heroSectionshortText}
                   backGroundImage={heroSection_getInvolved.imageUrl}
                 >
                   <div className={supportStyles['support__hero-section-buttons-wrapper']}>
@@ -115,31 +121,20 @@ function Support() {
 
               <section className={supportStyles['support__donors-container']}>
                 <h2>{headingSponsorsSection}</h2>
+
                 <div className={supportStyles['support__donors-logo-grid']}>
-                  <div className={supportStyles['support__donors-logo-wrapper']}>
-                    <img
-                      src={koelnMuseum}
-                      alt="Logo of the Rautenstrauch Joest Museum, Cologne"
-                      className={supportStyles['support__donors-logo']}
-                    />
-                  </div>
-                  <div className={supportStyles['support__donors-logo-wrapper']}>
-                    <img
-                      src={visibilitiLogo}
-                      alt="Logo of the Visibiliti Media, Cologne"
-                      className={supportStyles['support__donors-logo']}
-                    />
-                  </div>
-                  <div
-                    className={supportStyles['support__donors-logo-wrapper']}
-                    style={{ backgroundColor: '#232222' }}
-                  >
-                    <img
-                      src={integrationshausEvLogo}
-                      alt="Logo of the integrationshaus e.v"
-                      className={supportStyles['support__donors-logo']}
-                    />
-                  </div>
+                  {sponsorLogo &&
+                    sponsorLogo.map(({ _key, imageUrl, imageDescription_alt }) => (
+                      <Fragment key={_key}>
+                        <div className={supportStyles['support__donors-logo-wrapper']}>
+                          <img
+                            src={imageUrl}
+                            alt={imageDescription_alt}
+                            className={supportStyles['support__donors-logo']}
+                          />
+                        </div>
+                      </Fragment>
+                    ))}
                 </div>
 
                 <p>{closingTextSponsorsSection}</p>

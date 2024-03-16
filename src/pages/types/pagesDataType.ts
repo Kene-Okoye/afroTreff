@@ -17,5 +17,6 @@ export type heroSectionSupportUsDataType = {
   heroSectionHeadingText: string;
   volunteerButtonText: string;
   payPalButtonText: string;
+  heroSectionshortText: string;
   imageUrl: string;
 };

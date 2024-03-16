@@ -13,8 +13,14 @@ export const componentsPrivacy: PortableTextComponents = {
     strong: ({ children }) => <strong className="portableTextPrivacy-strong">{children}</strong>,
   },
 
+  list: {
+    // Ex. 2: customizing common list types
+    bullet: ({ children }) => <ul className="portableTextPrivacy-ul">{children}</ul>,
+    number: ({ children }) => <ol className="portableTextPrivacy-ol">{children}</ol>,
+  },
+
   marks: {
-    // Render a custom `link` annotation
+    // Ex. 3: Render a custom `link` annotation
     link: ({ children, value }) => {
       const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
       return (

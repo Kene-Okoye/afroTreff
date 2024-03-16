@@ -24,7 +24,7 @@
   "coming_soon": "coming soon",
   "coming_soon_elaboration_text": "We‘re currently working on this page. Stay tuned for some exciting updates",
   "return_to_homepage": "Return to the home page",
-  "page_not_found": "404: The page you requested could not be found.",
+  "page_not_found": "404: The page you requested could not be found. 🦥",
 
   "date": "Date:",
   "time": "Time:",
@@ -39,8 +39,12 @@
   "story": "Story",
   "news": "News",
   "interviews": "Interviews",
-  "biography": "Biography",
+  "lifestyle": "Lifestyle",
   "all": "All",
-  "category_not_available": "🤔 Opsie... There are currently no posts for your selected category.",
-  "back_to_top": "Back to top"
+  "category_not_available": "🙈 Opsie... There are currently no posts for your selected category.",
+  "back_to_top": "Back to top",
+  "by": "By",
+  "in": "in",
+  "category": "category",
+  "find_out_more": "Find out more"
 }

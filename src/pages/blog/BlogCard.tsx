@@ -4,6 +4,7 @@ import LinkButton from '@/components/linkButton/LinkButton';
 type BlogCardProps = {
   heading: string;
   category: string;
+  datePublished?: string;
   textContent: string;
   imageSrc?: string;
   imageAlt?: string;
@@ -15,6 +16,7 @@ type BlogCardProps = {
 const BlogCard = ({
   heading,
   category,
+  datePublished,
   textContent,
   imageSrc,
   imageAlt,
@@ -24,7 +26,7 @@ const BlogCard = ({
 }: BlogCardProps) => {
   return (
     <>
-      <div className={blogCardStyles['blog-item']}>
+      <div className={blogCardStyles['blog-item']} aria-live="polite" aria-atomic="true">
         <div className={blogCardStyles['blog-item--image-wrapper']}>
           {/* //TODO: Reintergrate after pics with the perfect dimension are ontained from Francis */}
           <img
@@ -36,10 +38,7 @@ const BlogCard = ({
         </div>
         <div
           className={`${blogCardStyles['blog-item--text-wrapper']} ${
-            (category === 'News' ||
-              category === 'Nachrichten' ||
-              category === 'Biography' ||
-              category === 'Biographie') &&
+            (category === 'News' || category === 'Nachrichten' || category === 'Lifestyle') &&
             blogCardStyles['blog-item--text-wrapper-news']
           }`}
         >
@@ -47,22 +46,16 @@ const BlogCard = ({
             <h2 className={blogCardStyles['blog-item--heading']}>{heading}</h2>
             <p
               className={`${blogCardStyles['blog-item--category']} ${
-                (category === 'News' ||
-                  category === 'Nachrichten' ||
-                  category === 'biography' ||
-                  category === 'Biographie') &&
+                (category === 'News' || category === 'Nachrichten' || category === 'Lifestyle') &&
                 blogCardStyles['blog-item--category-news']
               }`}
             >
-              {category}
+              {category} - {datePublished}
             </p>
           </div>
           <div
             className={`${blogCardStyles['blog-item--text-button-wrapper']} ${
-              (category === 'Story' ||
-                category === 'Geschichte' ||
-                category === 'Interviews' ||
-                category === 'Interviews') &&
+              (category === 'Story' || category === 'Geschichte' || category === 'Interviews') &&
               blogCardStyles['blog-item--text-button-wrapper-story']
             }`}
           >

@@ -13,7 +13,9 @@ import blogStyles from '@/pages/blog/Blog.module.css';
 import useFetchData from '@/hooks/useFetchData';
 import { queryPostType } from '@/pages/blog/types/blogTypes';
 
-const blogCategories = ['all', 'news', 'story', 'interviews', 'biography'];
+import { formatDate } from '@/utils/formatDate';
+
+const blogCategories = ['all', 'news', 'story', 'interviews', 'lifestyle'];
 
 const LANGUAGES: { [key: string]: string } = {
   en: 'english',
@@ -110,19 +112,25 @@ const Blog = () => {
 
               <div className={blogStyles['blog-container']}>
                 {post &&
-                  post.map(({ categories, title, briefIntro, slug, mainImage, _id }) => (
-                    <Fragment key={`${_id}-${Date.now()}-${Math.random()}`}>
-                      <BlogCard
-                        heading={title}
-                        category={t(`${categories[0]}`)}
-                        textContent={briefIntro}
-                        imageSrc={mainImage.url}
-                        imageAlt={''}
-                        buttonText={'Find out more'}
-                        path={slug.current}
-                      />
-                    </Fragment>
-                  ))}
+                  post.map(
+                    ({ categories, title, briefIntro, slug, mainImage, _id, publishedAt }) => (
+                      <Fragment key={`${_id}-${Date.now()}-${Math.random()}`}>
+                        <BlogCard
+                          heading={title}
+                          category={t(`${categories[0]}`)}
+                          datePublished={formatDate(
+                            publishedAt,
+                            currentLanguage === 'de' ? 'de-DE' : 'en-US',
+                          )}
+                          textContent={briefIntro}
+                          imageSrc={mainImage.url}
+                          imageAlt={''}
+                          buttonText={t('find_out_more')}
+                          path={slug.current}
+                        />
+                      </Fragment>
+                    ),
+                  )}
               </div>
 
               {post.length === 0 && (

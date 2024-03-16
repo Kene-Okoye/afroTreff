@@ -140,6 +140,11 @@ nav [aria-current='page'],
   inset-inline-end: 0; /* Logical property. Equivalent to right: 0; */
   width: 100%;
   visibility: visible;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

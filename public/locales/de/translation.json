@@ -24,7 +24,7 @@
   "coming_soon": "Seite kommt demnächst",
   "coming_soon_elaboration_text": "Wir arbeiten derzeit an dieser Seite. Bleiben Sie dran für einige spannende Updates",
   "return_to_homepage": "Zurück zur Startseite",
-  "page_not_found": "404: Die von Ihnen angeforderte Seite konnte nicht gefunden werden.",
+  "page_not_found": "404: Die von Ihnen angeforderte Seite konnte nicht gefunden werden. 🦥",
 
   "date": "Datum:",
   "time": "Uhrzeit:",
@@ -39,8 +39,12 @@
   "story": "Geschichte",
   "news": "Nachrichten",
   "interviews": "Interviews",
-  "biography": "Biographie",
+  "lifestyle": "Lifestyle",
   "all": "Alle",
-  "category_not_available": "🤔 Upsie... Es gibt derzeit keine Beiträge für die von Ihnen gewählte Kategorie.",
-  "back_to_top": "nach oben"
+  "category_not_available": "🙈 Upsie... Es gibt derzeit keine Beiträge für die von Ihnen gewählte Kategorie.",
+  "back_to_top": "nach oben",
+  "by": "Von",
+  "in": "in",
+  "category": "Kategorie",
+  "find_out_more": "Mehr erfahren"
 }
