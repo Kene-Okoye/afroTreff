@@ -30,19 +30,20 @@ const TeaserBoxes = ({ teaserBoxTextContent }: TeaserBoxesProps) => {
         {teaserBoxTextContent &&
           teaserBoxTextContent.map(({ buttonPath, ctaButtonText }) => (
             <div key={ctaButtonText} className={teaserBoxesStyles['teaser-box__CTA-box-text-only']}>
-              <LinkButton
-                linkText={ctaButtonText}
-                path={
-                  paths[currentLanguage][buttonPath] !== 'contact'
-                    ? `/${currentLanguage}/${paths[currentLanguage][buttonPath]}`
-                    : ''
-                }
-                href={
-                  paths[currentLanguage][buttonPath] === 'contact'
-                    ? 'mailto:hallo@afrotreff.de, hallo@afrotreff.de?subject=Volunteer with Afrotreff'
-                    : ''
-                }
-              />
+              {paths[currentLanguage][buttonPath] === 'contact' ||
+              paths[currentLanguage][buttonPath] === 'kontakt' ? (
+                <LinkButton
+                  linkText={ctaButtonText}
+                  href={
+                    'mailto:hallo@afrotreff.de, hallo@afrotreff.de?subject=Volunteer with Afrotreff'
+                  }
+                />
+              ) : (
+                <LinkButton
+                  linkText={ctaButtonText}
+                  path={`/${currentLanguage}/${paths[currentLanguage][buttonPath]}`}
+                />
+              )}
             </div>
           ))}
       </div>
