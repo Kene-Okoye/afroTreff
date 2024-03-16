@@ -6,6 +6,7 @@ import { heroSectionGeneralDataType } from '@/pages/types/pagesDataType';
 
 import HeroSection from '@/components/hero/HeroSection';
 import PageLoading from '../pageLoading/PageLoading';
+import Accordion from '@/components/accordion/Accordion';
 
 import faqStyles from '@/pages/faq/Faq.module.css';
 
@@ -59,10 +60,18 @@ const Faq = () => {
             <section>
               <h2>{QandAheading}</h2>
 
-              <ul className={faqStyles['faq--desktop']} role="list">
-                {qandAs.map(({ question, answer }) => (
-                  <li key={question}>
-                    <h3> {question}</h3>
+              <ul className={faqStyles['faq--mobile']} role="list" aria-roledescription="accordion">
+                {qandAs.map(({ question, answer, _key }) => (
+                  <li key={_key}>
+                    <Accordion summaryText={question} undisclosedText={answer} />
+                  </li>
+                ))}
+              </ul>
+
+              <ul className={faqStyles['faq--desktop']}>
+                {qandAs.map(({ question, answer, _key }) => (
+                  <li key={`${_key}-${Date.now()}-${Math.random()}`}>
+                    <h3>{question}</h3>
                     <p>{answer}</p>
                   </li>
                 ))}
