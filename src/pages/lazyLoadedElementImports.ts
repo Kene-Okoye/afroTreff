@@ -14,6 +14,8 @@ const lazyLoadedElementImports = {
   Thank_you: lazy(() => import('@/pages/contact/ThankYou')),
   ComingSoon: lazy(() => import('@/pages/comingSoon/ComingSoon')),
   Register: lazy(() => import('@/pages/register/Register')),
+  Imprint: lazy(() => import('@/pages/imprint/Imprint')),
+  PrivacyPolicy: lazy(() => import('@/pages/privacyPolicy/PrivacyPolicy')),
 };
 
 export default lazyLoadedElementImports;

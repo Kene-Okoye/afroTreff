@@ -1,0 +1,23 @@
+.privacyPolicy__container {
+  background-color: #ffff;
+  padding-inline: clamp(0.75rem, -1.14rem + 9.44vw, var(--spacing-xl));
+  padding-block: min(8vh, 5rem);
+  margin-inline: clamp(0.75rem, -1.14rem + 9.44vw, var(--spacing-xl));
+  margin-block-start: 10rem;
+  margin-block-end: 8rem;
+}
+
+.privacyPolicy__container > h1 {
+  font-size: var(--font-size-md);
+}
+
+/* ----------------
+  MEDIA QUERRIES
+----------------- */
+
+@media only screen and (min-width: 62em) {
+  .privacyPolicy__container {
+    width: 60%;
+    margin-inline: auto;
+  }
+}

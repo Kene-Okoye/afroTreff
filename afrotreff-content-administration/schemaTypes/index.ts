@@ -21,6 +21,10 @@ import blogPageDE from './pages/blogPage/blogPageDE'
 import post from './generalSchemas/post'
 import category from './generalSchemas/category'
 import author from './generalSchemas/author'
+import privacyPageDE from './pages/privacyPolicyPage/privacyPolicyPageDE'
+import privacyPolicyPageEN from './pages/privacyPolicyPage/privacyPolicyPageEN'
+import imprintPageEN from './pages/imprintPage/imprintPageEN'
+import imprintPageDE from './pages/imprintPage/imprintPageDE'
 
 export const schemaTypes = [
   blockContent,
@@ -47,4 +51,8 @@ export const schemaTypes = [
   albumsPageDE,
   blogPageEN,
   blogPageDE,
+  privacyPolicyPageEN,
+  privacyPageDE,
+  imprintPageEN,
+  imprintPageDE,
 ]

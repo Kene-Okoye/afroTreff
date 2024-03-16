@@ -8,6 +8,8 @@ import {BiSolidDonateHeart} from 'react-icons/bi'
 import {FcFaq} from 'react-icons/fc'
 import {BiSolidPhotoAlbum} from 'react-icons/bi'
 import {FaBlog} from 'react-icons/fa'
+import {FcPrivacy} from 'react-icons/fc'
+import {FaRegRegistered} from 'react-icons/fa'
 
 export const deskStructure = (S: StructureBuilder) =>
   S.list()
@@ -113,6 +115,34 @@ export const deskStructure = (S: StructureBuilder) =>
                 .icon(FaBlog)
                 .child(S.document().schemaType('blogPage_de').documentId('blogPage_de')),
               S.divider(),
+
+              S.listItem()
+                .title('Privacy Policy Page (EN)')
+                .icon(FcPrivacy)
+                .child(
+                  S.document()
+                    .schemaType('privacyPolicyPage_en')
+                    .documentId('privacyPolicyPage_en'),
+                ),
+              S.listItem()
+                .title('Privacy Policy Page (DE)')
+                .icon(FcPrivacy)
+                .child(
+                  S.document()
+                    .schemaType('privacyPolicyPage_de')
+                    .documentId('privacyPolicyPage_de'),
+                ),
+              S.divider(),
+
+              S.listItem()
+                .title('Imprint Page Page (EN)')
+                .icon(FaRegRegistered)
+                .child(S.document().schemaType('imprintPage_en').documentId('imprintPage_en')),
+              S.listItem()
+                .title('Imprint Page Page (DE)')
+                .icon(FaRegRegistered)
+                .child(S.document().schemaType('imprintPage_de').documentId('imprintPage_de')),
+              S.divider(),
             ]),
         ),
 
@@ -135,6 +165,10 @@ export const deskStructure = (S: StructureBuilder) =>
             'albumsPage_de',
             'blogPage_en',
             'blogPage_de',
+            'privacyPolicyPage_en',
+            'privacyPolicyPage_de',
+            'imprintPage_en',
+            'imprintPage_de',
           ].includes(listItem.getId()),
       ),
       S.divider(),

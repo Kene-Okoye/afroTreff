@@ -66,11 +66,11 @@ function App() {
             />
             <Route
               path={paths.en.IMPRINT}
-              element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
+              element={getRouteElement(lazyLoadedElementImports.Imprint)}
             />
             <Route
               path={paths.en.PRIVACY}
-              element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
+              element={getRouteElement(lazyLoadedElementImports.PrivacyPolicy)}
             />
             <Route path={paths.en.PAGE_NOT_FOUND} element={<PageNotFound />} />
           </Route>
@@ -119,11 +119,11 @@ function App() {
             />
             <Route
               path={paths.de.IMPRINT}
-              element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
+              element={getRouteElement(lazyLoadedElementImports.Imprint)}
             />
             <Route
               path={paths.de.PRIVACY}
-              element={getRouteElement(lazyLoadedElementImports.ComingSoon)}
+              element={getRouteElement(lazyLoadedElementImports.PrivacyPolicy)}
             />
             <Route path={paths.de.PAGE_NOT_FOUND} element={<PageNotFound />} />
           </Route>

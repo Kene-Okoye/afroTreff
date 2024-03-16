@@ -176,7 +176,7 @@ a {
 .portableText-blockquote,
 .portableText-strong,
 .portableText-link {
-  padding-block-end: var(--spacing-sm);
+  margin-block-end: var(--spacing-sm);
 }
 
 .portableText-link {
@@ -186,6 +186,34 @@ a {
 
 .portableText-link:visited {
   color: #681dbb;
+}
+
+.portableTextPrivacy-paragraph,
+.portableTextPrivacy-blockquote,
+.portableTextPrivacy-strong,
+.portableTextPrivacy-link {
+  margin-block-end: var(--spacing-sm);
+}
+
+.portableTextPrivacy-link {
+  color: #0640f1;
+  text-decoration: underline;
+}
+
+.portableTextPrivacy-link:visited {
+  color: #681dbb;
+}
+
+.portableTextPrivacy-h1 {
+  line-height: 1;
+  margin-block: var(--spacing-sm);
+  font-size: var(--font-size-md);
+}
+
+.portableTextPrivacy-h2 {
+  line-height: 1;
+  margin-block: var(--spacing-sm);
+  font-size: var(--font-size-sm);
 }
 
 /* -----------------------------------------
