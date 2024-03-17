@@ -27,11 +27,6 @@
   text-transform: uppercase;
   text-align: center;
   max-width: 250px;
-
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
 }
 
 .activities__text-button-wrapper {
@@ -42,6 +37,13 @@
 
   padding: var(--spacing-md);
   border-block-start: 0px;
+}
+
+.activities__text-large {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .activities__text-button-wrapper a {

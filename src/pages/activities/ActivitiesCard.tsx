@@ -37,7 +37,7 @@ const ActivitiesCard = ({
         // TODO: The attribute does not appear. FIX THIS! Then reintergarte else leave out
         className={`${activitiesCardStyles['activities__banner-wrapper']} ${activitiesCardStyles['activities__banner-backround-color']}`}
       >
-        <p>{eventName}</p>
+        <p className={activitiesCardStyles['activities__text-large']}>{eventName}</p>
       </div>
       <div className={activitiesCardStyles['activities__text-button-wrapper']}>
         <div className={activitiesCardStyles['activities__text-wrapper']}>

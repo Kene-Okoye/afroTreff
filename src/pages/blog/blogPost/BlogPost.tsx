@@ -73,7 +73,7 @@ const BlogPost = () => {
                 <p className={blogPostStyles['blog-post__article-meta-data-author']}>
                   {t('by')} {author.name} -{' '}
                   {formatDate(publishedAt, currentLanguage === 'de' ? 'de-DE' : 'en-US')} {t('in')}{' '}
-                  {categories}
+                  {t('category')}, {t(categories)}
                 </p>
 
                 <PortableText value={body} components={components} />
