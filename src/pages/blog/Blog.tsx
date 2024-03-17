@@ -43,7 +43,7 @@ const Blog = () => {
       postSectionheading,
       "post": *[_type == 'post' && language == '${LANGUAGES[currentLanguage]}' ${
       selectedCategory && `&& "${selectedCategory}" in categories[]`
-    }] {
+    }] | order(publishedAt desc) {
         title,
         author->{
           name,
