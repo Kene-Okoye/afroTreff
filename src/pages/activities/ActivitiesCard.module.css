@@ -54,6 +54,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
   margin-block-end: var(--spacing-xs);
 }
 
@@ -62,7 +64,7 @@
 }
 
 .activities__text-wrapper p {
-  margin-block-end: var(--spacing-sm);
+  margin-block-end: var(--spacing-md);
 }
 
 .activities__venue {

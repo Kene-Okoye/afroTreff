@@ -46,33 +46,39 @@ const ActivitiesCard = ({
           <p>{eventDate}</p>
           <strong>{t('time')}</strong>
           <p>{eventTime}</p>
-          <strong>{t('venue')}</strong>
-          {href && (
-            <p className={activitiesCardStyles['activities__venue']}>
-              <img
-                src={googleMapsIcon}
-                alt=""
-                role="presentation"
-                aria-hidden="true"
-                className={activitiesCardStyles['activities__google-maps-icon']}
-              />
 
-              <span className={activitiesCardStyles['activities__open-in-maps-wrapper']}>
-                <LinkOpenInNewWindow
-                  href={href ? href : ''}
-                  text={eventVenue}
-                  hideOpenInNewTablIcon
+          {href && eventVenue && (
+            <>
+              <strong>{t('venue')}</strong>
+              <p className={activitiesCardStyles['activities__venue']}>
+                <img
+                  src={googleMapsIcon}
+                  alt=""
+                  role="presentation"
+                  aria-hidden="true"
+                  className={activitiesCardStyles['activities__google-maps-icon']}
                 />
-              </span>
-            </p>
+
+                <span className={activitiesCardStyles['activities__open-in-maps-wrapper']}>
+                  <LinkOpenInNewWindow
+                    href={href ? href : ''}
+                    text={eventVenue}
+                    hideOpenInNewTablIcon
+                  />
+                </span>
+              </p>
+            </>
           )}
-          {!href && (
-            <p className={activitiesCardStyles['activities__venue-text-only']}>{eventVenue}</p>
+          {!href && eventVenue && (
+            <>
+              <strong>{t('venue')}</strong>
+              <p className={activitiesCardStyles['activities__venue-text-only']}>{eventVenue}</p>
+            </>
+          )}
+          {linkText && eventRegisterUrlLink && (
+            <LinkButton linkText={linkText} href={eventRegisterUrlLink} />
           )}
         </div>
-        {linkText && eventRegisterUrlLink && (
-          <LinkButton linkText={linkText} href={eventRegisterUrlLink} />
-        )}
       </div>
     </div>
   );
